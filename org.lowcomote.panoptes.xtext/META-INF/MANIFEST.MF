@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: org.lowcomote.panoptes.xtext
+Bundle-ManifestVersion: 2
+Bundle-Name: org.lowcomote.panoptes.xtext
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.lowcomote.panoptes.xtext; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: panoptesDSL,
+ org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtext.util,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Export-Package: org.lowcomote.panoptes.serializer,
+ org.lowcomote.panoptes.parser.antlr,
+ org.lowcomote.panoptes.scoping,
+ org.lowcomote.panoptes.parser.antlr.internal,
+ org.lowcomote.panoptes.generator,
+ org.lowcomote.panoptes.formatting2,
+ org.lowcomote.panoptes.services,
+ org.lowcomote.panoptes.validation,
+ org.lowcomote.panoptes
+Import-Package: org.apache.log4j

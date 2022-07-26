@@ -1,0 +1,82 @@
+Model PTP_XGBOOST{
+	uses INVOICE_TOTAL_GROSS_AMOUNT
+	outputs PTP_XGBOOST_PRED predicts INVOICE_PAID_ON_TIME
+}
+
+FeatureStore{
+	features INVOICE_TOTAL_GROSS_AMOUNT:continuous{requires entities invoice},
+		"SECTOR_DESC_Agriculture & Food":categorical{requires entities customer},
+		"SECTOR_DESC_Automotive & Transport":categorical{requires entities customer}
+	entities customer{keys customerID}, invoice{keys invoiceID}
+	labels INVOICE_PAID_ON_TIME
+	request data rq1
+}
+
+BaseAlgorithmRuntime PythonFunction{
+	endpoint  "https://domain.com"
+}
+
+BaseAlgorithm kolmogorovSmirnov{
+	codebase "https://domain.com"
+	runtime PythonFunction
+	severity levels 2
+	accepts only continuous
+	parameters pValue:Boolean
+}
+
+HigherOrderAlgorithmRuntime PythonFunctionHO{
+	endpoint "https://domain.com"
+}
+
+HigherOrderAlgorithm timeSeriesAnalysis{
+	codebase "https://domain.com"
+	runtime PythonFunctionHO
+	severity levels 2
+}
+
+Action emailSender{
+	endpoint "https://domain.com"
+	parameters mandatory email:String
+}
+
+Deployment PTP{
+	model PTP_XGBOOST
+	inputs "invoice.invoiceID","customer.customerID"
+	
+	BaseAlgorithmExecution KS_INVOICE_TOTAL_GROSS_AMOUNT{
+		algorithm kolmogorovSmirnov
+		from live data use INVOICE_TOTAL_GROSS_AMOUNT
+		from historic data use INVOICE_TOTAL_GROSS_AMOUNT
+		actions 1->emailMe
+		parameter values pValue = true
+	}
+	
+	HigherOrderAlgorithmExecution TS_KS_INVOICE_TOTAL_GROSS_AMOUNT{
+		algorithm timeSeriesAnalysis
+		observed execution KS_INVOICE_TOTAL_GROSS_AMOUNT
+		actions 1->emailMe
+		min observations 100
+		max observations 1000
+	}
+
+	ActionExecution emailMe{
+		action emailSender
+		parameter values email="panagiotis.kourouklidis@bt.com"
+	}
+	
+	when
+	100 samples received
+	and
+	one hour passed
+	and
+	100 labels received
+	and
+	100 predictions served
+	or
+	one month passed
+	and
+	150 samples received
+	or
+	one year passed
+	Execute KS_INVOICE_TOTAL_GROSS_AMOUNT	
+}

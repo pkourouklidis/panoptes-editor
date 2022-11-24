@@ -30,6 +30,11 @@
 				$("#save-button").click(function() {
 					editor.xtextServices.saveResource();
 				});
+				$("#apply-button").click(function() {
+					fetch('/xtext-service/apply?resource=platform.panoptesx')
+					  .then((response) => response.json())
+					  .then((data) => console.log(data));
+				});
 			});
 		});
 	</script>
@@ -45,7 +50,7 @@
 	</div>
 	<div class = "buttons">
 		<button id="save-button">Save</button>
-		<button id="other-button">Other</button>
+		<button id="apply-button">Apply</button>
 	</div>
 </div>
 </body>

@@ -3,12 +3,17 @@
  */
 package org.lowcomote.panoptes.validation;
 
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.validation.Check;
 
 import panoptesDSL.Execution;
+import panoptesDSL.HigherOrderAlgorithmExecution;
 import panoptesDSL.PanoptesDSLPackage;
 import panoptesDSL.Parameter;
 import panoptesDSL.parameterValueEntry;
+import panoptesDSL.ActionExecution;
+import panoptesDSL.BaseAlgorithmExecution;
 
 /**
  * This class contains custom validation rules. 
@@ -16,22 +21,23 @@ import panoptesDSL.parameterValueEntry;
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#validation
  */
 public class PanoptesXValidator extends AbstractPanoptesXValidator {
-	
 	public static final String MANDTORY_PARAMETER_MISSING = "mandatoryParameterMissing";
 	public static final String UNKNOWN_PARAMETER = "unknownParameter";
 	public static final String WRONG_TYPE = "wrongType";
-//
-//	@Check
-//	public void checkGreetingStartsWithCapital(Greeting greeting) {
-//		if (!Character.isUpperCase(greeting.getName().charAt(0))) {
-//			warning("Name should start with a capital",
-//					PanoptesXPackage.Literals.GREETING__NAME,
-//					INVALID_NAME);
-//		}
-//	}
+	
+	@Check
+	public void checkFeatureTypes(Execution execution) {
+		//TODO
+	}
+	
+	@Check
+	public void checkDeploymentInputs(Execution execution) {
+		//TODO
+	}
+	
 	@Check
 	public void checkMandatoryParameters(Execution execution) {
-		for (Parameter p : execution.getExecutable().getAdditionalParameters()) {
+		for (Parameter p : getAdditionalParameters(execution)) {
 			if (p.isMandatory()) {
 				boolean found = false;
 				for (parameterValueEntry entry : execution.getParameterValueMap()) {
@@ -53,7 +59,7 @@ public class PanoptesXValidator extends AbstractPanoptesXValidator {
 	public void checkUnknownParameters(Execution execution) {
 		for (parameterValueEntry entry : execution.getParameterValueMap()) {
 			boolean found = false;
-			for (Parameter p : execution.getExecutable().getAdditionalParameters()) {
+			for (Parameter p : getAdditionalParameters(execution)) {
 				if (entry.getKey().equals(p.getName())) {
 					found = true;
 					break;
@@ -71,7 +77,7 @@ public class PanoptesXValidator extends AbstractPanoptesXValidator {
 	public void checkParameterTypes(Execution execution) {
 		for (parameterValueEntry entry : execution.getParameterValueMap()) {
 			Parameter parameter = null;
-			for (Parameter p : execution.getExecutable().getAdditionalParameters()) {
+			for (Parameter p : getAdditionalParameters(execution)) {
 				if (entry.getKey().equals(p.getName())) {
 					parameter = p;
 					break;
@@ -109,5 +115,19 @@ public class PanoptesXValidator extends AbstractPanoptesXValidator {
 				}
 			}
 		}
+	}
+	
+	private EList<Parameter> getAdditionalParameters(EObject execution){
+		EList<Parameter> parameters = null;
+		if (execution.eClass().getClassifierID()==PanoptesDSLPackage.BASE_ALGORITHM_EXECUTION){
+			parameters = ((BaseAlgorithmExecution)execution).getAlgorithm().getAdditionalParameters();
+		}
+		else if (execution.eClass().getClassifierID()==PanoptesDSLPackage.HIGHER_ORDER_ALGORITHM_EXECUTION) {
+			parameters = ((HigherOrderAlgorithmExecution)execution).getAlgorithm().getAdditionalParameters();
+		}
+		else if (execution.eClass().getClassifierID()==PanoptesDSLPackage.ACTION_EXECUTION) {
+			parameters = ((ActionExecution)execution).getAction().getAdditionalParameters();
+		}
+		return parameters;
 	}
 }

@@ -6,13 +6,14 @@ import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
 Platform returns Platform:
 	(
-		featureStore=FeatureStore 
-		| mlModels+=Model 
-		| deployments+=Deployment 
-		| algorithms+=Algorithm 
-		| algorithmRuntimes+=AlgorithmRuntime 
-		| actions+=Action
+		featureStore=FeatureStore |
+		mlModels+=Model |
+		deployments+=Deployment | 
+		algorithms+=Algorithm |
+		algorithmRuntimes+=AlgorithmRuntime | 
+		actions+=Action
 	)*
+	
 ;
 
 Model returns Model:
@@ -20,18 +21,22 @@ Model returns Model:
 	'Model'
 	name=EString
 	'{'
-		'uses' inputs+=[Feature|EString] ( "," inputs+=[Feature|EString])*
-		'outputs' output=Prediction
+		(
+			('uses' inputs+=[Feature|EString] ( "," inputs+=[Feature|EString])*) &
+			('outputs' output=Prediction)
+		)
 	'}';
 
 FeatureStore returns FeatureStore:
 	{FeatureStore}
 	'FeatureStore'
 	'{'
-		('features' features+=Feature (',' features+=Feature)*)?
-		('entities' entities+=Entity ( "," entities+=Entity)*)?
-		('labels' labels+=Label (',' labels+=Label)*)?
-		('request' 'data' requestData+=RequestData (',' requestData+=RequestData)*)?
+		(
+			('features' features+=Feature (',' features+=Feature)*)? &
+			('entities' entities+=Entity ( "," entities+=Entity)*)? &
+			('labels' labels+=Label (',' labels+=Label)*)? &
+			('request' 'data' requestData+=RequestData (',' requestData+=RequestData)*)?
+		)
 	'}'
 ;
 
@@ -49,8 +54,10 @@ Feature returns Feature:
 	name=EString
 	(':' type=statisticalVariableType)?
 	('{'
-	('requires' 'entities' entities+=[Entity|EString] ( "," entities+=[Entity|EString])*)? 
-	('requires' 'request' 'data' requestData+=[RequestData|EString] ( "," requestData+=[RequestData|EString])*)?
+		(
+			('requires' 'entities' entities+=[Entity|EString] ( "," entities+=[Entity|EString])*)? &
+			('requires' 'request' 'data' requestData+=[RequestData|EString] ( "," requestData+=[RequestData|EString])*)?
+		)
 	'}')?
 ;
 
@@ -84,11 +91,14 @@ Deployment returns Deployment:
 	'Deployment'
 	name=EString
 	'{'
-		'model' mlModel=[Model|EString]
-		('inputs' inputs+=[DeploymentIO|EString] ( "," inputs+=[DeploymentIO|EString])* )?
-		(algorithmexecutions+=AlgorithmExecution)*
-		(actionExecutions+=ActionExecution)*
-		(triggerGroups+=TriggerGroup)*
+		(
+			'model' mlModel=[Model|EString] |
+			('inputs' inputs+=[DeploymentIO|EString] ( "," inputs+=[DeploymentIO|EString])* ) |
+			(algorithmexecutions+=AlgorithmExecution) |
+			(actionExecutions+=ActionExecution) |
+			(triggerGroups+=TriggerGroup)
+		)*
+
 	'}';
 
 Algorithm returns Algorithm:
@@ -98,11 +108,13 @@ BaseAlgorithm returns BaseAlgorithm:
 	'BaseAlgorithm'
 	name=EString
 	'{'
-		('codebase' codebase=EString)
-		('runtime' runtime=[BaseAlgorithmRuntime|EString])
-		('severity' 'levels' driftLevels=EIntegerObject)
-		('accepts' (strict?='only')? supportedTypes+=statisticalVariableType ( "," supportedTypes+=statisticalVariableType)*)?
-		('parameters' additionalParameters+=Parameter ( "," additionalParameters+=Parameter)*)?
+		(
+			('codebase' codebase=EString) &
+			('runtime' runtime=[BaseAlgorithmRuntime|EString]) &
+			('severity' 'levels' driftLevels=EIntegerObject) &
+			('accepts' (strict?='only')? supportedTypes+=statisticalVariableType ( "," supportedTypes+=statisticalVariableType)*)? &
+			('parameters' additionalParameters+=Parameter ( "," additionalParameters+=Parameter)*)?
+		)
 	'}';
 
 HigherOrderAlgorithm returns HigherOrderAlgorithm:
@@ -110,10 +122,12 @@ HigherOrderAlgorithm returns HigherOrderAlgorithm:
 	'HigherOrderAlgorithm'
 	name=EString
 	'{'
-		('codebase' codebase=EString)
-		('runtime' runtime=[HigherOrderAlgorithmRuntime|EString])
-		('severity' 'levels' driftLevels=EIntegerObject)
-		('parameters' additionalParameters+=Parameter ( "," additionalParameters+=Parameter)*)?
+		(
+			('codebase' codebase=EString) &
+			('runtime' runtime=[HigherOrderAlgorithmRuntime|EString]) &
+			('severity' 'levels' driftLevels=EIntegerObject) &
+			('parameters' additionalParameters+=Parameter ( "," additionalParameters+=Parameter)*)?
+		)
 	'}';
 
 AlgorithmRuntime returns AlgorithmRuntime:
@@ -124,17 +138,17 @@ BaseAlgorithmRuntime returns BaseAlgorithmRuntime:
 	{BaseAlgorithmRuntime}
 	'BaseAlgorithmRuntime'
 	name=EString
-	'{'
-		('endpoint' endpoint=EString)?
-	'}';
+	('{'
+		'endpoint' endpoint=EString
+	'}')?;
 
 HigherOrderAlgorithmRuntime returns HigherOrderAlgorithmRuntime:
 	{HigherOrderAlgorithmRuntime}
 	'HigherOrderAlgorithmRuntime'
 	name=EString
-	'{'
-		('endpoint' endpoint=EString)?
-	'}';
+	('{'
+		'endpoint' endpoint=EString
+	'}')?;
 
 AlgorithmExecution returns AlgorithmExecution:
 	BaseAlgorithmExecution | HigherOrderAlgorithmExecution;
@@ -144,11 +158,14 @@ BaseAlgorithmExecution returns BaseAlgorithmExecution:
 	'BaseAlgorithmExecution'
 	name=EString
 	'{'
-		('algorithm' executable=[BaseAlgorithm|EString])
-		('from' 'live' 'data' 'use' currentIOValues+=[ModelIO|EString] ( "," currentIOValues+=[ModelIO|EString])*)?
-		('from' 'historic' 'data' 'use' historicIOValues+=[ModelIO|EString] ( "," historicIOValues+=[ModelIO|EString])*)?
-		('actions' ActionExecutionMap+=actionExecutionEntry ( "," ActionExecutionMap+=actionExecutionEntry)*)
-		('parameter' 'values' parameterValueMap+=parameterValueEntry ( "," parameterValueMap+=parameterValueEntry)*)?
+		(
+			('algorithm' algorithm=[BaseAlgorithm|EString]) &
+			('live' 'data' currentIOValues+=[ModelIO|EString] ( "," currentIOValues+=[ModelIO|EString])*)? &
+			('historic' 'data' historicIOValues+=[ModelIO|EString] ( "," historicIOValues+=[ModelIO|EString])*)? &
+			('actions' ActionExecutionMap+=actionExecutionEntry ( "," ActionExecutionMap+=actionExecutionEntry)*) &
+			('parameter' 'values' parameterValueMap+=parameterValueEntry ( "," parameterValueMap+=parameterValueEntry)*)?
+		)
+
 	'}';
 
 HigherOrderAlgorithmExecution returns HigherOrderAlgorithmExecution:
@@ -156,12 +173,14 @@ HigherOrderAlgorithmExecution returns HigherOrderAlgorithmExecution:
 	'HigherOrderAlgorithmExecution'
 	name=EString
 	'{'
-		('algorithm' executable=[HigherOrderAlgorithm|EString])
-		('observed' 'execution' algorithmExecution=[AlgorithmExecution|EString])
-		('actions' ActionExecutionMap+=actionExecutionEntry ( "," ActionExecutionMap+=actionExecutionEntry)*)
-		(('minimum'|'min') 'observations' minDataPoints=EIntegerObject)?
-		(('maximum'|'max') 'observations' maxDataPoints=EIntegerObject)?
-		('parameter' 'values' parameterValueMap+=parameterValueEntry ( "," parameterValueMap+=parameterValueEntry)*)?
+		(
+			('algorithm' algorithm=[HigherOrderAlgorithm|EString]) &
+			('observed' 'execution' algorithmExecution=[AlgorithmExecution|EString]) &
+			('actions' ActionExecutionMap+=actionExecutionEntry ( "," ActionExecutionMap+=actionExecutionEntry)*) &
+			(('minimum'|'min') 'observations' minDataPoints=EIntegerObject) &
+			(('maximum'|'max') 'observations' maxDataPoints=EIntegerObject) &
+			('parameter' 'values' parameterValueMap+=parameterValueEntry ( "," parameterValueMap+=parameterValueEntry)*)?
+		)
 	'}';
 
 actionExecutionEntry returns actionExecutionEntry:
@@ -173,47 +192,52 @@ actionExecutionEntry returns actionExecutionEntry:
 
 TriggerGroup returns TriggerGroup:
 	{TriggerGroup}
-	('When' | 'when')
-	compositeTriggers+=CompositeTrigger ( "or" compositeTriggers+=CompositeTrigger)*
-	'Execute' targets+=[BaseAlgorithmExecution|EString] ( "," targets+=[BaseAlgorithmExecution|EString])*
+	'Trigger'
+	name=EString
+	'{'
+	compositeTriggers+=CompositeTrigger ("or" compositeTriggers+=CompositeTrigger)*
+	'execute' targets+=[BaseAlgorithmExecution|EString] ("," targets+=[BaseAlgorithmExecution|EString])*
+	'}'
 ;
 
 CompositeTrigger returns CompositeTrigger:
 	{CompositeTrigger}
+	'every'
 	(
-		( 'and'? tt=TemporalTrigger)? &
-		( 'and'? st=SampleBasedTrigger)? &
-		( 'and'? pt=PredictionBasedTrigger)? &
-		( 'and'? lt=LabelBasedTrigger)?
+		(tt=TemporalTrigger)? &
+		(st=SampleBasedTrigger)? &
+		(pt=PredictionBasedTrigger)? &
+		(lt=LabelBasedTrigger)?
 	);
 
 TemporalTrigger returns TemporalTrigger:
 	{TemporalTrigger}
-	('one' frequency=frequencyEnum 'passed') | (cronString=EString);
+	('one' frequency=frequencyEnum) | (cronString=EString);
 
 enum frequencyEnum returns frequencyEnum:
 	hourly = 'hour' | daily = 'day' | weekly = 'week' | monthly = 'month' | yearly = 'year';
 
 SampleBasedTrigger returns SampleBasedTrigger:
 	{SampleBasedTrigger}
-	frequency=EIntegerObject 'samples' 'received';
+	frequency=EIntegerObject 'samples';
 
 PredictionBasedTrigger returns PredictionBasedTrigger:
 	{PredictionBasedTrigger}
-	frequency=EIntegerObject 'predictions' 'served';
+	frequency=EIntegerObject 'predictions';
 
 LabelBasedTrigger returns LabelBasedTrigger:
 	{LabelBasedTrigger}
-	frequency=EIntegerObject 'labels' 'received';
+	frequency=EIntegerObject 'labels';
 
 Action returns Action:
 	{Action}
 	('Action')
 	name=EString
 	'{'
-		('endpoint' endpoint=EString)
-		('parameters' additionalParameters+=Parameter ( ',' additionalParameters+=Parameter)*)?
-		
+		(
+			('endpoint' endpoint=EString)? &
+			('parameters' additionalParameters+=Parameter ( ',' additionalParameters+=Parameter)*)?
+		)
 	'}';
 	
 Parameter returns Parameter:
@@ -239,8 +263,8 @@ ActionExecution returns ActionExecution:
 	name=EString
 	'{'
 	(
-		('action' executable=[Action|EString])
-		('parameter' 'values' parameterValueMap+=parameterValueEntry ( "," parameterValueMap+=parameterValueEntry)* )?
+		('action' action=[Action|EString]) &
+		('parameter' 'values' parameterValueMap+=parameterValueEntry ( "," parameterValueMap+=parameterValueEntry)*)?
 	)
 	'}';
 
@@ -248,7 +272,9 @@ EIntegerObject returns ecore::EIntegerObject:
 	'-'? INT;
 
 EString returns ecore::EString:
-	STRING | ID;
+	STRING | PANOPTESSTRING;
 
 EBoolean returns ecore::EBoolean:
 	'true' | 'false';
+
+terminal PANOPTESSTRING: ('a'..'z'|'A'..'Z'|'_'|'.'|'@') ('a'..'z'|'A'..'Z'|'_'|'.'|'@'|'0'..'9')*;

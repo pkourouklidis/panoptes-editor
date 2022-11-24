@@ -9,11 +9,15 @@ import panoptesDSL.PanoptesDSLPackage;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServletRequest;
 
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.xtext.util.DisposableRegistry;
+import org.eclipse.xtext.web.server.InvalidRequestException;
+import org.eclipse.xtext.web.server.XtextServiceDispatcher;
 import org.eclipse.xtext.web.server.persistence.IResourceBaseProvider;
 import org.eclipse.xtext.web.server.persistence.ResourceBaseProviderImpl;
+import org.eclipse.xtext.web.servlet.HttpServiceContext;
 import org.eclipse.xtext.web.servlet.XtextServlet;
 
 /**
@@ -40,6 +44,16 @@ public class PanoptesXServlet extends XtextServlet {
 			disposableRegistry = null;
 		}
 		super.destroy();
+	}
+	
+	@Override
+	protected XtextServiceDispatcher.ServiceDescriptor getService(HttpServletRequest request)
+			throws InvalidRequestException {
+		HttpServiceContext serviceContext = new HttpServiceContext(request);
+		Injector injector = getInjector(serviceContext);
+		XtextServiceDispatcher serviceDispatcher = injector.getInstance(PanoptesDispatcher.class);
+		XtextServiceDispatcher.ServiceDescriptor service = serviceDispatcher.getService(serviceContext);
+		return service;
 	}
 	
 }

@@ -1,6 +1,6 @@
 define(["ace/lib/oop", "ace/mode/text", "ace/mode/text_highlight_rules"], function(oop, mText, mTextHighlightRules) {
 	var HighlightRules = function() {
-		var keywords = "Action|ActionExecution|BaseAlgorithm|BaseAlgorithmExecution|BaseAlgorithmRuntime|Boolean|Deployment|Execute|FeatureStore|HigherOrderAlgorithm|HigherOrderAlgorithmExecution|HigherOrderAlgorithmRuntime|Integer|Model|Real|String|When|accepts|action|actions|algorithm|and|categorical|codebase|continuous|data|day|endpoint|entities|execution|false|features|from|historic|hour|inputs|keys|labels|levels|live|mandatory|max|maximum|min|minimum|model|month|observations|observed|one|only|or|outputs|parameter|parameters|passed|predictions|predicts|received|request|requires|runtime|samples|served|severity|true|use|uses|values|week|when|year";
+		var keywords = "Action|ActionExecution|BaseAlgorithm|BaseAlgorithmExecution|BaseAlgorithmRuntime|Boolean|Deployment|FeatureStore|HigherOrderAlgorithm|HigherOrderAlgorithmExecution|HigherOrderAlgorithmRuntime|Integer|Model|Real|String|Trigger|accepts|action|actions|algorithm|categorical|codebase|continuous|data|day|endpoint|entities|every|execute|execution|false|features|historic|hour|inputs|keys|labels|levels|live|mandatory|max|maximum|min|minimum|model|month|observations|observed|one|only|or|outputs|parameter|parameters|predictions|predicts|request|requires|runtime|samples|severity|true|uses|values|week|year";
 		this.$rules = {
 			"start": [
 				{token: "comment", regex: "\\/\\/.*$"},

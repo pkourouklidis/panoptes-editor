@@ -147,7 +147,7 @@ public class PanoptesXSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     ActionExecution returns ActionExecution
 	 *
 	 * Constraint:
-	 *     (name=EString executable=[Action|EString] (parameterValueMap+=parameterValueEntry parameterValueMap+=parameterValueEntry*)?)
+	 *     (name=EString (action=[Action|EString]? (parameterValueMap+=parameterValueEntry parameterValueMap+=parameterValueEntry*)?)+)
 	 */
 	protected void sequence_ActionExecution(ISerializationContext context, ActionExecution semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -159,7 +159,7 @@ public class PanoptesXSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     Action returns Action
 	 *
 	 * Constraint:
-	 *     (name=EString endpoint=EString (additionalParameters+=Parameter additionalParameters+=Parameter*)?)
+	 *     (name=EString (endpoint=EString? (additionalParameters+=Parameter additionalParameters+=Parameter*)?)+)
 	 */
 	protected void sequence_Action(ISerializationContext context, panoptesDSL.Action semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -174,12 +174,13 @@ public class PanoptesXSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 * Constraint:
 	 *     (
 	 *         name=EString 
-	 *         executable=[BaseAlgorithm|EString] 
-	 *         (currentIOValues+=[ModelIO|EString] currentIOValues+=[ModelIO|EString]*)? 
-	 *         (historicIOValues+=[ModelIO|EString] historicIOValues+=[ModelIO|EString]*)? 
-	 *         ActionExecutionMap+=actionExecutionEntry 
-	 *         ActionExecutionMap+=actionExecutionEntry* 
-	 *         (parameterValueMap+=parameterValueEntry parameterValueMap+=parameterValueEntry*)?
+	 *         (
+	 *             algorithm=[BaseAlgorithm|EString]? 
+	 *             (ActionExecutionMap+=actionExecutionEntry ActionExecutionMap+=actionExecutionEntry*)? 
+	 *             (parameterValueMap+=parameterValueEntry parameterValueMap+=parameterValueEntry*)? 
+	 *             (historicIOValues+=[ModelIO|EString] historicIOValues+=[ModelIO|EString]*)? 
+	 *             (currentIOValues+=[ModelIO|EString] currentIOValues+=[ModelIO|EString]*)?
+	 *         )+
 	 *     )
 	 */
 	protected void sequence_BaseAlgorithmExecution(ISerializationContext context, BaseAlgorithmExecution semanticObject) {
@@ -208,11 +209,11 @@ public class PanoptesXSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 * Constraint:
 	 *     (
 	 *         name=EString 
-	 *         codebase=EString 
-	 *         runtime=[BaseAlgorithmRuntime|EString] 
-	 *         driftLevels=EIntegerObject 
-	 *         (strict?='only'? supportedTypes+=statisticalVariableType supportedTypes+=statisticalVariableType*)? 
-	 *         (additionalParameters+=Parameter additionalParameters+=Parameter*)?
+	 *         (
+	 *             (codebase=EString | runtime=[BaseAlgorithmRuntime|EString] | driftLevels=EIntegerObject)? 
+	 *             (additionalParameters+=Parameter additionalParameters+=Parameter*)? 
+	 *             (strict?='only'? supportedTypes+=statisticalVariableType supportedTypes+=statisticalVariableType*)?
+	 *         )+
 	 *     )
 	 */
 	protected void sequence_BaseAlgorithm(ISerializationContext context, BaseAlgorithm semanticObject) {
@@ -239,11 +240,10 @@ public class PanoptesXSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 * Constraint:
 	 *     (
 	 *         name=EString 
-	 *         mlModel=[Model|EString] 
-	 *         (inputs+=[DeploymentIO|EString] inputs+=[DeploymentIO|EString]*)? 
-	 *         algorithmexecutions+=AlgorithmExecution* 
-	 *         actionExecutions+=ActionExecution* 
-	 *         triggerGroups+=TriggerGroup*
+	 *         (
+	 *             (mlModel=[Model|EString] | algorithmexecutions+=AlgorithmExecution | actionExecutions+=ActionExecution | triggerGroups+=TriggerGroup)? 
+	 *             (inputs+=[DeploymentIO|EString] inputs+=[DeploymentIO|EString]*)?
+	 *         )+
 	 *     )
 	 */
 	protected void sequence_Deployment(ISerializationContext context, Deployment semanticObject) {
@@ -269,11 +269,11 @@ public class PanoptesXSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *
 	 * Constraint:
 	 *     (
-	 *         (features+=Feature features+=Feature*)? 
-	 *         (entities+=Entity entities+=Entity*)? 
-	 *         (labels+=Label labels+=Label*)? 
-	 *         (requestData+=RequestData requestData+=RequestData*)?
-	 *     )
+	 *         (features+=Feature features+=Feature*) | 
+	 *         (entities+=Entity entities+=Entity*) | 
+	 *         (labels+=Label labels+=Label*) | 
+	 *         (requestData+=RequestData requestData+=RequestData*)
+	 *     )*
 	 */
 	protected void sequence_FeatureStore(ISerializationContext context, FeatureStore semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -289,8 +289,7 @@ public class PanoptesXSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     (
 	 *         name=EString 
 	 *         type=statisticalVariableType? 
-	 *         (entities+=[Entity|EString] entities+=[Entity|EString]*)? 
-	 *         (requestData+=[RequestData|EString] requestData+=[RequestData|EString]*)?
+	 *         ((entities+=[Entity|EString] entities+=[Entity|EString]*) | (requestData+=[RequestData|EString] requestData+=[RequestData|EString]*))*
 	 *     )
 	 */
 	protected void sequence_Feature(ISerializationContext context, Feature semanticObject) {
@@ -306,13 +305,16 @@ public class PanoptesXSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 * Constraint:
 	 *     (
 	 *         name=EString 
-	 *         executable=[HigherOrderAlgorithm|EString] 
-	 *         algorithmExecution=[AlgorithmExecution|EString] 
-	 *         ActionExecutionMap+=actionExecutionEntry 
-	 *         ActionExecutionMap+=actionExecutionEntry* 
-	 *         minDataPoints=EIntegerObject? 
-	 *         maxDataPoints=EIntegerObject? 
-	 *         (parameterValueMap+=parameterValueEntry parameterValueMap+=parameterValueEntry*)?
+	 *         (
+	 *             (
+	 *                 algorithm=[HigherOrderAlgorithm|EString] | 
+	 *                 algorithmExecution=[AlgorithmExecution|EString] | 
+	 *                 minDataPoints=EIntegerObject | 
+	 *                 maxDataPoints=EIntegerObject
+	 *             )? 
+	 *             (ActionExecutionMap+=actionExecutionEntry ActionExecutionMap+=actionExecutionEntry*)? 
+	 *             (parameterValueMap+=parameterValueEntry parameterValueMap+=parameterValueEntry*)?
+	 *         )+
 	 *     )
 	 */
 	protected void sequence_HigherOrderAlgorithmExecution(ISerializationContext context, HigherOrderAlgorithmExecution semanticObject) {
@@ -341,10 +343,10 @@ public class PanoptesXSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 * Constraint:
 	 *     (
 	 *         name=EString 
-	 *         codebase=EString 
-	 *         runtime=[HigherOrderAlgorithmRuntime|EString] 
-	 *         driftLevels=EIntegerObject 
-	 *         (additionalParameters+=Parameter additionalParameters+=Parameter*)?
+	 *         (
+	 *             (codebase=EString | runtime=[HigherOrderAlgorithmRuntime|EString] | driftLevels=EIntegerObject)? 
+	 *             (additionalParameters+=Parameter additionalParameters+=Parameter*)?
+	 *         )+
 	 *     )
 	 */
 	protected void sequence_HigherOrderAlgorithm(ISerializationContext context, HigherOrderAlgorithm semanticObject) {
@@ -407,7 +409,7 @@ public class PanoptesXSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     Model returns Model
 	 *
 	 * Constraint:
-	 *     (name=EString inputs+=[Feature|EString] inputs+=[Feature|EString]* output=Prediction)
+	 *     (name=EString ((inputs+=[Feature|EString] inputs+=[Feature|EString]*) | output=Prediction)+)
 	 */
 	protected void sequence_Model(ISerializationContext context, Model semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -531,6 +533,7 @@ public class PanoptesXSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *
 	 * Constraint:
 	 *     (
+	 *         name=EString 
 	 *         compositeTriggers+=CompositeTrigger 
 	 *         compositeTriggers+=CompositeTrigger* 
 	 *         targets+=[BaseAlgorithmExecution|EString] 

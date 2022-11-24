@@ -22,26 +22,16 @@ import org.lowcomote.panoptes.services.PanoptesXGrammarAccess;
 public class PanoptesXSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected PanoptesXGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_CompositeTrigger_AndKeyword_1_0_0_q;
-	protected AbstractElementAlias match_CompositeTrigger_AndKeyword_1_1_0_q;
-	protected AbstractElementAlias match_CompositeTrigger_AndKeyword_1_2_0_q;
-	protected AbstractElementAlias match_CompositeTrigger_AndKeyword_1_3_0_q;
-	protected AbstractElementAlias match_Feature___LeftCurlyBracketKeyword_2_0_RightCurlyBracketKeyword_2_3__q;
-	protected AbstractElementAlias match_HigherOrderAlgorithmExecution_MaxKeyword_8_0_1_or_MaximumKeyword_8_0_0;
-	protected AbstractElementAlias match_HigherOrderAlgorithmExecution_MinKeyword_7_0_1_or_MinimumKeyword_7_0_0;
-	protected AbstractElementAlias match_TriggerGroup_WhenKeyword_1_0_or_WhenKeyword_1_1;
+	protected AbstractElementAlias match_Feature___LeftCurlyBracketKeyword_2_0_RightCurlyBracketKeyword_2_2__q;
+	protected AbstractElementAlias match_HigherOrderAlgorithmExecution_MaxKeyword_4_4_0_1_or_MaximumKeyword_4_4_0_0;
+	protected AbstractElementAlias match_HigherOrderAlgorithmExecution_MinKeyword_4_3_0_1_or_MinimumKeyword_4_3_0_0;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (PanoptesXGrammarAccess) access;
-		match_CompositeTrigger_AndKeyword_1_0_0_q = new TokenAlias(false, true, grammarAccess.getCompositeTriggerAccess().getAndKeyword_1_0_0());
-		match_CompositeTrigger_AndKeyword_1_1_0_q = new TokenAlias(false, true, grammarAccess.getCompositeTriggerAccess().getAndKeyword_1_1_0());
-		match_CompositeTrigger_AndKeyword_1_2_0_q = new TokenAlias(false, true, grammarAccess.getCompositeTriggerAccess().getAndKeyword_1_2_0());
-		match_CompositeTrigger_AndKeyword_1_3_0_q = new TokenAlias(false, true, grammarAccess.getCompositeTriggerAccess().getAndKeyword_1_3_0());
-		match_Feature___LeftCurlyBracketKeyword_2_0_RightCurlyBracketKeyword_2_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getFeatureAccess().getLeftCurlyBracketKeyword_2_0()), new TokenAlias(false, false, grammarAccess.getFeatureAccess().getRightCurlyBracketKeyword_2_3()));
-		match_HigherOrderAlgorithmExecution_MaxKeyword_8_0_1_or_MaximumKeyword_8_0_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getHigherOrderAlgorithmExecutionAccess().getMaxKeyword_8_0_1()), new TokenAlias(false, false, grammarAccess.getHigherOrderAlgorithmExecutionAccess().getMaximumKeyword_8_0_0()));
-		match_HigherOrderAlgorithmExecution_MinKeyword_7_0_1_or_MinimumKeyword_7_0_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getHigherOrderAlgorithmExecutionAccess().getMinKeyword_7_0_1()), new TokenAlias(false, false, grammarAccess.getHigherOrderAlgorithmExecutionAccess().getMinimumKeyword_7_0_0()));
-		match_TriggerGroup_WhenKeyword_1_0_or_WhenKeyword_1_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getTriggerGroupAccess().getWhenKeyword_1_0()), new TokenAlias(false, false, grammarAccess.getTriggerGroupAccess().getWhenKeyword_1_1()));
+		match_Feature___LeftCurlyBracketKeyword_2_0_RightCurlyBracketKeyword_2_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getFeatureAccess().getLeftCurlyBracketKeyword_2_0()), new TokenAlias(false, false, grammarAccess.getFeatureAccess().getRightCurlyBracketKeyword_2_2()));
+		match_HigherOrderAlgorithmExecution_MaxKeyword_4_4_0_1_or_MaximumKeyword_4_4_0_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getHigherOrderAlgorithmExecutionAccess().getMaxKeyword_4_4_0_1()), new TokenAlias(false, false, grammarAccess.getHigherOrderAlgorithmExecutionAccess().getMaximumKeyword_4_4_0_0()));
+		match_HigherOrderAlgorithmExecution_MinKeyword_4_3_0_1_or_MinimumKeyword_4_3_0_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getHigherOrderAlgorithmExecutionAccess().getMinKeyword_4_3_0_1()), new TokenAlias(false, false, grammarAccess.getHigherOrderAlgorithmExecutionAccess().getMinimumKeyword_4_3_0_0()));
 	}
 	
 	@Override
@@ -56,86 +46,16 @@ public class PanoptesXSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_CompositeTrigger_AndKeyword_1_0_0_q.equals(syntax))
-				emit_CompositeTrigger_AndKeyword_1_0_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_CompositeTrigger_AndKeyword_1_1_0_q.equals(syntax))
-				emit_CompositeTrigger_AndKeyword_1_1_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_CompositeTrigger_AndKeyword_1_2_0_q.equals(syntax))
-				emit_CompositeTrigger_AndKeyword_1_2_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_CompositeTrigger_AndKeyword_1_3_0_q.equals(syntax))
-				emit_CompositeTrigger_AndKeyword_1_3_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Feature___LeftCurlyBracketKeyword_2_0_RightCurlyBracketKeyword_2_3__q.equals(syntax))
-				emit_Feature___LeftCurlyBracketKeyword_2_0_RightCurlyBracketKeyword_2_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_HigherOrderAlgorithmExecution_MaxKeyword_8_0_1_or_MaximumKeyword_8_0_0.equals(syntax))
-				emit_HigherOrderAlgorithmExecution_MaxKeyword_8_0_1_or_MaximumKeyword_8_0_0(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_HigherOrderAlgorithmExecution_MinKeyword_7_0_1_or_MinimumKeyword_7_0_0.equals(syntax))
-				emit_HigherOrderAlgorithmExecution_MinKeyword_7_0_1_or_MinimumKeyword_7_0_0(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_TriggerGroup_WhenKeyword_1_0_or_WhenKeyword_1_1.equals(syntax))
-				emit_TriggerGroup_WhenKeyword_1_0_or_WhenKeyword_1_1(semanticObject, getLastNavigableState(), syntaxNodes);
+			if (match_Feature___LeftCurlyBracketKeyword_2_0_RightCurlyBracketKeyword_2_2__q.equals(syntax))
+				emit_Feature___LeftCurlyBracketKeyword_2_0_RightCurlyBracketKeyword_2_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_HigherOrderAlgorithmExecution_MaxKeyword_4_4_0_1_or_MaximumKeyword_4_4_0_0.equals(syntax))
+				emit_HigherOrderAlgorithmExecution_MaxKeyword_4_4_0_1_or_MaximumKeyword_4_4_0_0(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_HigherOrderAlgorithmExecution_MinKeyword_4_3_0_1_or_MinimumKeyword_4_3_0_0.equals(syntax))
+				emit_HigherOrderAlgorithmExecution_MinKeyword_4_3_0_1_or_MinimumKeyword_4_3_0_0(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
-	/**
-	 * Ambiguous syntax:
-	 *     'and'?
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) tt=TemporalTrigger
-	 *     lt=LabelBasedTrigger (ambiguity) tt=TemporalTrigger
-	 *     pt=PredictionBasedTrigger (ambiguity) tt=TemporalTrigger
-	 *     st=SampleBasedTrigger (ambiguity) tt=TemporalTrigger
-	 *     tt=TemporalTrigger (ambiguity) tt=TemporalTrigger
-	 */
-	protected void emit_CompositeTrigger_AndKeyword_1_0_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Ambiguous syntax:
-	 *     'and'?
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) st=SampleBasedTrigger
-	 *     lt=LabelBasedTrigger (ambiguity) st=SampleBasedTrigger
-	 *     pt=PredictionBasedTrigger (ambiguity) st=SampleBasedTrigger
-	 *     st=SampleBasedTrigger (ambiguity) st=SampleBasedTrigger
-	 *     tt=TemporalTrigger (ambiguity) st=SampleBasedTrigger
-	 */
-	protected void emit_CompositeTrigger_AndKeyword_1_1_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Ambiguous syntax:
-	 *     'and'?
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) pt=PredictionBasedTrigger
-	 *     lt=LabelBasedTrigger (ambiguity) pt=PredictionBasedTrigger
-	 *     pt=PredictionBasedTrigger (ambiguity) pt=PredictionBasedTrigger
-	 *     st=SampleBasedTrigger (ambiguity) pt=PredictionBasedTrigger
-	 *     tt=TemporalTrigger (ambiguity) pt=PredictionBasedTrigger
-	 */
-	protected void emit_CompositeTrigger_AndKeyword_1_2_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Ambiguous syntax:
-	 *     'and'?
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) lt=LabelBasedTrigger
-	 *     lt=LabelBasedTrigger (ambiguity) lt=LabelBasedTrigger
-	 *     pt=PredictionBasedTrigger (ambiguity) lt=LabelBasedTrigger
-	 *     st=SampleBasedTrigger (ambiguity) lt=LabelBasedTrigger
-	 *     tt=TemporalTrigger (ambiguity) lt=LabelBasedTrigger
-	 */
-	protected void emit_CompositeTrigger_AndKeyword_1_3_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
 	/**
 	 * Ambiguous syntax:
 	 *     ('{' '}')?
@@ -144,7 +64,7 @@ public class PanoptesXSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     name=EString (ambiguity) (rule end)
 	 *     type=statisticalVariableType (ambiguity) (rule end)
 	 */
-	protected void emit_Feature___LeftCurlyBracketKeyword_2_0_RightCurlyBracketKeyword_2_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Feature___LeftCurlyBracketKeyword_2_0_RightCurlyBracketKeyword_2_2__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -154,9 +74,14 @@ public class PanoptesXSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     ActionExecutionMap+=actionExecutionEntry (ambiguity) 'observations' maxDataPoints=EIntegerObject
+	 *     algorithm=[HigherOrderAlgorithm|EString] (ambiguity) 'observations' maxDataPoints=EIntegerObject
+	 *     algorithmExecution=[AlgorithmExecution|EString] (ambiguity) 'observations' maxDataPoints=EIntegerObject
+	 *     maxDataPoints=EIntegerObject (ambiguity) 'observations' maxDataPoints=EIntegerObject
 	 *     minDataPoints=EIntegerObject (ambiguity) 'observations' maxDataPoints=EIntegerObject
+	 *     name=EString '{' (ambiguity) 'observations' maxDataPoints=EIntegerObject
+	 *     parameterValueMap+=parameterValueEntry (ambiguity) 'observations' maxDataPoints=EIntegerObject
 	 */
-	protected void emit_HigherOrderAlgorithmExecution_MaxKeyword_8_0_1_or_MaximumKeyword_8_0_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_HigherOrderAlgorithmExecution_MaxKeyword_4_4_0_1_or_MaximumKeyword_4_4_0_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -166,19 +91,14 @@ public class PanoptesXSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     ActionExecutionMap+=actionExecutionEntry (ambiguity) 'observations' minDataPoints=EIntegerObject
+	 *     algorithm=[HigherOrderAlgorithm|EString] (ambiguity) 'observations' minDataPoints=EIntegerObject
+	 *     algorithmExecution=[AlgorithmExecution|EString] (ambiguity) 'observations' minDataPoints=EIntegerObject
+	 *     maxDataPoints=EIntegerObject (ambiguity) 'observations' minDataPoints=EIntegerObject
+	 *     minDataPoints=EIntegerObject (ambiguity) 'observations' minDataPoints=EIntegerObject
+	 *     name=EString '{' (ambiguity) 'observations' minDataPoints=EIntegerObject
+	 *     parameterValueMap+=parameterValueEntry (ambiguity) 'observations' minDataPoints=EIntegerObject
 	 */
-	protected void emit_HigherOrderAlgorithmExecution_MinKeyword_7_0_1_or_MinimumKeyword_7_0_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Ambiguous syntax:
-	 *     'When' | 'when'
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) compositeTriggers+=CompositeTrigger
-	 */
-	protected void emit_TriggerGroup_WhenKeyword_1_0_or_WhenKeyword_1_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_HigherOrderAlgorithmExecution_MinKeyword_4_3_0_1_or_MinimumKeyword_4_3_0_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

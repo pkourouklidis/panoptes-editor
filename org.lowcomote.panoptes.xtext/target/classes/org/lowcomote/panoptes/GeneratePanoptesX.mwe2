@@ -27,7 +27,16 @@ Workflow {
 				preferXtendStubs = false
 			}
 		}
+
 		language = StandardLanguage {
+//			parserGenerator = {
+//				options = {
+//					classSplitting = true
+//        			casesPerSpecialStateSwitch= "200"
+//					fieldsPerClass = "500" 
+//					methodsPerClass = "200"
+//				}
+//			}
 			name = "org.lowcomote.panoptes.PanoptesX"
 			fileExtensions = "panoptesx"
 			referencedResource = "platform:/resource/panoptesDSL/metamodel/panoptesDSL.genmodel"

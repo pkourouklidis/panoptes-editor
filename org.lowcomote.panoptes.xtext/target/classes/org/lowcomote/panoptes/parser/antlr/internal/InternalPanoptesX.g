@@ -3654,29 +3654,31 @@ ruleParameter returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_3=':'
-		{
-			newLeafNode(otherlv_3, grammarAccess.getParameterAccess().getColonKeyword_3());
-		}
 		(
+			otherlv_3=':'
+			{
+				newLeafNode(otherlv_3, grammarAccess.getParameterAccess().getColonKeyword_3_0());
+			}
 			(
-				{
-					newCompositeNode(grammarAccess.getParameterAccess().getTypeParameterTypeEnumRuleCall_4_0());
-				}
-				lv_type_4_0=ruleparameterType
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getParameterRule());
+				(
+					{
+						newCompositeNode(grammarAccess.getParameterAccess().getTypeParameterTypeEnumRuleCall_3_1_0());
 					}
-					set(
-						$current,
-						"type",
-						lv_type_4_0,
-						"org.lowcomote.panoptes.PanoptesX.parameterType");
-					afterParserOrEnumRuleCall();
-				}
+					lv_type_4_0=ruleparameterType
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getParameterRule());
+						}
+						set(
+							$current,
+							"type",
+							lv_type_4_0,
+							"org.lowcomote.panoptes.PanoptesX.parameterType");
+						afterParserOrEnumRuleCall();
+					}
+				)
 			)
-		)
+		)?
 	)
 ;
 

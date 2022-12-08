@@ -2440,22 +2440,23 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final Keyword cMandatoryMandatoryKeyword_1_0 = (Keyword)cMandatoryAssignment_1.eContents().get(0);
 		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
-		private final Keyword cColonKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cTypeAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cTypeParameterTypeEnumRuleCall_4_0 = (RuleCall)cTypeAssignment_4.eContents().get(0);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cColonKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cTypeAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cTypeParameterTypeEnumRuleCall_3_1_0 = (RuleCall)cTypeAssignment_3_1.eContents().get(0);
 		
 		//Parameter returns Parameter:
 		//    {Parameter}
 		//    (mandatory?='mandatory')?
 		//    name=EString
-		//     ':' type=parameterType
+		//     (':' type=parameterType)?
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{Parameter}
 		//(mandatory?='mandatory')?
 		//name=EString
-		// ':' type=parameterType
+		// (':' type=parameterType)?
 		public Group getGroup() { return cGroup; }
 		
 		//{Parameter}
@@ -2473,14 +2474,17 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//EString
 		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
 		
+		//(':' type=parameterType)?
+		public Group getGroup_3() { return cGroup_3; }
+		
 		//':'
-		public Keyword getColonKeyword_3() { return cColonKeyword_3; }
+		public Keyword getColonKeyword_3_0() { return cColonKeyword_3_0; }
 		
 		//type=parameterType
-		public Assignment getTypeAssignment_4() { return cTypeAssignment_4; }
+		public Assignment getTypeAssignment_3_1() { return cTypeAssignment_3_1; }
 		
 		//parameterType
-		public RuleCall getTypeParameterTypeEnumRuleCall_4_0() { return cTypeParameterTypeEnumRuleCall_4_0; }
+		public RuleCall getTypeParameterTypeEnumRuleCall_3_1_0() { return cTypeParameterTypeEnumRuleCall_3_1_0; }
 	}
 	public class ParameterValueEntryElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.lowcomote.panoptes.PanoptesX.parameterValueEntry");
@@ -3397,7 +3401,7 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 	//    {Parameter}
 	//    (mandatory?='mandatory')?
 	//    name=EString
-	//     ':' type=parameterType
+	//     (':' type=parameterType)?
 	//;
 	public ParameterElements getParameterAccess() {
 		return pParameter;

@@ -177,9 +177,9 @@ public class PanoptesXSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *         (
 	 *             algorithm=[BaseAlgorithm|EString]? 
 	 *             (ActionExecutionMap+=actionExecutionEntry ActionExecutionMap+=actionExecutionEntry*)? 
+	 *             (currentIOValues+=[ModelIO|EString] currentIOValues+=[ModelIO|EString]*)? 
 	 *             (parameterValueMap+=parameterValueEntry parameterValueMap+=parameterValueEntry*)? 
-	 *             (historicIOValues+=[ModelIO|EString] historicIOValues+=[ModelIO|EString]*)? 
-	 *             (currentIOValues+=[ModelIO|EString] currentIOValues+=[ModelIO|EString]*)?
+	 *             (historicIOValues+=[ModelIO|EString] historicIOValues+=[ModelIO|EString]*)?
 	 *         )+
 	 *     )
 	 */
@@ -421,7 +421,7 @@ public class PanoptesXSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     Parameter returns Parameter
 	 *
 	 * Constraint:
-	 *     (mandatory?='mandatory'? name=EString type=parameterType)
+	 *     (mandatory?='mandatory'? name=EString type=parameterType?)
 	 */
 	protected void sequence_Parameter(ISerializationContext context, panoptesDSL.Parameter semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

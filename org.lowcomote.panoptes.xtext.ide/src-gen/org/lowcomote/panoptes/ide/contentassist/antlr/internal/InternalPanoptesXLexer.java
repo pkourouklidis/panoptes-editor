@@ -1618,8 +1618,8 @@ public class InternalPanoptesXLexer extends Lexer {
         try {
             int _type = RULE_PANOPTESSTRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPanoptesX.g:11811:21: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '.' | '@' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '.' | '@' | '0' .. '9' )* )
-            // InternalPanoptesX.g:11811:23: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '.' | '@' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '.' | '@' | '0' .. '9' )*
+            // InternalPanoptesX.g:11838:21: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '.' | '@' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '.' | '@' | '0' .. '9' )* )
+            // InternalPanoptesX.g:11838:23: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '.' | '@' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '.' | '@' | '0' .. '9' )*
             {
             if ( input.LA(1)=='.'||(input.LA(1)>='@' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z') ) {
                 input.consume();
@@ -1630,7 +1630,7 @@ public class InternalPanoptesXLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalPanoptesX.g:11811:55: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '.' | '@' | '0' .. '9' )*
+            // InternalPanoptesX.g:11838:55: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '.' | '@' | '0' .. '9' )*
             loop1:
             do {
                 int alt1=2;
@@ -1679,10 +1679,10 @@ public class InternalPanoptesXLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPanoptesX.g:11813:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // InternalPanoptesX.g:11813:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalPanoptesX.g:11840:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalPanoptesX.g:11840:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // InternalPanoptesX.g:11813:11: ( '^' )?
+            // InternalPanoptesX.g:11840:11: ( '^' )?
             int alt2=2;
             int LA2_0 = input.LA(1);
 
@@ -1691,7 +1691,7 @@ public class InternalPanoptesXLexer extends Lexer {
             }
             switch (alt2) {
                 case 1 :
-                    // InternalPanoptesX.g:11813:11: '^'
+                    // InternalPanoptesX.g:11840:11: '^'
                     {
                     match('^'); 
 
@@ -1709,7 +1709,7 @@ public class InternalPanoptesXLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalPanoptesX.g:11813:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalPanoptesX.g:11840:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop3:
             do {
                 int alt3=2;
@@ -1758,10 +1758,10 @@ public class InternalPanoptesXLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPanoptesX.g:11815:10: ( ( '0' .. '9' )+ )
-            // InternalPanoptesX.g:11815:12: ( '0' .. '9' )+
+            // InternalPanoptesX.g:11842:10: ( ( '0' .. '9' )+ )
+            // InternalPanoptesX.g:11842:12: ( '0' .. '9' )+
             {
-            // InternalPanoptesX.g:11815:12: ( '0' .. '9' )+
+            // InternalPanoptesX.g:11842:12: ( '0' .. '9' )+
             int cnt4=0;
             loop4:
             do {
@@ -1775,7 +1775,7 @@ public class InternalPanoptesXLexer extends Lexer {
 
                 switch (alt4) {
             	case 1 :
-            	    // InternalPanoptesX.g:11815:13: '0' .. '9'
+            	    // InternalPanoptesX.g:11842:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -1807,10 +1807,10 @@ public class InternalPanoptesXLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPanoptesX.g:11817:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // InternalPanoptesX.g:11817:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalPanoptesX.g:11844:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // InternalPanoptesX.g:11844:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // InternalPanoptesX.g:11817:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalPanoptesX.g:11844:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -1828,10 +1828,10 @@ public class InternalPanoptesXLexer extends Lexer {
             }
             switch (alt7) {
                 case 1 :
-                    // InternalPanoptesX.g:11817:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // InternalPanoptesX.g:11844:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // InternalPanoptesX.g:11817:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalPanoptesX.g:11844:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -1847,7 +1847,7 @@ public class InternalPanoptesXLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // InternalPanoptesX.g:11817:21: '\\\\' .
+                    	    // InternalPanoptesX.g:11844:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -1855,7 +1855,7 @@ public class InternalPanoptesXLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalPanoptesX.g:11817:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalPanoptesX.g:11844:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1880,10 +1880,10 @@ public class InternalPanoptesXLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalPanoptesX.g:11817:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // InternalPanoptesX.g:11844:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // InternalPanoptesX.g:11817:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalPanoptesX.g:11844:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop6:
                     do {
                         int alt6=3;
@@ -1899,7 +1899,7 @@ public class InternalPanoptesXLexer extends Lexer {
 
                         switch (alt6) {
                     	case 1 :
-                    	    // InternalPanoptesX.g:11817:54: '\\\\' .
+                    	    // InternalPanoptesX.g:11844:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -1907,7 +1907,7 @@ public class InternalPanoptesXLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalPanoptesX.g:11817:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalPanoptesX.g:11844:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1950,12 +1950,12 @@ public class InternalPanoptesXLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPanoptesX.g:11819:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalPanoptesX.g:11819:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalPanoptesX.g:11846:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalPanoptesX.g:11846:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // InternalPanoptesX.g:11819:24: ( options {greedy=false; } : . )*
+            // InternalPanoptesX.g:11846:24: ( options {greedy=false; } : . )*
             loop8:
             do {
                 int alt8=2;
@@ -1980,7 +1980,7 @@ public class InternalPanoptesXLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // InternalPanoptesX.g:11819:52: .
+            	    // InternalPanoptesX.g:11846:52: .
             	    {
             	    matchAny(); 
 
@@ -2010,12 +2010,12 @@ public class InternalPanoptesXLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPanoptesX.g:11821:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // InternalPanoptesX.g:11821:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalPanoptesX.g:11848:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalPanoptesX.g:11848:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // InternalPanoptesX.g:11821:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalPanoptesX.g:11848:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop9:
             do {
                 int alt9=2;
@@ -2028,7 +2028,7 @@ public class InternalPanoptesXLexer extends Lexer {
 
                 switch (alt9) {
             	case 1 :
-            	    // InternalPanoptesX.g:11821:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalPanoptesX.g:11848:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -2048,7 +2048,7 @@ public class InternalPanoptesXLexer extends Lexer {
                 }
             } while (true);
 
-            // InternalPanoptesX.g:11821:40: ( ( '\\r' )? '\\n' )?
+            // InternalPanoptesX.g:11848:40: ( ( '\\r' )? '\\n' )?
             int alt11=2;
             int LA11_0 = input.LA(1);
 
@@ -2057,9 +2057,9 @@ public class InternalPanoptesXLexer extends Lexer {
             }
             switch (alt11) {
                 case 1 :
-                    // InternalPanoptesX.g:11821:41: ( '\\r' )? '\\n'
+                    // InternalPanoptesX.g:11848:41: ( '\\r' )? '\\n'
                     {
-                    // InternalPanoptesX.g:11821:41: ( '\\r' )?
+                    // InternalPanoptesX.g:11848:41: ( '\\r' )?
                     int alt10=2;
                     int LA10_0 = input.LA(1);
 
@@ -2068,7 +2068,7 @@ public class InternalPanoptesXLexer extends Lexer {
                     }
                     switch (alt10) {
                         case 1 :
-                            // InternalPanoptesX.g:11821:41: '\\r'
+                            // InternalPanoptesX.g:11848:41: '\\r'
                             {
                             match('\r'); 
 
@@ -2100,10 +2100,10 @@ public class InternalPanoptesXLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPanoptesX.g:11823:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalPanoptesX.g:11823:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalPanoptesX.g:11850:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalPanoptesX.g:11850:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalPanoptesX.g:11823:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalPanoptesX.g:11850:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt12=0;
             loop12:
             do {
@@ -2157,8 +2157,8 @@ public class InternalPanoptesXLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPanoptesX.g:11825:16: ( . )
-            // InternalPanoptesX.g:11825:18: .
+            // InternalPanoptesX.g:11852:16: ( . )
+            // InternalPanoptesX.g:11852:18: .
             {
             matchAny(); 
 

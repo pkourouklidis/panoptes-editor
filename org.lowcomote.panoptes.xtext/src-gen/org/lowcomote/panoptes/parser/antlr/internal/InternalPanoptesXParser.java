@@ -9064,7 +9064,7 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleParameter"
-    // InternalPanoptesX.g:3609:1: ruleParameter returns [EObject current=null] : ( () ( (lv_mandatory_1_0= 'mandatory' ) )? ( (lv_name_2_0= ruleEString ) ) otherlv_3= ':' ( (lv_type_4_0= ruleparameterType ) ) ) ;
+    // InternalPanoptesX.g:3609:1: ruleParameter returns [EObject current=null] : ( () ( (lv_mandatory_1_0= 'mandatory' ) )? ( (lv_name_2_0= ruleEString ) ) (otherlv_3= ':' ( (lv_type_4_0= ruleparameterType ) ) )? ) ;
     public final EObject ruleParameter() throws RecognitionException {
         EObject current = null;
 
@@ -9079,11 +9079,11 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalPanoptesX.g:3615:2: ( ( () ( (lv_mandatory_1_0= 'mandatory' ) )? ( (lv_name_2_0= ruleEString ) ) otherlv_3= ':' ( (lv_type_4_0= ruleparameterType ) ) ) )
-            // InternalPanoptesX.g:3616:2: ( () ( (lv_mandatory_1_0= 'mandatory' ) )? ( (lv_name_2_0= ruleEString ) ) otherlv_3= ':' ( (lv_type_4_0= ruleparameterType ) ) )
+            // InternalPanoptesX.g:3615:2: ( ( () ( (lv_mandatory_1_0= 'mandatory' ) )? ( (lv_name_2_0= ruleEString ) ) (otherlv_3= ':' ( (lv_type_4_0= ruleparameterType ) ) )? ) )
+            // InternalPanoptesX.g:3616:2: ( () ( (lv_mandatory_1_0= 'mandatory' ) )? ( (lv_name_2_0= ruleEString ) ) (otherlv_3= ':' ( (lv_type_4_0= ruleparameterType ) ) )? )
             {
-            // InternalPanoptesX.g:3616:2: ( () ( (lv_mandatory_1_0= 'mandatory' ) )? ( (lv_name_2_0= ruleEString ) ) otherlv_3= ':' ( (lv_type_4_0= ruleparameterType ) ) )
-            // InternalPanoptesX.g:3617:3: () ( (lv_mandatory_1_0= 'mandatory' ) )? ( (lv_name_2_0= ruleEString ) ) otherlv_3= ':' ( (lv_type_4_0= ruleparameterType ) )
+            // InternalPanoptesX.g:3616:2: ( () ( (lv_mandatory_1_0= 'mandatory' ) )? ( (lv_name_2_0= ruleEString ) ) (otherlv_3= ':' ( (lv_type_4_0= ruleparameterType ) ) )? )
+            // InternalPanoptesX.g:3617:3: () ( (lv_mandatory_1_0= 'mandatory' ) )? ( (lv_name_2_0= ruleEString ) ) (otherlv_3= ':' ( (lv_type_4_0= ruleparameterType ) ) )?
             {
             // InternalPanoptesX.g:3617:3: ()
             // InternalPanoptesX.g:3618:4: 
@@ -9138,7 +9138,7 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
 
             					newCompositeNode(grammarAccess.getParameterAccess().getNameEStringParserRuleCall_2_0());
             				
-            pushFollow(FOLLOW_56);
+            pushFollow(FOLLOW_22);
             lv_name_2_0=ruleEString();
 
             state._fsp--;
@@ -9160,38 +9160,55 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,25,FOLLOW_57); 
+            // InternalPanoptesX.g:3657:3: (otherlv_3= ':' ( (lv_type_4_0= ruleparameterType ) ) )?
+            int alt47=2;
+            int LA47_0 = input.LA(1);
 
-            			newLeafNode(otherlv_3, grammarAccess.getParameterAccess().getColonKeyword_3());
-            		
-            // InternalPanoptesX.g:3661:3: ( (lv_type_4_0= ruleparameterType ) )
-            // InternalPanoptesX.g:3662:4: (lv_type_4_0= ruleparameterType )
-            {
-            // InternalPanoptesX.g:3662:4: (lv_type_4_0= ruleparameterType )
-            // InternalPanoptesX.g:3663:5: lv_type_4_0= ruleparameterType
-            {
-
-            					newCompositeNode(grammarAccess.getParameterAccess().getTypeParameterTypeEnumRuleCall_4_0());
-            				
-            pushFollow(FOLLOW_2);
-            lv_type_4_0=ruleparameterType();
-
-            state._fsp--;
-
-
-            					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getParameterRule());
-            					}
-            					set(
-            						current,
-            						"type",
-            						lv_type_4_0,
-            						"org.lowcomote.panoptes.PanoptesX.parameterType");
-            					afterParserOrEnumRuleCall();
-            				
-
+            if ( (LA47_0==25) ) {
+                alt47=1;
             }
+            switch (alt47) {
+                case 1 :
+                    // InternalPanoptesX.g:3658:4: otherlv_3= ':' ( (lv_type_4_0= ruleparameterType ) )
+                    {
+                    otherlv_3=(Token)match(input,25,FOLLOW_56); 
 
+                    				newLeafNode(otherlv_3, grammarAccess.getParameterAccess().getColonKeyword_3_0());
+                    			
+                    // InternalPanoptesX.g:3662:4: ( (lv_type_4_0= ruleparameterType ) )
+                    // InternalPanoptesX.g:3663:5: (lv_type_4_0= ruleparameterType )
+                    {
+                    // InternalPanoptesX.g:3663:5: (lv_type_4_0= ruleparameterType )
+                    // InternalPanoptesX.g:3664:6: lv_type_4_0= ruleparameterType
+                    {
+
+                    						newCompositeNode(grammarAccess.getParameterAccess().getTypeParameterTypeEnumRuleCall_3_1_0());
+                    					
+                    pushFollow(FOLLOW_2);
+                    lv_type_4_0=ruleparameterType();
+
+                    state._fsp--;
+
+
+                    						if (current==null) {
+                    							current = createModelElementForParent(grammarAccess.getParameterRule());
+                    						}
+                    						set(
+                    							current,
+                    							"type",
+                    							lv_type_4_0,
+                    							"org.lowcomote.panoptes.PanoptesX.parameterType");
+                    						afterParserOrEnumRuleCall();
+                    					
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
 
             }
 
@@ -9218,7 +9235,7 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleparameterValueEntry"
-    // InternalPanoptesX.g:3684:1: entryRuleparameterValueEntry returns [EObject current=null] : iv_ruleparameterValueEntry= ruleparameterValueEntry EOF ;
+    // InternalPanoptesX.g:3686:1: entryRuleparameterValueEntry returns [EObject current=null] : iv_ruleparameterValueEntry= ruleparameterValueEntry EOF ;
     public final EObject entryRuleparameterValueEntry() throws RecognitionException {
         EObject current = null;
 
@@ -9226,8 +9243,8 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPanoptesX.g:3684:60: (iv_ruleparameterValueEntry= ruleparameterValueEntry EOF )
-            // InternalPanoptesX.g:3685:2: iv_ruleparameterValueEntry= ruleparameterValueEntry EOF
+            // InternalPanoptesX.g:3686:60: (iv_ruleparameterValueEntry= ruleparameterValueEntry EOF )
+            // InternalPanoptesX.g:3687:2: iv_ruleparameterValueEntry= ruleparameterValueEntry EOF
             {
              newCompositeNode(grammarAccess.getParameterValueEntryRule()); 
             pushFollow(FOLLOW_1);
@@ -9254,7 +9271,7 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleparameterValueEntry"
-    // InternalPanoptesX.g:3691:1: ruleparameterValueEntry returns [EObject current=null] : ( () ( (lv_key_1_0= ruleEString ) ) otherlv_2= '=' ( (lv_value_3_0= ruleEString ) ) ) ;
+    // InternalPanoptesX.g:3693:1: ruleparameterValueEntry returns [EObject current=null] : ( () ( (lv_key_1_0= ruleEString ) ) otherlv_2= '=' ( (lv_value_3_0= ruleEString ) ) ) ;
     public final EObject ruleparameterValueEntry() throws RecognitionException {
         EObject current = null;
 
@@ -9268,14 +9285,14 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalPanoptesX.g:3697:2: ( ( () ( (lv_key_1_0= ruleEString ) ) otherlv_2= '=' ( (lv_value_3_0= ruleEString ) ) ) )
-            // InternalPanoptesX.g:3698:2: ( () ( (lv_key_1_0= ruleEString ) ) otherlv_2= '=' ( (lv_value_3_0= ruleEString ) ) )
+            // InternalPanoptesX.g:3699:2: ( ( () ( (lv_key_1_0= ruleEString ) ) otherlv_2= '=' ( (lv_value_3_0= ruleEString ) ) ) )
+            // InternalPanoptesX.g:3700:2: ( () ( (lv_key_1_0= ruleEString ) ) otherlv_2= '=' ( (lv_value_3_0= ruleEString ) ) )
             {
-            // InternalPanoptesX.g:3698:2: ( () ( (lv_key_1_0= ruleEString ) ) otherlv_2= '=' ( (lv_value_3_0= ruleEString ) ) )
-            // InternalPanoptesX.g:3699:3: () ( (lv_key_1_0= ruleEString ) ) otherlv_2= '=' ( (lv_value_3_0= ruleEString ) )
+            // InternalPanoptesX.g:3700:2: ( () ( (lv_key_1_0= ruleEString ) ) otherlv_2= '=' ( (lv_value_3_0= ruleEString ) ) )
+            // InternalPanoptesX.g:3701:3: () ( (lv_key_1_0= ruleEString ) ) otherlv_2= '=' ( (lv_value_3_0= ruleEString ) )
             {
-            // InternalPanoptesX.g:3699:3: ()
-            // InternalPanoptesX.g:3700:4: 
+            // InternalPanoptesX.g:3701:3: ()
+            // InternalPanoptesX.g:3702:4: 
             {
 
             				current = forceCreateModelElement(
@@ -9285,16 +9302,16 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalPanoptesX.g:3706:3: ( (lv_key_1_0= ruleEString ) )
-            // InternalPanoptesX.g:3707:4: (lv_key_1_0= ruleEString )
+            // InternalPanoptesX.g:3708:3: ( (lv_key_1_0= ruleEString ) )
+            // InternalPanoptesX.g:3709:4: (lv_key_1_0= ruleEString )
             {
-            // InternalPanoptesX.g:3707:4: (lv_key_1_0= ruleEString )
-            // InternalPanoptesX.g:3708:5: lv_key_1_0= ruleEString
+            // InternalPanoptesX.g:3709:4: (lv_key_1_0= ruleEString )
+            // InternalPanoptesX.g:3710:5: lv_key_1_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getParameterValueEntryAccess().getKeyEStringParserRuleCall_1_0());
             				
-            pushFollow(FOLLOW_58);
+            pushFollow(FOLLOW_57);
             lv_key_1_0=ruleEString();
 
             state._fsp--;
@@ -9320,11 +9337,11 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_2, grammarAccess.getParameterValueEntryAccess().getEqualsSignKeyword_2());
             		
-            // InternalPanoptesX.g:3729:3: ( (lv_value_3_0= ruleEString ) )
-            // InternalPanoptesX.g:3730:4: (lv_value_3_0= ruleEString )
+            // InternalPanoptesX.g:3731:3: ( (lv_value_3_0= ruleEString ) )
+            // InternalPanoptesX.g:3732:4: (lv_value_3_0= ruleEString )
             {
-            // InternalPanoptesX.g:3730:4: (lv_value_3_0= ruleEString )
-            // InternalPanoptesX.g:3731:5: lv_value_3_0= ruleEString
+            // InternalPanoptesX.g:3732:4: (lv_value_3_0= ruleEString )
+            // InternalPanoptesX.g:3733:5: lv_value_3_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getParameterValueEntryAccess().getValueEStringParserRuleCall_3_0());
@@ -9374,7 +9391,7 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleActionExecution"
-    // InternalPanoptesX.g:3752:1: entryRuleActionExecution returns [EObject current=null] : iv_ruleActionExecution= ruleActionExecution EOF ;
+    // InternalPanoptesX.g:3754:1: entryRuleActionExecution returns [EObject current=null] : iv_ruleActionExecution= ruleActionExecution EOF ;
     public final EObject entryRuleActionExecution() throws RecognitionException {
         EObject current = null;
 
@@ -9382,8 +9399,8 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPanoptesX.g:3752:56: (iv_ruleActionExecution= ruleActionExecution EOF )
-            // InternalPanoptesX.g:3753:2: iv_ruleActionExecution= ruleActionExecution EOF
+            // InternalPanoptesX.g:3754:56: (iv_ruleActionExecution= ruleActionExecution EOF )
+            // InternalPanoptesX.g:3755:2: iv_ruleActionExecution= ruleActionExecution EOF
             {
              newCompositeNode(grammarAccess.getActionExecutionRule()); 
             pushFollow(FOLLOW_1);
@@ -9410,7 +9427,7 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleActionExecution"
-    // InternalPanoptesX.g:3759:1: ruleActionExecution returns [EObject current=null] : ( () otherlv_1= 'ActionExecution' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_5= 'action' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'parameter' otherlv_8= 'values' ( (lv_parameterValueMap_9_0= ruleparameterValueEntry ) ) (otherlv_10= ',' ( (lv_parameterValueMap_11_0= ruleparameterValueEntry ) ) )* ) ) ) ) )+ {...}?) ) ) otherlv_12= '}' ) ;
+    // InternalPanoptesX.g:3761:1: ruleActionExecution returns [EObject current=null] : ( () otherlv_1= 'ActionExecution' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_5= 'action' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'parameter' otherlv_8= 'values' ( (lv_parameterValueMap_9_0= ruleparameterValueEntry ) ) (otherlv_10= ',' ( (lv_parameterValueMap_11_0= ruleparameterValueEntry ) ) )* ) ) ) ) )+ {...}?) ) ) otherlv_12= '}' ) ;
     public final EObject ruleActionExecution() throws RecognitionException {
         EObject current = null;
 
@@ -9432,14 +9449,14 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalPanoptesX.g:3765:2: ( ( () otherlv_1= 'ActionExecution' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_5= 'action' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'parameter' otherlv_8= 'values' ( (lv_parameterValueMap_9_0= ruleparameterValueEntry ) ) (otherlv_10= ',' ( (lv_parameterValueMap_11_0= ruleparameterValueEntry ) ) )* ) ) ) ) )+ {...}?) ) ) otherlv_12= '}' ) )
-            // InternalPanoptesX.g:3766:2: ( () otherlv_1= 'ActionExecution' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_5= 'action' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'parameter' otherlv_8= 'values' ( (lv_parameterValueMap_9_0= ruleparameterValueEntry ) ) (otherlv_10= ',' ( (lv_parameterValueMap_11_0= ruleparameterValueEntry ) ) )* ) ) ) ) )+ {...}?) ) ) otherlv_12= '}' )
+            // InternalPanoptesX.g:3767:2: ( ( () otherlv_1= 'ActionExecution' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_5= 'action' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'parameter' otherlv_8= 'values' ( (lv_parameterValueMap_9_0= ruleparameterValueEntry ) ) (otherlv_10= ',' ( (lv_parameterValueMap_11_0= ruleparameterValueEntry ) ) )* ) ) ) ) )+ {...}?) ) ) otherlv_12= '}' ) )
+            // InternalPanoptesX.g:3768:2: ( () otherlv_1= 'ActionExecution' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_5= 'action' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'parameter' otherlv_8= 'values' ( (lv_parameterValueMap_9_0= ruleparameterValueEntry ) ) (otherlv_10= ',' ( (lv_parameterValueMap_11_0= ruleparameterValueEntry ) ) )* ) ) ) ) )+ {...}?) ) ) otherlv_12= '}' )
             {
-            // InternalPanoptesX.g:3766:2: ( () otherlv_1= 'ActionExecution' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_5= 'action' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'parameter' otherlv_8= 'values' ( (lv_parameterValueMap_9_0= ruleparameterValueEntry ) ) (otherlv_10= ',' ( (lv_parameterValueMap_11_0= ruleparameterValueEntry ) ) )* ) ) ) ) )+ {...}?) ) ) otherlv_12= '}' )
-            // InternalPanoptesX.g:3767:3: () otherlv_1= 'ActionExecution' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_5= 'action' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'parameter' otherlv_8= 'values' ( (lv_parameterValueMap_9_0= ruleparameterValueEntry ) ) (otherlv_10= ',' ( (lv_parameterValueMap_11_0= ruleparameterValueEntry ) ) )* ) ) ) ) )+ {...}?) ) ) otherlv_12= '}'
+            // InternalPanoptesX.g:3768:2: ( () otherlv_1= 'ActionExecution' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_5= 'action' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'parameter' otherlv_8= 'values' ( (lv_parameterValueMap_9_0= ruleparameterValueEntry ) ) (otherlv_10= ',' ( (lv_parameterValueMap_11_0= ruleparameterValueEntry ) ) )* ) ) ) ) )+ {...}?) ) ) otherlv_12= '}' )
+            // InternalPanoptesX.g:3769:3: () otherlv_1= 'ActionExecution' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_5= 'action' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'parameter' otherlv_8= 'values' ( (lv_parameterValueMap_9_0= ruleparameterValueEntry ) ) (otherlv_10= ',' ( (lv_parameterValueMap_11_0= ruleparameterValueEntry ) ) )* ) ) ) ) )+ {...}?) ) ) otherlv_12= '}'
             {
-            // InternalPanoptesX.g:3767:3: ()
-            // InternalPanoptesX.g:3768:4: 
+            // InternalPanoptesX.g:3769:3: ()
+            // InternalPanoptesX.g:3770:4: 
             {
 
             				current = forceCreateModelElement(
@@ -9453,11 +9470,11 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getActionExecutionAccess().getActionExecutionKeyword_1());
             		
-            // InternalPanoptesX.g:3778:3: ( (lv_name_2_0= ruleEString ) )
-            // InternalPanoptesX.g:3779:4: (lv_name_2_0= ruleEString )
+            // InternalPanoptesX.g:3780:3: ( (lv_name_2_0= ruleEString ) )
+            // InternalPanoptesX.g:3781:4: (lv_name_2_0= ruleEString )
             {
-            // InternalPanoptesX.g:3779:4: (lv_name_2_0= ruleEString )
-            // InternalPanoptesX.g:3780:5: lv_name_2_0= ruleEString
+            // InternalPanoptesX.g:3781:4: (lv_name_2_0= ruleEString )
+            // InternalPanoptesX.g:3782:5: lv_name_2_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getActionExecutionAccess().getNameEStringParserRuleCall_2_0());
@@ -9484,71 +9501,71 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,13,FOLLOW_59); 
+            otherlv_3=(Token)match(input,13,FOLLOW_58); 
 
             			newLeafNode(otherlv_3, grammarAccess.getActionExecutionAccess().getLeftCurlyBracketKeyword_3());
             		
-            // InternalPanoptesX.g:3801:3: ( ( ( ( ({...}? => ( ({...}? => (otherlv_5= 'action' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'parameter' otherlv_8= 'values' ( (lv_parameterValueMap_9_0= ruleparameterValueEntry ) ) (otherlv_10= ',' ( (lv_parameterValueMap_11_0= ruleparameterValueEntry ) ) )* ) ) ) ) )+ {...}?) ) )
-            // InternalPanoptesX.g:3802:4: ( ( ( ({...}? => ( ({...}? => (otherlv_5= 'action' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'parameter' otherlv_8= 'values' ( (lv_parameterValueMap_9_0= ruleparameterValueEntry ) ) (otherlv_10= ',' ( (lv_parameterValueMap_11_0= ruleparameterValueEntry ) ) )* ) ) ) ) )+ {...}?) )
+            // InternalPanoptesX.g:3803:3: ( ( ( ( ({...}? => ( ({...}? => (otherlv_5= 'action' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'parameter' otherlv_8= 'values' ( (lv_parameterValueMap_9_0= ruleparameterValueEntry ) ) (otherlv_10= ',' ( (lv_parameterValueMap_11_0= ruleparameterValueEntry ) ) )* ) ) ) ) )+ {...}?) ) )
+            // InternalPanoptesX.g:3804:4: ( ( ( ({...}? => ( ({...}? => (otherlv_5= 'action' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'parameter' otherlv_8= 'values' ( (lv_parameterValueMap_9_0= ruleparameterValueEntry ) ) (otherlv_10= ',' ( (lv_parameterValueMap_11_0= ruleparameterValueEntry ) ) )* ) ) ) ) )+ {...}?) )
             {
-            // InternalPanoptesX.g:3802:4: ( ( ( ({...}? => ( ({...}? => (otherlv_5= 'action' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'parameter' otherlv_8= 'values' ( (lv_parameterValueMap_9_0= ruleparameterValueEntry ) ) (otherlv_10= ',' ( (lv_parameterValueMap_11_0= ruleparameterValueEntry ) ) )* ) ) ) ) )+ {...}?) )
-            // InternalPanoptesX.g:3803:5: ( ( ({...}? => ( ({...}? => (otherlv_5= 'action' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'parameter' otherlv_8= 'values' ( (lv_parameterValueMap_9_0= ruleparameterValueEntry ) ) (otherlv_10= ',' ( (lv_parameterValueMap_11_0= ruleparameterValueEntry ) ) )* ) ) ) ) )+ {...}?)
+            // InternalPanoptesX.g:3804:4: ( ( ( ({...}? => ( ({...}? => (otherlv_5= 'action' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'parameter' otherlv_8= 'values' ( (lv_parameterValueMap_9_0= ruleparameterValueEntry ) ) (otherlv_10= ',' ( (lv_parameterValueMap_11_0= ruleparameterValueEntry ) ) )* ) ) ) ) )+ {...}?) )
+            // InternalPanoptesX.g:3805:5: ( ( ({...}? => ( ({...}? => (otherlv_5= 'action' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'parameter' otherlv_8= 'values' ( (lv_parameterValueMap_9_0= ruleparameterValueEntry ) ) (otherlv_10= ',' ( (lv_parameterValueMap_11_0= ruleparameterValueEntry ) ) )* ) ) ) ) )+ {...}?)
             {
              
             				  getUnorderedGroupHelper().enter(grammarAccess.getActionExecutionAccess().getUnorderedGroup_4());
             				
-            // InternalPanoptesX.g:3806:5: ( ( ({...}? => ( ({...}? => (otherlv_5= 'action' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'parameter' otherlv_8= 'values' ( (lv_parameterValueMap_9_0= ruleparameterValueEntry ) ) (otherlv_10= ',' ( (lv_parameterValueMap_11_0= ruleparameterValueEntry ) ) )* ) ) ) ) )+ {...}?)
-            // InternalPanoptesX.g:3807:6: ( ({...}? => ( ({...}? => (otherlv_5= 'action' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'parameter' otherlv_8= 'values' ( (lv_parameterValueMap_9_0= ruleparameterValueEntry ) ) (otherlv_10= ',' ( (lv_parameterValueMap_11_0= ruleparameterValueEntry ) ) )* ) ) ) ) )+ {...}?
+            // InternalPanoptesX.g:3808:5: ( ( ({...}? => ( ({...}? => (otherlv_5= 'action' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'parameter' otherlv_8= 'values' ( (lv_parameterValueMap_9_0= ruleparameterValueEntry ) ) (otherlv_10= ',' ( (lv_parameterValueMap_11_0= ruleparameterValueEntry ) ) )* ) ) ) ) )+ {...}?)
+            // InternalPanoptesX.g:3809:6: ( ({...}? => ( ({...}? => (otherlv_5= 'action' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'parameter' otherlv_8= 'values' ( (lv_parameterValueMap_9_0= ruleparameterValueEntry ) ) (otherlv_10= ',' ( (lv_parameterValueMap_11_0= ruleparameterValueEntry ) ) )* ) ) ) ) )+ {...}?
             {
-            // InternalPanoptesX.g:3807:6: ( ({...}? => ( ({...}? => (otherlv_5= 'action' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'parameter' otherlv_8= 'values' ( (lv_parameterValueMap_9_0= ruleparameterValueEntry ) ) (otherlv_10= ',' ( (lv_parameterValueMap_11_0= ruleparameterValueEntry ) ) )* ) ) ) ) )+
-            int cnt48=0;
-            loop48:
+            // InternalPanoptesX.g:3809:6: ( ({...}? => ( ({...}? => (otherlv_5= 'action' ( ( ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'parameter' otherlv_8= 'values' ( (lv_parameterValueMap_9_0= ruleparameterValueEntry ) ) (otherlv_10= ',' ( (lv_parameterValueMap_11_0= ruleparameterValueEntry ) ) )* ) ) ) ) )+
+            int cnt49=0;
+            loop49:
             do {
-                int alt48=3;
-                int LA48_0 = input.LA(1);
+                int alt49=3;
+                int LA49_0 = input.LA(1);
 
-                if ( LA48_0 == 70 && getUnorderedGroupHelper().canSelect(grammarAccess.getActionExecutionAccess().getUnorderedGroup_4(), 0) ) {
-                    alt48=1;
+                if ( LA49_0 == 70 && getUnorderedGroupHelper().canSelect(grammarAccess.getActionExecutionAccess().getUnorderedGroup_4(), 0) ) {
+                    alt49=1;
                 }
-                else if ( LA48_0 == 48 && getUnorderedGroupHelper().canSelect(grammarAccess.getActionExecutionAccess().getUnorderedGroup_4(), 1) ) {
-                    alt48=2;
+                else if ( LA49_0 == 48 && getUnorderedGroupHelper().canSelect(grammarAccess.getActionExecutionAccess().getUnorderedGroup_4(), 1) ) {
+                    alt49=2;
                 }
 
 
-                switch (alt48) {
+                switch (alt49) {
             	case 1 :
-            	    // InternalPanoptesX.g:3808:4: ({...}? => ( ({...}? => (otherlv_5= 'action' ( ( ruleEString ) ) ) ) ) )
+            	    // InternalPanoptesX.g:3810:4: ({...}? => ( ({...}? => (otherlv_5= 'action' ( ( ruleEString ) ) ) ) ) )
             	    {
-            	    // InternalPanoptesX.g:3808:4: ({...}? => ( ({...}? => (otherlv_5= 'action' ( ( ruleEString ) ) ) ) ) )
-            	    // InternalPanoptesX.g:3809:5: {...}? => ( ({...}? => (otherlv_5= 'action' ( ( ruleEString ) ) ) ) )
+            	    // InternalPanoptesX.g:3810:4: ({...}? => ( ({...}? => (otherlv_5= 'action' ( ( ruleEString ) ) ) ) ) )
+            	    // InternalPanoptesX.g:3811:5: {...}? => ( ({...}? => (otherlv_5= 'action' ( ( ruleEString ) ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getActionExecutionAccess().getUnorderedGroup_4(), 0) ) {
             	        throw new FailedPredicateException(input, "ruleActionExecution", "getUnorderedGroupHelper().canSelect(grammarAccess.getActionExecutionAccess().getUnorderedGroup_4(), 0)");
             	    }
-            	    // InternalPanoptesX.g:3809:112: ( ({...}? => (otherlv_5= 'action' ( ( ruleEString ) ) ) ) )
-            	    // InternalPanoptesX.g:3810:6: ({...}? => (otherlv_5= 'action' ( ( ruleEString ) ) ) )
+            	    // InternalPanoptesX.g:3811:112: ( ({...}? => (otherlv_5= 'action' ( ( ruleEString ) ) ) ) )
+            	    // InternalPanoptesX.g:3812:6: ({...}? => (otherlv_5= 'action' ( ( ruleEString ) ) ) )
             	    {
 
             	    						getUnorderedGroupHelper().select(grammarAccess.getActionExecutionAccess().getUnorderedGroup_4(), 0);
             	    					
-            	    // InternalPanoptesX.g:3813:9: ({...}? => (otherlv_5= 'action' ( ( ruleEString ) ) ) )
-            	    // InternalPanoptesX.g:3813:10: {...}? => (otherlv_5= 'action' ( ( ruleEString ) ) )
+            	    // InternalPanoptesX.g:3815:9: ({...}? => (otherlv_5= 'action' ( ( ruleEString ) ) ) )
+            	    // InternalPanoptesX.g:3815:10: {...}? => (otherlv_5= 'action' ( ( ruleEString ) ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleActionExecution", "true");
             	    }
-            	    // InternalPanoptesX.g:3813:19: (otherlv_5= 'action' ( ( ruleEString ) ) )
-            	    // InternalPanoptesX.g:3813:20: otherlv_5= 'action' ( ( ruleEString ) )
+            	    // InternalPanoptesX.g:3815:19: (otherlv_5= 'action' ( ( ruleEString ) ) )
+            	    // InternalPanoptesX.g:3815:20: otherlv_5= 'action' ( ( ruleEString ) )
             	    {
             	    otherlv_5=(Token)match(input,70,FOLLOW_4); 
 
             	    									newLeafNode(otherlv_5, grammarAccess.getActionExecutionAccess().getActionKeyword_4_0_0());
             	    								
-            	    // InternalPanoptesX.g:3817:9: ( ( ruleEString ) )
-            	    // InternalPanoptesX.g:3818:10: ( ruleEString )
+            	    // InternalPanoptesX.g:3819:9: ( ( ruleEString ) )
+            	    // InternalPanoptesX.g:3820:10: ( ruleEString )
             	    {
-            	    // InternalPanoptesX.g:3818:10: ( ruleEString )
-            	    // InternalPanoptesX.g:3819:11: ruleEString
+            	    // InternalPanoptesX.g:3820:10: ( ruleEString )
+            	    // InternalPanoptesX.g:3821:11: ruleEString
             	    {
 
             	    											if (current==null) {
@@ -9558,7 +9575,7 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
 
             	    											newCompositeNode(grammarAccess.getActionExecutionAccess().getActionActionCrossReference_4_0_1_0());
             	    										
-            	    pushFollow(FOLLOW_60);
+            	    pushFollow(FOLLOW_59);
             	    ruleEString();
 
             	    state._fsp--;
@@ -9591,28 +9608,28 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 2 :
-            	    // InternalPanoptesX.g:3839:4: ({...}? => ( ({...}? => (otherlv_7= 'parameter' otherlv_8= 'values' ( (lv_parameterValueMap_9_0= ruleparameterValueEntry ) ) (otherlv_10= ',' ( (lv_parameterValueMap_11_0= ruleparameterValueEntry ) ) )* ) ) ) )
+            	    // InternalPanoptesX.g:3841:4: ({...}? => ( ({...}? => (otherlv_7= 'parameter' otherlv_8= 'values' ( (lv_parameterValueMap_9_0= ruleparameterValueEntry ) ) (otherlv_10= ',' ( (lv_parameterValueMap_11_0= ruleparameterValueEntry ) ) )* ) ) ) )
             	    {
-            	    // InternalPanoptesX.g:3839:4: ({...}? => ( ({...}? => (otherlv_7= 'parameter' otherlv_8= 'values' ( (lv_parameterValueMap_9_0= ruleparameterValueEntry ) ) (otherlv_10= ',' ( (lv_parameterValueMap_11_0= ruleparameterValueEntry ) ) )* ) ) ) )
-            	    // InternalPanoptesX.g:3840:5: {...}? => ( ({...}? => (otherlv_7= 'parameter' otherlv_8= 'values' ( (lv_parameterValueMap_9_0= ruleparameterValueEntry ) ) (otherlv_10= ',' ( (lv_parameterValueMap_11_0= ruleparameterValueEntry ) ) )* ) ) )
+            	    // InternalPanoptesX.g:3841:4: ({...}? => ( ({...}? => (otherlv_7= 'parameter' otherlv_8= 'values' ( (lv_parameterValueMap_9_0= ruleparameterValueEntry ) ) (otherlv_10= ',' ( (lv_parameterValueMap_11_0= ruleparameterValueEntry ) ) )* ) ) ) )
+            	    // InternalPanoptesX.g:3842:5: {...}? => ( ({...}? => (otherlv_7= 'parameter' otherlv_8= 'values' ( (lv_parameterValueMap_9_0= ruleparameterValueEntry ) ) (otherlv_10= ',' ( (lv_parameterValueMap_11_0= ruleparameterValueEntry ) ) )* ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getActionExecutionAccess().getUnorderedGroup_4(), 1) ) {
             	        throw new FailedPredicateException(input, "ruleActionExecution", "getUnorderedGroupHelper().canSelect(grammarAccess.getActionExecutionAccess().getUnorderedGroup_4(), 1)");
             	    }
-            	    // InternalPanoptesX.g:3840:112: ( ({...}? => (otherlv_7= 'parameter' otherlv_8= 'values' ( (lv_parameterValueMap_9_0= ruleparameterValueEntry ) ) (otherlv_10= ',' ( (lv_parameterValueMap_11_0= ruleparameterValueEntry ) ) )* ) ) )
-            	    // InternalPanoptesX.g:3841:6: ({...}? => (otherlv_7= 'parameter' otherlv_8= 'values' ( (lv_parameterValueMap_9_0= ruleparameterValueEntry ) ) (otherlv_10= ',' ( (lv_parameterValueMap_11_0= ruleparameterValueEntry ) ) )* ) )
+            	    // InternalPanoptesX.g:3842:112: ( ({...}? => (otherlv_7= 'parameter' otherlv_8= 'values' ( (lv_parameterValueMap_9_0= ruleparameterValueEntry ) ) (otherlv_10= ',' ( (lv_parameterValueMap_11_0= ruleparameterValueEntry ) ) )* ) ) )
+            	    // InternalPanoptesX.g:3843:6: ({...}? => (otherlv_7= 'parameter' otherlv_8= 'values' ( (lv_parameterValueMap_9_0= ruleparameterValueEntry ) ) (otherlv_10= ',' ( (lv_parameterValueMap_11_0= ruleparameterValueEntry ) ) )* ) )
             	    {
 
             	    						getUnorderedGroupHelper().select(grammarAccess.getActionExecutionAccess().getUnorderedGroup_4(), 1);
             	    					
-            	    // InternalPanoptesX.g:3844:9: ({...}? => (otherlv_7= 'parameter' otherlv_8= 'values' ( (lv_parameterValueMap_9_0= ruleparameterValueEntry ) ) (otherlv_10= ',' ( (lv_parameterValueMap_11_0= ruleparameterValueEntry ) ) )* ) )
-            	    // InternalPanoptesX.g:3844:10: {...}? => (otherlv_7= 'parameter' otherlv_8= 'values' ( (lv_parameterValueMap_9_0= ruleparameterValueEntry ) ) (otherlv_10= ',' ( (lv_parameterValueMap_11_0= ruleparameterValueEntry ) ) )* )
+            	    // InternalPanoptesX.g:3846:9: ({...}? => (otherlv_7= 'parameter' otherlv_8= 'values' ( (lv_parameterValueMap_9_0= ruleparameterValueEntry ) ) (otherlv_10= ',' ( (lv_parameterValueMap_11_0= ruleparameterValueEntry ) ) )* ) )
+            	    // InternalPanoptesX.g:3846:10: {...}? => (otherlv_7= 'parameter' otherlv_8= 'values' ( (lv_parameterValueMap_9_0= ruleparameterValueEntry ) ) (otherlv_10= ',' ( (lv_parameterValueMap_11_0= ruleparameterValueEntry ) ) )* )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleActionExecution", "true");
             	    }
-            	    // InternalPanoptesX.g:3844:19: (otherlv_7= 'parameter' otherlv_8= 'values' ( (lv_parameterValueMap_9_0= ruleparameterValueEntry ) ) (otherlv_10= ',' ( (lv_parameterValueMap_11_0= ruleparameterValueEntry ) ) )* )
-            	    // InternalPanoptesX.g:3844:20: otherlv_7= 'parameter' otherlv_8= 'values' ( (lv_parameterValueMap_9_0= ruleparameterValueEntry ) ) (otherlv_10= ',' ( (lv_parameterValueMap_11_0= ruleparameterValueEntry ) ) )*
+            	    // InternalPanoptesX.g:3846:19: (otherlv_7= 'parameter' otherlv_8= 'values' ( (lv_parameterValueMap_9_0= ruleparameterValueEntry ) ) (otherlv_10= ',' ( (lv_parameterValueMap_11_0= ruleparameterValueEntry ) ) )* )
+            	    // InternalPanoptesX.g:3846:20: otherlv_7= 'parameter' otherlv_8= 'values' ( (lv_parameterValueMap_9_0= ruleparameterValueEntry ) ) (otherlv_10= ',' ( (lv_parameterValueMap_11_0= ruleparameterValueEntry ) ) )*
             	    {
             	    otherlv_7=(Token)match(input,48,FOLLOW_40); 
 
@@ -9622,16 +9639,16 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
 
             	    									newLeafNode(otherlv_8, grammarAccess.getActionExecutionAccess().getValuesKeyword_4_1_1());
             	    								
-            	    // InternalPanoptesX.g:3852:9: ( (lv_parameterValueMap_9_0= ruleparameterValueEntry ) )
-            	    // InternalPanoptesX.g:3853:10: (lv_parameterValueMap_9_0= ruleparameterValueEntry )
+            	    // InternalPanoptesX.g:3854:9: ( (lv_parameterValueMap_9_0= ruleparameterValueEntry ) )
+            	    // InternalPanoptesX.g:3855:10: (lv_parameterValueMap_9_0= ruleparameterValueEntry )
             	    {
-            	    // InternalPanoptesX.g:3853:10: (lv_parameterValueMap_9_0= ruleparameterValueEntry )
-            	    // InternalPanoptesX.g:3854:11: lv_parameterValueMap_9_0= ruleparameterValueEntry
+            	    // InternalPanoptesX.g:3855:10: (lv_parameterValueMap_9_0= ruleparameterValueEntry )
+            	    // InternalPanoptesX.g:3856:11: lv_parameterValueMap_9_0= ruleparameterValueEntry
             	    {
 
             	    											newCompositeNode(grammarAccess.getActionExecutionAccess().getParameterValueMapParameterValueEntryParserRuleCall_4_1_2_0());
             	    										
-            	    pushFollow(FOLLOW_61);
+            	    pushFollow(FOLLOW_60);
             	    lv_parameterValueMap_9_0=ruleparameterValueEntry();
 
             	    state._fsp--;
@@ -9653,35 +9670,35 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // InternalPanoptesX.g:3871:9: (otherlv_10= ',' ( (lv_parameterValueMap_11_0= ruleparameterValueEntry ) ) )*
-            	    loop47:
+            	    // InternalPanoptesX.g:3873:9: (otherlv_10= ',' ( (lv_parameterValueMap_11_0= ruleparameterValueEntry ) ) )*
+            	    loop48:
             	    do {
-            	        int alt47=2;
-            	        int LA47_0 = input.LA(1);
+            	        int alt48=2;
+            	        int LA48_0 = input.LA(1);
 
-            	        if ( (LA47_0==15) ) {
-            	            alt47=1;
+            	        if ( (LA48_0==15) ) {
+            	            alt48=1;
             	        }
 
 
-            	        switch (alt47) {
+            	        switch (alt48) {
             	    	case 1 :
-            	    	    // InternalPanoptesX.g:3872:10: otherlv_10= ',' ( (lv_parameterValueMap_11_0= ruleparameterValueEntry ) )
+            	    	    // InternalPanoptesX.g:3874:10: otherlv_10= ',' ( (lv_parameterValueMap_11_0= ruleparameterValueEntry ) )
             	    	    {
             	    	    otherlv_10=(Token)match(input,15,FOLLOW_4); 
 
             	    	    										newLeafNode(otherlv_10, grammarAccess.getActionExecutionAccess().getCommaKeyword_4_1_3_0());
             	    	    									
-            	    	    // InternalPanoptesX.g:3876:10: ( (lv_parameterValueMap_11_0= ruleparameterValueEntry ) )
-            	    	    // InternalPanoptesX.g:3877:11: (lv_parameterValueMap_11_0= ruleparameterValueEntry )
+            	    	    // InternalPanoptesX.g:3878:10: ( (lv_parameterValueMap_11_0= ruleparameterValueEntry ) )
+            	    	    // InternalPanoptesX.g:3879:11: (lv_parameterValueMap_11_0= ruleparameterValueEntry )
             	    	    {
-            	    	    // InternalPanoptesX.g:3877:11: (lv_parameterValueMap_11_0= ruleparameterValueEntry )
-            	    	    // InternalPanoptesX.g:3878:12: lv_parameterValueMap_11_0= ruleparameterValueEntry
+            	    	    // InternalPanoptesX.g:3879:11: (lv_parameterValueMap_11_0= ruleparameterValueEntry )
+            	    	    // InternalPanoptesX.g:3880:12: lv_parameterValueMap_11_0= ruleparameterValueEntry
             	    	    {
 
             	    	    												newCompositeNode(grammarAccess.getActionExecutionAccess().getParameterValueMapParameterValueEntryParserRuleCall_4_1_3_1_0());
             	    	    											
-            	    	    pushFollow(FOLLOW_61);
+            	    	    pushFollow(FOLLOW_60);
             	    	    lv_parameterValueMap_11_0=ruleparameterValueEntry();
 
             	    	    state._fsp--;
@@ -9708,7 +9725,7 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
             	    	    break;
 
             	    	default :
-            	    	    break loop47;
+            	    	    break loop48;
             	        }
             	    } while (true);
 
@@ -9732,12 +9749,12 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    if ( cnt48 >= 1 ) break loop48;
+            	    if ( cnt49 >= 1 ) break loop49;
                         EarlyExitException eee =
-                            new EarlyExitException(48, input);
+                            new EarlyExitException(49, input);
                         throw eee;
                 }
-                cnt48++;
+                cnt49++;
             } while (true);
 
             if ( ! getUnorderedGroupHelper().canLeave(grammarAccess.getActionExecutionAccess().getUnorderedGroup_4()) ) {
@@ -9782,7 +9799,7 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEIntegerObject"
-    // InternalPanoptesX.g:3918:1: entryRuleEIntegerObject returns [String current=null] : iv_ruleEIntegerObject= ruleEIntegerObject EOF ;
+    // InternalPanoptesX.g:3920:1: entryRuleEIntegerObject returns [String current=null] : iv_ruleEIntegerObject= ruleEIntegerObject EOF ;
     public final String entryRuleEIntegerObject() throws RecognitionException {
         String current = null;
 
@@ -9790,8 +9807,8 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPanoptesX.g:3918:54: (iv_ruleEIntegerObject= ruleEIntegerObject EOF )
-            // InternalPanoptesX.g:3919:2: iv_ruleEIntegerObject= ruleEIntegerObject EOF
+            // InternalPanoptesX.g:3920:54: (iv_ruleEIntegerObject= ruleEIntegerObject EOF )
+            // InternalPanoptesX.g:3921:2: iv_ruleEIntegerObject= ruleEIntegerObject EOF
             {
              newCompositeNode(grammarAccess.getEIntegerObjectRule()); 
             pushFollow(FOLLOW_1);
@@ -9818,7 +9835,7 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEIntegerObject"
-    // InternalPanoptesX.g:3925:1: ruleEIntegerObject returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (kw= '-' )? this_INT_1= RULE_INT ) ;
+    // InternalPanoptesX.g:3927:1: ruleEIntegerObject returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (kw= '-' )? this_INT_1= RULE_INT ) ;
     public final AntlrDatatypeRuleToken ruleEIntegerObject() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -9829,24 +9846,24 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalPanoptesX.g:3931:2: ( ( (kw= '-' )? this_INT_1= RULE_INT ) )
-            // InternalPanoptesX.g:3932:2: ( (kw= '-' )? this_INT_1= RULE_INT )
+            // InternalPanoptesX.g:3933:2: ( ( (kw= '-' )? this_INT_1= RULE_INT ) )
+            // InternalPanoptesX.g:3934:2: ( (kw= '-' )? this_INT_1= RULE_INT )
             {
-            // InternalPanoptesX.g:3932:2: ( (kw= '-' )? this_INT_1= RULE_INT )
-            // InternalPanoptesX.g:3933:3: (kw= '-' )? this_INT_1= RULE_INT
+            // InternalPanoptesX.g:3934:2: ( (kw= '-' )? this_INT_1= RULE_INT )
+            // InternalPanoptesX.g:3935:3: (kw= '-' )? this_INT_1= RULE_INT
             {
-            // InternalPanoptesX.g:3933:3: (kw= '-' )?
-            int alt49=2;
-            int LA49_0 = input.LA(1);
+            // InternalPanoptesX.g:3935:3: (kw= '-' )?
+            int alt50=2;
+            int LA50_0 = input.LA(1);
 
-            if ( (LA49_0==71) ) {
-                alt49=1;
+            if ( (LA50_0==71) ) {
+                alt50=1;
             }
-            switch (alt49) {
+            switch (alt50) {
                 case 1 :
-                    // InternalPanoptesX.g:3934:4: kw= '-'
+                    // InternalPanoptesX.g:3936:4: kw= '-'
                     {
-                    kw=(Token)match(input,71,FOLLOW_62); 
+                    kw=(Token)match(input,71,FOLLOW_61); 
 
                     				current.merge(kw);
                     				newLeafNode(kw, grammarAccess.getEIntegerObjectAccess().getHyphenMinusKeyword_0());
@@ -9887,7 +9904,7 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEString"
-    // InternalPanoptesX.g:3951:1: entryRuleEString returns [String current=null] : iv_ruleEString= ruleEString EOF ;
+    // InternalPanoptesX.g:3953:1: entryRuleEString returns [String current=null] : iv_ruleEString= ruleEString EOF ;
     public final String entryRuleEString() throws RecognitionException {
         String current = null;
 
@@ -9895,8 +9912,8 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPanoptesX.g:3951:47: (iv_ruleEString= ruleEString EOF )
-            // InternalPanoptesX.g:3952:2: iv_ruleEString= ruleEString EOF
+            // InternalPanoptesX.g:3953:47: (iv_ruleEString= ruleEString EOF )
+            // InternalPanoptesX.g:3954:2: iv_ruleEString= ruleEString EOF
             {
              newCompositeNode(grammarAccess.getEStringRule()); 
             pushFollow(FOLLOW_1);
@@ -9923,7 +9940,7 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEString"
-    // InternalPanoptesX.g:3958:1: ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_STRING_0= RULE_STRING | this_PANOPTESSTRING_1= RULE_PANOPTESSTRING ) ;
+    // InternalPanoptesX.g:3960:1: ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_STRING_0= RULE_STRING | this_PANOPTESSTRING_1= RULE_PANOPTESSTRING ) ;
     public final AntlrDatatypeRuleToken ruleEString() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -9934,28 +9951,28 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalPanoptesX.g:3964:2: ( (this_STRING_0= RULE_STRING | this_PANOPTESSTRING_1= RULE_PANOPTESSTRING ) )
-            // InternalPanoptesX.g:3965:2: (this_STRING_0= RULE_STRING | this_PANOPTESSTRING_1= RULE_PANOPTESSTRING )
+            // InternalPanoptesX.g:3966:2: ( (this_STRING_0= RULE_STRING | this_PANOPTESSTRING_1= RULE_PANOPTESSTRING ) )
+            // InternalPanoptesX.g:3967:2: (this_STRING_0= RULE_STRING | this_PANOPTESSTRING_1= RULE_PANOPTESSTRING )
             {
-            // InternalPanoptesX.g:3965:2: (this_STRING_0= RULE_STRING | this_PANOPTESSTRING_1= RULE_PANOPTESSTRING )
-            int alt50=2;
-            int LA50_0 = input.LA(1);
+            // InternalPanoptesX.g:3967:2: (this_STRING_0= RULE_STRING | this_PANOPTESSTRING_1= RULE_PANOPTESSTRING )
+            int alt51=2;
+            int LA51_0 = input.LA(1);
 
-            if ( (LA50_0==RULE_STRING) ) {
-                alt50=1;
+            if ( (LA51_0==RULE_STRING) ) {
+                alt51=1;
             }
-            else if ( (LA50_0==RULE_PANOPTESSTRING) ) {
-                alt50=2;
+            else if ( (LA51_0==RULE_PANOPTESSTRING) ) {
+                alt51=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 50, 0, input);
+                    new NoViableAltException("", 51, 0, input);
 
                 throw nvae;
             }
-            switch (alt50) {
+            switch (alt51) {
                 case 1 :
-                    // InternalPanoptesX.g:3966:3: this_STRING_0= RULE_STRING
+                    // InternalPanoptesX.g:3968:3: this_STRING_0= RULE_STRING
                     {
                     this_STRING_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -9968,7 +9985,7 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalPanoptesX.g:3974:3: this_PANOPTESSTRING_1= RULE_PANOPTESSTRING
+                    // InternalPanoptesX.g:3976:3: this_PANOPTESSTRING_1= RULE_PANOPTESSTRING
                     {
                     this_PANOPTESSTRING_1=(Token)match(input,RULE_PANOPTESSTRING,FOLLOW_2); 
 
@@ -10003,7 +10020,7 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulestatisticalVariableType"
-    // InternalPanoptesX.g:3985:1: rulestatisticalVariableType returns [Enumerator current=null] : ( (enumLiteral_0= 'continuous' ) | (enumLiteral_1= 'categorical' ) | (enumLiteral_2= 'ordered categorical' ) ) ;
+    // InternalPanoptesX.g:3987:1: rulestatisticalVariableType returns [Enumerator current=null] : ( (enumLiteral_0= 'continuous' ) | (enumLiteral_1= 'categorical' ) | (enumLiteral_2= 'ordered categorical' ) ) ;
     public final Enumerator rulestatisticalVariableType() throws RecognitionException {
         Enumerator current = null;
 
@@ -10015,40 +10032,40 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalPanoptesX.g:3991:2: ( ( (enumLiteral_0= 'continuous' ) | (enumLiteral_1= 'categorical' ) | (enumLiteral_2= 'ordered categorical' ) ) )
-            // InternalPanoptesX.g:3992:2: ( (enumLiteral_0= 'continuous' ) | (enumLiteral_1= 'categorical' ) | (enumLiteral_2= 'ordered categorical' ) )
+            // InternalPanoptesX.g:3993:2: ( ( (enumLiteral_0= 'continuous' ) | (enumLiteral_1= 'categorical' ) | (enumLiteral_2= 'ordered categorical' ) ) )
+            // InternalPanoptesX.g:3994:2: ( (enumLiteral_0= 'continuous' ) | (enumLiteral_1= 'categorical' ) | (enumLiteral_2= 'ordered categorical' ) )
             {
-            // InternalPanoptesX.g:3992:2: ( (enumLiteral_0= 'continuous' ) | (enumLiteral_1= 'categorical' ) | (enumLiteral_2= 'ordered categorical' ) )
-            int alt51=3;
+            // InternalPanoptesX.g:3994:2: ( (enumLiteral_0= 'continuous' ) | (enumLiteral_1= 'categorical' ) | (enumLiteral_2= 'ordered categorical' ) )
+            int alt52=3;
             switch ( input.LA(1) ) {
             case 72:
                 {
-                alt51=1;
+                alt52=1;
                 }
                 break;
             case 73:
                 {
-                alt51=2;
+                alt52=2;
                 }
                 break;
             case 74:
                 {
-                alt51=3;
+                alt52=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 51, 0, input);
+                    new NoViableAltException("", 52, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt51) {
+            switch (alt52) {
                 case 1 :
-                    // InternalPanoptesX.g:3993:3: (enumLiteral_0= 'continuous' )
+                    // InternalPanoptesX.g:3995:3: (enumLiteral_0= 'continuous' )
                     {
-                    // InternalPanoptesX.g:3993:3: (enumLiteral_0= 'continuous' )
-                    // InternalPanoptesX.g:3994:4: enumLiteral_0= 'continuous'
+                    // InternalPanoptesX.g:3995:3: (enumLiteral_0= 'continuous' )
+                    // InternalPanoptesX.g:3996:4: enumLiteral_0= 'continuous'
                     {
                     enumLiteral_0=(Token)match(input,72,FOLLOW_2); 
 
@@ -10062,10 +10079,10 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalPanoptesX.g:4001:3: (enumLiteral_1= 'categorical' )
+                    // InternalPanoptesX.g:4003:3: (enumLiteral_1= 'categorical' )
                     {
-                    // InternalPanoptesX.g:4001:3: (enumLiteral_1= 'categorical' )
-                    // InternalPanoptesX.g:4002:4: enumLiteral_1= 'categorical'
+                    // InternalPanoptesX.g:4003:3: (enumLiteral_1= 'categorical' )
+                    // InternalPanoptesX.g:4004:4: enumLiteral_1= 'categorical'
                     {
                     enumLiteral_1=(Token)match(input,73,FOLLOW_2); 
 
@@ -10079,10 +10096,10 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalPanoptesX.g:4009:3: (enumLiteral_2= 'ordered categorical' )
+                    // InternalPanoptesX.g:4011:3: (enumLiteral_2= 'ordered categorical' )
                     {
-                    // InternalPanoptesX.g:4009:3: (enumLiteral_2= 'ordered categorical' )
-                    // InternalPanoptesX.g:4010:4: enumLiteral_2= 'ordered categorical'
+                    // InternalPanoptesX.g:4011:3: (enumLiteral_2= 'ordered categorical' )
+                    // InternalPanoptesX.g:4012:4: enumLiteral_2= 'ordered categorical'
                     {
                     enumLiteral_2=(Token)match(input,74,FOLLOW_2); 
 
@@ -10118,7 +10135,7 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulefrequencyEnum"
-    // InternalPanoptesX.g:4020:1: rulefrequencyEnum returns [Enumerator current=null] : ( (enumLiteral_0= 'hour' ) | (enumLiteral_1= 'day' ) | (enumLiteral_2= 'week' ) | (enumLiteral_3= 'month' ) | (enumLiteral_4= 'year' ) ) ;
+    // InternalPanoptesX.g:4022:1: rulefrequencyEnum returns [Enumerator current=null] : ( (enumLiteral_0= 'hour' ) | (enumLiteral_1= 'day' ) | (enumLiteral_2= 'week' ) | (enumLiteral_3= 'month' ) | (enumLiteral_4= 'year' ) ) ;
     public final Enumerator rulefrequencyEnum() throws RecognitionException {
         Enumerator current = null;
 
@@ -10132,50 +10149,50 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalPanoptesX.g:4026:2: ( ( (enumLiteral_0= 'hour' ) | (enumLiteral_1= 'day' ) | (enumLiteral_2= 'week' ) | (enumLiteral_3= 'month' ) | (enumLiteral_4= 'year' ) ) )
-            // InternalPanoptesX.g:4027:2: ( (enumLiteral_0= 'hour' ) | (enumLiteral_1= 'day' ) | (enumLiteral_2= 'week' ) | (enumLiteral_3= 'month' ) | (enumLiteral_4= 'year' ) )
+            // InternalPanoptesX.g:4028:2: ( ( (enumLiteral_0= 'hour' ) | (enumLiteral_1= 'day' ) | (enumLiteral_2= 'week' ) | (enumLiteral_3= 'month' ) | (enumLiteral_4= 'year' ) ) )
+            // InternalPanoptesX.g:4029:2: ( (enumLiteral_0= 'hour' ) | (enumLiteral_1= 'day' ) | (enumLiteral_2= 'week' ) | (enumLiteral_3= 'month' ) | (enumLiteral_4= 'year' ) )
             {
-            // InternalPanoptesX.g:4027:2: ( (enumLiteral_0= 'hour' ) | (enumLiteral_1= 'day' ) | (enumLiteral_2= 'week' ) | (enumLiteral_3= 'month' ) | (enumLiteral_4= 'year' ) )
-            int alt52=5;
+            // InternalPanoptesX.g:4029:2: ( (enumLiteral_0= 'hour' ) | (enumLiteral_1= 'day' ) | (enumLiteral_2= 'week' ) | (enumLiteral_3= 'month' ) | (enumLiteral_4= 'year' ) )
+            int alt53=5;
             switch ( input.LA(1) ) {
             case 75:
                 {
-                alt52=1;
+                alt53=1;
                 }
                 break;
             case 76:
                 {
-                alt52=2;
+                alt53=2;
                 }
                 break;
             case 77:
                 {
-                alt52=3;
+                alt53=3;
                 }
                 break;
             case 78:
                 {
-                alt52=4;
+                alt53=4;
                 }
                 break;
             case 79:
                 {
-                alt52=5;
+                alt53=5;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 52, 0, input);
+                    new NoViableAltException("", 53, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt52) {
+            switch (alt53) {
                 case 1 :
-                    // InternalPanoptesX.g:4028:3: (enumLiteral_0= 'hour' )
+                    // InternalPanoptesX.g:4030:3: (enumLiteral_0= 'hour' )
                     {
-                    // InternalPanoptesX.g:4028:3: (enumLiteral_0= 'hour' )
-                    // InternalPanoptesX.g:4029:4: enumLiteral_0= 'hour'
+                    // InternalPanoptesX.g:4030:3: (enumLiteral_0= 'hour' )
+                    // InternalPanoptesX.g:4031:4: enumLiteral_0= 'hour'
                     {
                     enumLiteral_0=(Token)match(input,75,FOLLOW_2); 
 
@@ -10189,10 +10206,10 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalPanoptesX.g:4036:3: (enumLiteral_1= 'day' )
+                    // InternalPanoptesX.g:4038:3: (enumLiteral_1= 'day' )
                     {
-                    // InternalPanoptesX.g:4036:3: (enumLiteral_1= 'day' )
-                    // InternalPanoptesX.g:4037:4: enumLiteral_1= 'day'
+                    // InternalPanoptesX.g:4038:3: (enumLiteral_1= 'day' )
+                    // InternalPanoptesX.g:4039:4: enumLiteral_1= 'day'
                     {
                     enumLiteral_1=(Token)match(input,76,FOLLOW_2); 
 
@@ -10206,10 +10223,10 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalPanoptesX.g:4044:3: (enumLiteral_2= 'week' )
+                    // InternalPanoptesX.g:4046:3: (enumLiteral_2= 'week' )
                     {
-                    // InternalPanoptesX.g:4044:3: (enumLiteral_2= 'week' )
-                    // InternalPanoptesX.g:4045:4: enumLiteral_2= 'week'
+                    // InternalPanoptesX.g:4046:3: (enumLiteral_2= 'week' )
+                    // InternalPanoptesX.g:4047:4: enumLiteral_2= 'week'
                     {
                     enumLiteral_2=(Token)match(input,77,FOLLOW_2); 
 
@@ -10223,10 +10240,10 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalPanoptesX.g:4052:3: (enumLiteral_3= 'month' )
+                    // InternalPanoptesX.g:4054:3: (enumLiteral_3= 'month' )
                     {
-                    // InternalPanoptesX.g:4052:3: (enumLiteral_3= 'month' )
-                    // InternalPanoptesX.g:4053:4: enumLiteral_3= 'month'
+                    // InternalPanoptesX.g:4054:3: (enumLiteral_3= 'month' )
+                    // InternalPanoptesX.g:4055:4: enumLiteral_3= 'month'
                     {
                     enumLiteral_3=(Token)match(input,78,FOLLOW_2); 
 
@@ -10240,10 +10257,10 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalPanoptesX.g:4060:3: (enumLiteral_4= 'year' )
+                    // InternalPanoptesX.g:4062:3: (enumLiteral_4= 'year' )
                     {
-                    // InternalPanoptesX.g:4060:3: (enumLiteral_4= 'year' )
-                    // InternalPanoptesX.g:4061:4: enumLiteral_4= 'year'
+                    // InternalPanoptesX.g:4062:3: (enumLiteral_4= 'year' )
+                    // InternalPanoptesX.g:4063:4: enumLiteral_4= 'year'
                     {
                     enumLiteral_4=(Token)match(input,79,FOLLOW_2); 
 
@@ -10279,7 +10296,7 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleparameterType"
-    // InternalPanoptesX.g:4071:1: ruleparameterType returns [Enumerator current=null] : ( (enumLiteral_0= 'Integer' ) | (enumLiteral_1= 'Real' ) | (enumLiteral_2= 'String' ) | (enumLiteral_3= 'Boolean' ) ) ;
+    // InternalPanoptesX.g:4073:1: ruleparameterType returns [Enumerator current=null] : ( (enumLiteral_0= 'Integer' ) | (enumLiteral_1= 'Real' ) | (enumLiteral_2= 'String' ) | (enumLiteral_3= 'Boolean' ) ) ;
     public final Enumerator ruleparameterType() throws RecognitionException {
         Enumerator current = null;
 
@@ -10292,45 +10309,45 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalPanoptesX.g:4077:2: ( ( (enumLiteral_0= 'Integer' ) | (enumLiteral_1= 'Real' ) | (enumLiteral_2= 'String' ) | (enumLiteral_3= 'Boolean' ) ) )
-            // InternalPanoptesX.g:4078:2: ( (enumLiteral_0= 'Integer' ) | (enumLiteral_1= 'Real' ) | (enumLiteral_2= 'String' ) | (enumLiteral_3= 'Boolean' ) )
+            // InternalPanoptesX.g:4079:2: ( ( (enumLiteral_0= 'Integer' ) | (enumLiteral_1= 'Real' ) | (enumLiteral_2= 'String' ) | (enumLiteral_3= 'Boolean' ) ) )
+            // InternalPanoptesX.g:4080:2: ( (enumLiteral_0= 'Integer' ) | (enumLiteral_1= 'Real' ) | (enumLiteral_2= 'String' ) | (enumLiteral_3= 'Boolean' ) )
             {
-            // InternalPanoptesX.g:4078:2: ( (enumLiteral_0= 'Integer' ) | (enumLiteral_1= 'Real' ) | (enumLiteral_2= 'String' ) | (enumLiteral_3= 'Boolean' ) )
-            int alt53=4;
+            // InternalPanoptesX.g:4080:2: ( (enumLiteral_0= 'Integer' ) | (enumLiteral_1= 'Real' ) | (enumLiteral_2= 'String' ) | (enumLiteral_3= 'Boolean' ) )
+            int alt54=4;
             switch ( input.LA(1) ) {
             case 80:
                 {
-                alt53=1;
+                alt54=1;
                 }
                 break;
             case 81:
                 {
-                alt53=2;
+                alt54=2;
                 }
                 break;
             case 82:
                 {
-                alt53=3;
+                alt54=3;
                 }
                 break;
             case 83:
                 {
-                alt53=4;
+                alt54=4;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 53, 0, input);
+                    new NoViableAltException("", 54, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt53) {
+            switch (alt54) {
                 case 1 :
-                    // InternalPanoptesX.g:4079:3: (enumLiteral_0= 'Integer' )
+                    // InternalPanoptesX.g:4081:3: (enumLiteral_0= 'Integer' )
                     {
-                    // InternalPanoptesX.g:4079:3: (enumLiteral_0= 'Integer' )
-                    // InternalPanoptesX.g:4080:4: enumLiteral_0= 'Integer'
+                    // InternalPanoptesX.g:4081:3: (enumLiteral_0= 'Integer' )
+                    // InternalPanoptesX.g:4082:4: enumLiteral_0= 'Integer'
                     {
                     enumLiteral_0=(Token)match(input,80,FOLLOW_2); 
 
@@ -10344,10 +10361,10 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalPanoptesX.g:4087:3: (enumLiteral_1= 'Real' )
+                    // InternalPanoptesX.g:4089:3: (enumLiteral_1= 'Real' )
                     {
-                    // InternalPanoptesX.g:4087:3: (enumLiteral_1= 'Real' )
-                    // InternalPanoptesX.g:4088:4: enumLiteral_1= 'Real'
+                    // InternalPanoptesX.g:4089:3: (enumLiteral_1= 'Real' )
+                    // InternalPanoptesX.g:4090:4: enumLiteral_1= 'Real'
                     {
                     enumLiteral_1=(Token)match(input,81,FOLLOW_2); 
 
@@ -10361,10 +10378,10 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalPanoptesX.g:4095:3: (enumLiteral_2= 'String' )
+                    // InternalPanoptesX.g:4097:3: (enumLiteral_2= 'String' )
                     {
-                    // InternalPanoptesX.g:4095:3: (enumLiteral_2= 'String' )
-                    // InternalPanoptesX.g:4096:4: enumLiteral_2= 'String'
+                    // InternalPanoptesX.g:4097:3: (enumLiteral_2= 'String' )
+                    // InternalPanoptesX.g:4098:4: enumLiteral_2= 'String'
                     {
                     enumLiteral_2=(Token)match(input,82,FOLLOW_2); 
 
@@ -10378,10 +10395,10 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalPanoptesX.g:4103:3: (enumLiteral_3= 'Boolean' )
+                    // InternalPanoptesX.g:4105:3: (enumLiteral_3= 'Boolean' )
                     {
-                    // InternalPanoptesX.g:4103:3: (enumLiteral_3= 'Boolean' )
-                    // InternalPanoptesX.g:4104:4: enumLiteral_3= 'Boolean'
+                    // InternalPanoptesX.g:4105:3: (enumLiteral_3= 'Boolean' )
+                    // InternalPanoptesX.g:4106:4: enumLiteral_3= 'Boolean'
                     {
                     enumLiteral_3=(Token)match(input,83,FOLLOW_2); 
 
@@ -10475,12 +10492,11 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_53 = new BitSet(new long[]{0x0000000000200000L});
     public static final BitSet FOLLOW_54 = new BitSet(new long[]{0x0000024000020000L});
     public static final BitSet FOLLOW_55 = new BitSet(new long[]{0x0000024000028000L});
-    public static final BitSet FOLLOW_56 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_57 = new BitSet(new long[]{0x0000000000000000L,0x00000000000F0000L});
-    public static final BitSet FOLLOW_58 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000010L});
-    public static final BitSet FOLLOW_59 = new BitSet(new long[]{0x0001000000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_60 = new BitSet(new long[]{0x0001000000020000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_61 = new BitSet(new long[]{0x0001000000028000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_62 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_56 = new BitSet(new long[]{0x0000000000000000L,0x00000000000F0000L});
+    public static final BitSet FOLLOW_57 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000010L});
+    public static final BitSet FOLLOW_58 = new BitSet(new long[]{0x0001000000000000L,0x0000000000000040L});
+    public static final BitSet FOLLOW_59 = new BitSet(new long[]{0x0001000000020000L,0x0000000000000040L});
+    public static final BitSet FOLLOW_60 = new BitSet(new long[]{0x0001000000028000L,0x0000000000000040L});
+    public static final BitSet FOLLOW_61 = new BitSet(new long[]{0x0000000000000010L});
 
 }

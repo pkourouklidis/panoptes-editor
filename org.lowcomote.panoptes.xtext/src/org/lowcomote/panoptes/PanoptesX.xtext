@@ -244,7 +244,7 @@ Parameter returns Parameter:
 	{Parameter}
 	(mandatory?='mandatory')?
 	name=EString
-	 ':' type=parameterType
+	 (':' type=parameterType)?
 ;
 
 enum parameterType returns parameterType:

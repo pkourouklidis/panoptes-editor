@@ -130,6 +130,7 @@ public class PanoptesXParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getActionAccess().getGroup_4_1(), "rule__Action__Group_4_1__0");
 			builder.put(grammarAccess.getActionAccess().getGroup_4_1_2(), "rule__Action__Group_4_1_2__0");
 			builder.put(grammarAccess.getParameterAccess().getGroup(), "rule__Parameter__Group__0");
+			builder.put(grammarAccess.getParameterAccess().getGroup_3(), "rule__Parameter__Group_3__0");
 			builder.put(grammarAccess.getParameterValueEntryAccess().getGroup(), "rule__ParameterValueEntry__Group__0");
 			builder.put(grammarAccess.getActionExecutionAccess().getGroup(), "rule__ActionExecution__Group__0");
 			builder.put(grammarAccess.getActionExecutionAccess().getGroup_4_0(), "rule__ActionExecution__Group_4_0__0");
@@ -236,7 +237,7 @@ public class PanoptesXParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getActionAccess().getAdditionalParametersAssignment_4_1_2_1(), "rule__Action__AdditionalParametersAssignment_4_1_2_1");
 			builder.put(grammarAccess.getParameterAccess().getMandatoryAssignment_1(), "rule__Parameter__MandatoryAssignment_1");
 			builder.put(grammarAccess.getParameterAccess().getNameAssignment_2(), "rule__Parameter__NameAssignment_2");
-			builder.put(grammarAccess.getParameterAccess().getTypeAssignment_4(), "rule__Parameter__TypeAssignment_4");
+			builder.put(grammarAccess.getParameterAccess().getTypeAssignment_3_1(), "rule__Parameter__TypeAssignment_3_1");
 			builder.put(grammarAccess.getParameterValueEntryAccess().getKeyAssignment_1(), "rule__ParameterValueEntry__KeyAssignment_1");
 			builder.put(grammarAccess.getParameterValueEntryAccess().getValueAssignment_3(), "rule__ParameterValueEntry__ValueAssignment_3");
 			builder.put(grammarAccess.getActionExecutionAccess().getNameAssignment_2(), "rule__ActionExecution__NameAssignment_2");

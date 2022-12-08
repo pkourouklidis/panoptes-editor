@@ -8253,7 +8253,6 @@ rule__Parameter__Group__3
 	}
 :
 	rule__Parameter__Group__3__Impl
-	rule__Parameter__Group__4
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -8265,35 +8264,63 @@ rule__Parameter__Group__3__Impl
 	}
 :
 (
-	{ before(grammarAccess.getParameterAccess().getColonKeyword_3()); }
-	':'
-	{ after(grammarAccess.getParameterAccess().getColonKeyword_3()); }
+	{ before(grammarAccess.getParameterAccess().getGroup_3()); }
+	(rule__Parameter__Group_3__0)?
+	{ after(grammarAccess.getParameterAccess().getGroup_3()); }
 )
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Parameter__Group__4
+
+rule__Parameter__Group_3__0
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
-	rule__Parameter__Group__4__Impl
+	rule__Parameter__Group_3__0__Impl
+	rule__Parameter__Group_3__1
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Parameter__Group__4__Impl
+rule__Parameter__Group_3__0__Impl
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 (
-	{ before(grammarAccess.getParameterAccess().getTypeAssignment_4()); }
-	(rule__Parameter__TypeAssignment_4)
-	{ after(grammarAccess.getParameterAccess().getTypeAssignment_4()); }
+	{ before(grammarAccess.getParameterAccess().getColonKeyword_3_0()); }
+	':'
+	{ after(grammarAccess.getParameterAccess().getColonKeyword_3_0()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Parameter__Group_3__1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__Parameter__Group_3__1__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Parameter__Group_3__1__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getParameterAccess().getTypeAssignment_3_1()); }
+	(rule__Parameter__TypeAssignment_3_1)
+	{ after(grammarAccess.getParameterAccess().getTypeAssignment_3_1()); }
 )
 ;
 finally {
@@ -11699,15 +11726,15 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Parameter__TypeAssignment_4
+rule__Parameter__TypeAssignment_3_1
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getParameterAccess().getTypeParameterTypeEnumRuleCall_4_0()); }
+		{ before(grammarAccess.getParameterAccess().getTypeParameterTypeEnumRuleCall_3_1_0()); }
 		ruleparameterType
-		{ after(grammarAccess.getParameterAccess().getTypeParameterTypeEnumRuleCall_4_0()); }
+		{ after(grammarAccess.getParameterAccess().getTypeParameterTypeEnumRuleCall_3_1_0()); }
 	)
 ;
 finally {

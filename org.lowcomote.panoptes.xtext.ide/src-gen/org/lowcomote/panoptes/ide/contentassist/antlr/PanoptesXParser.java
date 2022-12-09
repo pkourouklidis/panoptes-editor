@@ -42,7 +42,6 @@ public class PanoptesXParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getHigherOrderAlgorithmExecutionAccess().getAlternatives_4_4_0(), "rule__HigherOrderAlgorithmExecution__Alternatives_4_4_0");
 			builder.put(grammarAccess.getTemporalTriggerAccess().getAlternatives(), "rule__TemporalTrigger__Alternatives");
 			builder.put(grammarAccess.getEStringAccess().getAlternatives(), "rule__EString__Alternatives");
-			builder.put(grammarAccess.getEBooleanAccess().getAlternatives(), "rule__EBoolean__Alternatives");
 			builder.put(grammarAccess.getStatisticalVariableTypeAccess().getAlternatives(), "rule__StatisticalVariableType__Alternatives");
 			builder.put(grammarAccess.getFrequencyEnumAccess().getAlternatives(), "rule__FrequencyEnum__Alternatives");
 			builder.put(grammarAccess.getParameterTypeAccess().getAlternatives(), "rule__ParameterType__Alternatives");
@@ -137,6 +136,7 @@ public class PanoptesXParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getActionExecutionAccess().getGroup_4_1(), "rule__ActionExecution__Group_4_1__0");
 			builder.put(grammarAccess.getActionExecutionAccess().getGroup_4_1_3(), "rule__ActionExecution__Group_4_1_3__0");
 			builder.put(grammarAccess.getEIntegerObjectAccess().getGroup(), "rule__EIntegerObject__Group__0");
+			builder.put(grammarAccess.getParameterLiteralAccess().getGroup(), "rule__ParameterLiteral__Group__0");
 			builder.put(grammarAccess.getPlatformAccess().getFeatureStoreAssignment_0(), "rule__Platform__FeatureStoreAssignment_0");
 			builder.put(grammarAccess.getPlatformAccess().getMlModelsAssignment_1(), "rule__Platform__MlModelsAssignment_1");
 			builder.put(grammarAccess.getPlatformAccess().getDeploymentsAssignment_2(), "rule__Platform__DeploymentsAssignment_2");

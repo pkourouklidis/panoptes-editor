@@ -161,7 +161,7 @@ BaseAlgorithmExecution returns BaseAlgorithmExecution:
 		(
 			('algorithm' algorithm=[BaseAlgorithm|EString]) &
 			('live' 'data' currentIOValues+=[ModelIO|EString] ( "," currentIOValues+=[ModelIO|EString])*)? &
-			('historic' 'data' historicIOValues+=[ModelIO|EString] ( "," historicIOValues+=[ModelIO|EString])*)? &
+			('historical' 'data' historicIOValues+=[ModelIO|EString] ( "," historicIOValues+=[ModelIO|EString])*)? &
 			('actions' ActionExecutionMap+=actionExecutionEntry ( "," ActionExecutionMap+=actionExecutionEntry)*) &
 			('parameter' 'values' parameterValueMap+=parameterValueEntry ( "," parameterValueMap+=parameterValueEntry)*)?
 		)
@@ -254,7 +254,7 @@ parameterValueEntry returns parameterValueEntry:
 	{parameterValueEntry}
 	key=EString
 	'='
-	value=EString
+	value=ParameterLiteral
 ;
 
 ActionExecution returns ActionExecution:
@@ -272,9 +272,9 @@ EIntegerObject returns ecore::EIntegerObject:
 	'-'? INT;
 
 EString returns ecore::EString:
-	STRING | PANOPTESSTRING;
+	STRING | SAFESTRING;
+	
+ParameterLiteral returns ecore::EString:
+	'-'? (INT)? (SAFESTRING)?;
 
-EBoolean returns ecore::EBoolean:
-	'true' | 'false';
-
-terminal PANOPTESSTRING: ('a'..'z'|'A'..'Z'|'_'|'.'|'@') ('a'..'z'|'A'..'Z'|'_'|'.'|'@'|'0'..'9')*;
+terminal SAFESTRING: ('a'..'z'|'A'..'Z'|'_'|'.'|'@') ('a'..'z'|'A'..'Z'|'_'|'.'|'-'|'@'|'0'..'9')*;

@@ -56,8 +56,8 @@ public class InternalPanoptesXLexer extends Lexer {
     public static final int T__70=70;
     public static final int T__71=71;
     public static final int T__72=72;
-    public static final int RULE_PANOPTESSTRING=5;
     public static final int RULE_STRING=4;
+    public static final int RULE_SAFESTRING=5;
     public static final int RULE_SL_COMMENT=9;
     public static final int T__37=37;
     public static final int T__38=38;
@@ -1613,13 +1613,13 @@ public class InternalPanoptesXLexer extends Lexer {
     }
     // $ANTLR end "T__83"
 
-    // $ANTLR start "RULE_PANOPTESSTRING"
-    public final void mRULE_PANOPTESSTRING() throws RecognitionException {
+    // $ANTLR start "RULE_SAFESTRING"
+    public final void mRULE_SAFESTRING() throws RecognitionException {
         try {
-            int _type = RULE_PANOPTESSTRING;
+            int _type = RULE_SAFESTRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPanoptesX.g:11838:21: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '.' | '@' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '.' | '@' | '0' .. '9' )* )
-            // InternalPanoptesX.g:11838:23: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '.' | '@' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '.' | '@' | '0' .. '9' )*
+            // InternalPanoptesX.g:11944:17: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '.' | '@' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '.' | '-' | '@' | '0' .. '9' )* )
+            // InternalPanoptesX.g:11944:19: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '.' | '@' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '.' | '-' | '@' | '0' .. '9' )*
             {
             if ( input.LA(1)=='.'||(input.LA(1)>='@' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z') ) {
                 input.consume();
@@ -1630,13 +1630,13 @@ public class InternalPanoptesXLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalPanoptesX.g:11838:55: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '.' | '@' | '0' .. '9' )*
+            // InternalPanoptesX.g:11944:51: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '.' | '-' | '@' | '0' .. '9' )*
             loop1:
             do {
                 int alt1=2;
                 int LA1_0 = input.LA(1);
 
-                if ( (LA1_0=='.'||(LA1_0>='0' && LA1_0<='9')||(LA1_0>='@' && LA1_0<='Z')||LA1_0=='_'||(LA1_0>='a' && LA1_0<='z')) ) {
+                if ( ((LA1_0>='-' && LA1_0<='.')||(LA1_0>='0' && LA1_0<='9')||(LA1_0>='@' && LA1_0<='Z')||LA1_0=='_'||(LA1_0>='a' && LA1_0<='z')) ) {
                     alt1=1;
                 }
 
@@ -1645,7 +1645,7 @@ public class InternalPanoptesXLexer extends Lexer {
             	case 1 :
             	    // InternalPanoptesX.g:
             	    {
-            	    if ( input.LA(1)=='.'||(input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='@' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z') ) {
+            	    if ( (input.LA(1)>='-' && input.LA(1)<='.')||(input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='@' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z') ) {
             	        input.consume();
 
             	    }
@@ -1672,17 +1672,17 @@ public class InternalPanoptesXLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "RULE_PANOPTESSTRING"
+    // $ANTLR end "RULE_SAFESTRING"
 
     // $ANTLR start "RULE_ID"
     public final void mRULE_ID() throws RecognitionException {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPanoptesX.g:11840:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // InternalPanoptesX.g:11840:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalPanoptesX.g:11946:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalPanoptesX.g:11946:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // InternalPanoptesX.g:11840:11: ( '^' )?
+            // InternalPanoptesX.g:11946:11: ( '^' )?
             int alt2=2;
             int LA2_0 = input.LA(1);
 
@@ -1691,7 +1691,7 @@ public class InternalPanoptesXLexer extends Lexer {
             }
             switch (alt2) {
                 case 1 :
-                    // InternalPanoptesX.g:11840:11: '^'
+                    // InternalPanoptesX.g:11946:11: '^'
                     {
                     match('^'); 
 
@@ -1709,7 +1709,7 @@ public class InternalPanoptesXLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalPanoptesX.g:11840:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalPanoptesX.g:11946:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop3:
             do {
                 int alt3=2;
@@ -1758,10 +1758,10 @@ public class InternalPanoptesXLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPanoptesX.g:11842:10: ( ( '0' .. '9' )+ )
-            // InternalPanoptesX.g:11842:12: ( '0' .. '9' )+
+            // InternalPanoptesX.g:11948:10: ( ( '0' .. '9' )+ )
+            // InternalPanoptesX.g:11948:12: ( '0' .. '9' )+
             {
-            // InternalPanoptesX.g:11842:12: ( '0' .. '9' )+
+            // InternalPanoptesX.g:11948:12: ( '0' .. '9' )+
             int cnt4=0;
             loop4:
             do {
@@ -1775,7 +1775,7 @@ public class InternalPanoptesXLexer extends Lexer {
 
                 switch (alt4) {
             	case 1 :
-            	    // InternalPanoptesX.g:11842:13: '0' .. '9'
+            	    // InternalPanoptesX.g:11948:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -1807,10 +1807,10 @@ public class InternalPanoptesXLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPanoptesX.g:11844:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // InternalPanoptesX.g:11844:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalPanoptesX.g:11950:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // InternalPanoptesX.g:11950:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // InternalPanoptesX.g:11844:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalPanoptesX.g:11950:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -1828,10 +1828,10 @@ public class InternalPanoptesXLexer extends Lexer {
             }
             switch (alt7) {
                 case 1 :
-                    // InternalPanoptesX.g:11844:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // InternalPanoptesX.g:11950:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // InternalPanoptesX.g:11844:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalPanoptesX.g:11950:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -1847,7 +1847,7 @@ public class InternalPanoptesXLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // InternalPanoptesX.g:11844:21: '\\\\' .
+                    	    // InternalPanoptesX.g:11950:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -1855,7 +1855,7 @@ public class InternalPanoptesXLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalPanoptesX.g:11844:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalPanoptesX.g:11950:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1880,10 +1880,10 @@ public class InternalPanoptesXLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalPanoptesX.g:11844:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // InternalPanoptesX.g:11950:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // InternalPanoptesX.g:11844:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalPanoptesX.g:11950:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop6:
                     do {
                         int alt6=3;
@@ -1899,7 +1899,7 @@ public class InternalPanoptesXLexer extends Lexer {
 
                         switch (alt6) {
                     	case 1 :
-                    	    // InternalPanoptesX.g:11844:54: '\\\\' .
+                    	    // InternalPanoptesX.g:11950:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -1907,7 +1907,7 @@ public class InternalPanoptesXLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalPanoptesX.g:11844:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalPanoptesX.g:11950:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1950,12 +1950,12 @@ public class InternalPanoptesXLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPanoptesX.g:11846:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalPanoptesX.g:11846:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalPanoptesX.g:11952:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalPanoptesX.g:11952:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // InternalPanoptesX.g:11846:24: ( options {greedy=false; } : . )*
+            // InternalPanoptesX.g:11952:24: ( options {greedy=false; } : . )*
             loop8:
             do {
                 int alt8=2;
@@ -1980,7 +1980,7 @@ public class InternalPanoptesXLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // InternalPanoptesX.g:11846:52: .
+            	    // InternalPanoptesX.g:11952:52: .
             	    {
             	    matchAny(); 
 
@@ -2010,12 +2010,12 @@ public class InternalPanoptesXLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPanoptesX.g:11848:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // InternalPanoptesX.g:11848:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalPanoptesX.g:11954:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalPanoptesX.g:11954:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // InternalPanoptesX.g:11848:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalPanoptesX.g:11954:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop9:
             do {
                 int alt9=2;
@@ -2028,7 +2028,7 @@ public class InternalPanoptesXLexer extends Lexer {
 
                 switch (alt9) {
             	case 1 :
-            	    // InternalPanoptesX.g:11848:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalPanoptesX.g:11954:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -2048,7 +2048,7 @@ public class InternalPanoptesXLexer extends Lexer {
                 }
             } while (true);
 
-            // InternalPanoptesX.g:11848:40: ( ( '\\r' )? '\\n' )?
+            // InternalPanoptesX.g:11954:40: ( ( '\\r' )? '\\n' )?
             int alt11=2;
             int LA11_0 = input.LA(1);
 
@@ -2057,9 +2057,9 @@ public class InternalPanoptesXLexer extends Lexer {
             }
             switch (alt11) {
                 case 1 :
-                    // InternalPanoptesX.g:11848:41: ( '\\r' )? '\\n'
+                    // InternalPanoptesX.g:11954:41: ( '\\r' )? '\\n'
                     {
-                    // InternalPanoptesX.g:11848:41: ( '\\r' )?
+                    // InternalPanoptesX.g:11954:41: ( '\\r' )?
                     int alt10=2;
                     int LA10_0 = input.LA(1);
 
@@ -2068,7 +2068,7 @@ public class InternalPanoptesXLexer extends Lexer {
                     }
                     switch (alt10) {
                         case 1 :
-                            // InternalPanoptesX.g:11848:41: '\\r'
+                            // InternalPanoptesX.g:11954:41: '\\r'
                             {
                             match('\r'); 
 
@@ -2100,10 +2100,10 @@ public class InternalPanoptesXLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPanoptesX.g:11850:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalPanoptesX.g:11850:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalPanoptesX.g:11956:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalPanoptesX.g:11956:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalPanoptesX.g:11850:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalPanoptesX.g:11956:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt12=0;
             loop12:
             do {
@@ -2157,8 +2157,8 @@ public class InternalPanoptesXLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalPanoptesX.g:11852:16: ( . )
-            // InternalPanoptesX.g:11852:18: .
+            // InternalPanoptesX.g:11958:16: ( . )
+            // InternalPanoptesX.g:11958:18: .
             {
             matchAny(); 
 
@@ -2173,7 +2173,7 @@ public class InternalPanoptesXLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // InternalPanoptesX.g:1:8: ( T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | RULE_PANOPTESSTRING | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        // InternalPanoptesX.g:1:8: ( T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | RULE_SAFESTRING | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
         int alt13=80;
         alt13 = dfa13.predict(input);
         switch (alt13) {
@@ -2682,56 +2682,56 @@ public class InternalPanoptesXLexer extends Lexer {
                 }
                 break;
             case 73 :
-                // InternalPanoptesX.g:1:442: RULE_PANOPTESSTRING
+                // InternalPanoptesX.g:1:442: RULE_SAFESTRING
                 {
-                mRULE_PANOPTESSTRING(); 
+                mRULE_SAFESTRING(); 
 
                 }
                 break;
             case 74 :
-                // InternalPanoptesX.g:1:462: RULE_ID
+                // InternalPanoptesX.g:1:458: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
             case 75 :
-                // InternalPanoptesX.g:1:470: RULE_INT
+                // InternalPanoptesX.g:1:466: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
             case 76 :
-                // InternalPanoptesX.g:1:479: RULE_STRING
+                // InternalPanoptesX.g:1:475: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
             case 77 :
-                // InternalPanoptesX.g:1:491: RULE_ML_COMMENT
+                // InternalPanoptesX.g:1:487: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
             case 78 :
-                // InternalPanoptesX.g:1:507: RULE_SL_COMMENT
+                // InternalPanoptesX.g:1:503: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
             case 79 :
-                // InternalPanoptesX.g:1:523: RULE_WS
+                // InternalPanoptesX.g:1:519: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
             case 80 :
-                // InternalPanoptesX.g:1:531: RULE_ANY_OTHER
+                // InternalPanoptesX.g:1:527: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -2749,7 +2749,7 @@ public class InternalPanoptesXLexer extends Lexer {
     static final String DFA13_eofS =
         "\u01e1\uffff";
     static final String DFA13_minS =
-        "\1\0\14\60\2\uffff\1\60\1\uffff\6\60\1\uffff\7\60\1\76\2\60\1\uffff\1\60\1\101\2\uffff\2\0\1\52\2\uffff\3\60\1\uffff\3\60\1\56\16\60\2\uffff\1\60\1\uffff\13\60\1\uffff\12\60\2\uffff\2\60\7\uffff\2\56\7\60\1\uffff\2\60\1\56\3\60\1\56\44\60\1\uffff\1\60\1\uffff\11\60\1\uffff\2\56\1\60\1\uffff\3\56\1\60\1\56\4\60\1\56\10\60\1\56\2\60\1\56\20\60\2\56\6\60\2\uffff\1\60\3\uffff\1\60\1\uffff\3\60\1\56\1\uffff\5\60\1\56\2\60\1\uffff\3\60\1\uffff\20\60\2\uffff\10\60\1\56\2\60\1\uffff\5\60\1\uffff\2\56\6\60\1\56\3\60\1\56\2\60\1\56\1\60\3\56\4\60\1\40\1\56\3\60\1\56\1\uffff\1\56\6\60\1\56\2\uffff\1\56\1\60\1\56\3\60\1\uffff\1\60\3\56\1\uffff\2\60\1\uffff\1\56\1\60\3\uffff\2\60\1\56\1\60\2\uffff\1\56\1\60\1\56\2\uffff\2\60\3\56\1\60\2\uffff\1\56\1\uffff\1\56\3\60\1\56\3\uffff\2\60\1\uffff\1\60\1\56\1\60\1\uffff\1\60\1\uffff\1\60\1\uffff\2\60\3\uffff\1\56\2\uffff\1\60\1\56\1\60\1\uffff\1\56\2\60\1\uffff\1\56\4\60\1\uffff\1\60\1\56\1\uffff\1\56\1\uffff\2\60\1\uffff\1\56\3\60\1\56\2\uffff\2\60\1\uffff\1\56\1\60\1\56\1\uffff\2\60\1\uffff\1\56\1\uffff\4\60\1\uffff\5\60\1\56\3\60\1\uffff\11\60\1\56\1\60\1\56\1\uffff\3\60\1\uffff\1\56\2\60\1\uffff\10\60\1\56\1\60\1\uffff\1\60\1\56\1\uffff";
+        "\1\0\14\60\2\uffff\1\60\1\uffff\6\60\1\uffff\7\60\1\76\2\60\1\uffff\1\60\1\101\2\uffff\2\0\1\52\2\uffff\3\60\1\uffff\3\60\1\55\16\60\2\uffff\1\60\1\uffff\13\60\1\uffff\12\60\2\uffff\2\60\7\uffff\2\55\7\60\1\uffff\2\60\1\55\3\60\1\55\44\60\1\uffff\1\60\1\uffff\11\60\1\uffff\2\55\1\60\1\uffff\3\55\1\60\1\55\4\60\1\55\10\60\1\55\2\60\1\55\20\60\2\55\6\60\2\uffff\1\60\3\uffff\1\60\1\uffff\3\60\1\55\1\uffff\5\60\1\55\2\60\1\uffff\3\60\1\uffff\20\60\2\uffff\10\60\1\55\2\60\1\uffff\5\60\1\uffff\2\55\6\60\1\55\3\60\1\55\2\60\1\55\1\60\3\55\4\60\1\40\1\55\3\60\1\55\1\uffff\1\55\6\60\1\55\2\uffff\1\55\1\60\1\55\3\60\1\uffff\1\60\3\55\1\uffff\2\60\1\uffff\1\55\1\60\3\uffff\2\60\1\55\1\60\2\uffff\1\55\1\60\1\55\2\uffff\2\60\3\55\1\60\2\uffff\1\55\1\uffff\1\55\3\60\1\55\3\uffff\2\60\1\uffff\1\60\1\55\1\60\1\uffff\1\60\1\uffff\1\60\1\uffff\2\60\3\uffff\1\55\2\uffff\1\60\1\55\1\60\1\uffff\1\55\2\60\1\uffff\1\55\4\60\1\uffff\1\60\1\55\1\uffff\1\55\1\uffff\2\60\1\uffff\1\55\3\60\1\55\2\uffff\2\60\1\uffff\1\55\1\60\1\55\1\uffff\2\60\1\uffff\1\55\1\uffff\4\60\1\uffff\5\60\1\55\3\60\1\uffff\11\60\1\55\1\60\1\55\1\uffff\3\60\1\uffff\1\55\2\60\1\uffff\10\60\1\55\1\60\1\uffff\1\60\1\55\1\uffff";
     static final String DFA13_maxS =
         "\1\uffff\14\172\2\uffff\1\172\1\uffff\6\172\1\uffff\7\172\1\76\2\172\1\uffff\2\172\2\uffff\2\uffff\1\57\2\uffff\3\172\1\uffff\22\172\2\uffff\1\172\1\uffff\13\172\1\uffff\12\172\2\uffff\2\172\7\uffff\11\172\1\uffff\53\172\1\uffff\1\172\1\uffff\11\172\1\uffff\3\172\1\uffff\56\172\2\uffff\1\172\3\uffff\1\172\1\uffff\4\172\1\uffff\10\172\1\uffff\3\172\1\uffff\20\172\2\uffff\13\172\1\uffff\5\172\1\uffff\36\172\1\uffff\10\172\2\uffff\6\172\1\uffff\4\172\1\uffff\2\172\1\uffff\2\172\3\uffff\4\172\2\uffff\3\172\2\uffff\6\172\2\uffff\1\172\1\uffff\5\172\3\uffff\2\172\1\uffff\3\172\1\uffff\1\172\1\uffff\1\172\1\uffff\2\172\3\uffff\1\172\2\uffff\3\172\1\uffff\3\172\1\uffff\5\172\1\uffff\2\172\1\uffff\1\172\1\uffff\2\172\1\uffff\5\172\2\uffff\2\172\1\uffff\3\172\1\uffff\2\172\1\uffff\1\172\1\uffff\4\172\1\uffff\11\172\1\uffff\14\172\1\uffff\3\172\1\uffff\3\172\1\uffff\12\172\1\uffff\2\172\1\uffff";
     static final String DFA13_acceptS =
@@ -2808,7 +2808,7 @@ public class InternalPanoptesXLexer extends Lexer {
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\3\60\1\155\11\60\1\154\14\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\23\60\1\156\6\60",
-            "\1\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\3\60\1\157\26\60",
+            "\2\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\3\60\1\157\26\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\23\60\1\161\6\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\22\60\1\162\7\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\4\60\1\163\6\60\1\164\16\60",
@@ -2860,8 +2860,8 @@ public class InternalPanoptesXLexer extends Lexer {
             "",
             "",
             "",
-            "\1\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\10\60\1\u009b\21\60",
-            "\1\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\10\60\1\u009d\21\60",
+            "\2\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\10\60\1\u009b\21\60",
+            "\2\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\10\60\1\u009d\21\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\3\60\1\u009f\26\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\23\60\1\u00a0\6\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\4\60\1\u00a1\25\60",
@@ -2872,11 +2872,11 @@ public class InternalPanoptesXLexer extends Lexer {
             "",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\17\60\1\u00a6\12\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\4\60\1\u00a7\25\60",
-            "\1\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\2\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\30\60\1\u00a9\1\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\21\60\1\u00aa\10\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\23\60\1\u00ab\6\60",
-            "\1\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\2\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\1\u00ad\31\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\12\60\1\u00ae\17\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\21\60\1\u00af\10\60",
@@ -2926,20 +2926,20 @@ public class InternalPanoptesXLexer extends Lexer {
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\24\60\1\u00d9\5\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\21\60\1\u00da\10\60",
             "",
-            "\1\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
-            "\1\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\2\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\2\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\16\60\1\u00dd\13\60",
             "",
-            "\1\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
-            "\1\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
-            "\1\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\2\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\2\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\2\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\6\60\1\u00e1\23\60",
-            "\1\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\2\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\15\60\1\u00e3\14\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\4\60\1\u00e4\25\60",
             "\12\60\7\uffff\1\u00e5\31\60\4\uffff\1\60\1\uffff\32\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\13\60\1\u00e6\16\60",
-            "\1\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\2\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\24\60\1\u00e8\5\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\24\60\1\u00e9\5\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\23\60\1\u00ea\6\60",
@@ -2948,10 +2948,10 @@ public class InternalPanoptesXLexer extends Lexer {
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\30\60\1\u00ed\1\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\13\60\1\u00ee\16\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\13\60\1\u00ef\16\60",
-            "\1\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\2\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\4\60\1\u00f1\3\60\1\u00f2\21\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\10\60\1\u00f3\21\60",
-            "\1\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\2\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\10\60\1\u00f5\21\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\14\60\1\u00f6\15\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\16\60\1\u00f7\13\60",
@@ -2968,8 +2968,8 @@ public class InternalPanoptesXLexer extends Lexer {
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\24\60\1\u0102\5\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\24\60\1\u0103\5\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\23\60\1\u0104\6\60",
-            "\1\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
-            "\1\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\2\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\2\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\15\60\1\u0107\14\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\1\u0108\31\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\16\60\1\u0109\13\60",
@@ -2987,14 +2987,14 @@ public class InternalPanoptesXLexer extends Lexer {
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\6\60\1\u010f\23\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\1\u0110\31\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\13\60\1\u0111\16\60",
-            "\1\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\2\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
             "",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\21\60\1\u0113\10\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\21\60\1\u0114\10\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\10\60\1\u0115\21\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\10\60\1\u0116\21\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\23\60\1\u0117\6\60",
-            "\1\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\2\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\22\60\1\u0119\7\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\22\60\1\u011a\7\60",
             "",
@@ -3028,7 +3028,7 @@ public class InternalPanoptesXLexer extends Lexer {
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\1\u0134\3\60\1\u0133\25\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\10\60\1\u0135\21\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\21\60\1\u0136\10\60",
-            "\1\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\2\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\15\60\1\u0138\14\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\6\60\1\u0139\23\60",
             "",
@@ -3038,93 +3038,93 @@ public class InternalPanoptesXLexer extends Lexer {
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\15\60\1\u013d\14\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\4\60\1\u013f\3\60\1\u013e\21\60",
             "",
-            "\1\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
-            "\1\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\2\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\2\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\23\60\1\u0142\6\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\4\60\1\u0143\25\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\4\60\1\u0144\25\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\23\60\1\u0145\6\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\23\60\1\u0146\6\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\14\60\1\u0147\15\60",
-            "\1\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\2\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\23\60\1\u0149\6\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\22\60\1\u014a\7\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\22\60\1\u014b\7\60",
-            "\1\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\22\60\1\u014c\7\60",
+            "\2\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\22\60\1\u014c\7\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\23\60\1\u014e\6\60",
             "\12\60\7\uffff\16\60\1\u014f\13\60\4\uffff\1\60\1\uffff\32\60",
-            "\1\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\2\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\21\60\1\u0151\10\60",
-            "\1\57\1\uffff\12\60\6\uffff\1\57\4\60\1\u0152\25\60\4\uffff\1\60\1\uffff\32\60",
-            "\1\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
-            "\1\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\2\57\1\uffff\12\60\6\uffff\1\57\4\60\1\u0152\25\60\4\uffff\1\60\1\uffff\32\60",
+            "\2\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\2\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\21\60\1\u0156\10\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\16\60\1\u0157\13\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\4\60\1\u0158\25\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\10\60\1\u0159\21\60",
             "\1\u015a\17\uffff\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32\60",
-            "\1\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\2\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\3\60\1\u015c\26\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\23\60\1\u015d\6\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\2\60\1\u015e\27\60",
-            "\1\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\2\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
             "",
-            "\1\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\2\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\16\60\1\u0161\13\60",
             "\12\60\7\uffff\22\60\1\u0162\7\60\4\uffff\1\60\1\uffff\32\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\22\60\1\u0163\7\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\22\60\1\u0164\7\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\23\60\1\u0165\6\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\16\60\1\u0166\13\60",
-            "\1\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\2\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
             "",
             "",
-            "\1\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\2\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\22\60\1\u0169\7\60",
-            "\1\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\2\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\10\60\1\u016c\11\60\1\u016b\7\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\4\60\1\u016d\25\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\4\60\1\u016e\25\60",
             "",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\30\60\1\u016f\1\60",
-            "\1\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
-            "\1\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
-            "\1\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\2\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\2\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\2\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
             "",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\7\60\1\u0173\22\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\21\60\1\u0174\10\60",
             "",
-            "\1\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\2\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\27\60\1\u0176\2\60",
             "",
             "",
             "",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\30\60\1\u0177\1\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\24\60\1\u0178\5\60",
-            "\1\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\2\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\2\60\1\u017a\27\60",
             "",
             "",
-            "\1\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\2\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\10\60\1\u017c\21\60",
-            "\1\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\2\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
             "",
             "",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\21\60\1\u017e\10\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\23\60\1\u017f\6\60",
-            "\1\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
-            "\1\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
-            "\1\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\2\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\2\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\2\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\15\60\1\u0183\14\60",
             "",
             "",
-            "\1\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\2\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
             "",
-            "\1\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\2\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\16\60\1\u0186\13\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\21\60\1\u0187\10\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\15\60\1\u0188\14\60",
-            "\1\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\2\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
             "",
             "",
             "",
@@ -3132,7 +3132,7 @@ public class InternalPanoptesXLexer extends Lexer {
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\3\60\1\u018b\26\60",
             "",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\4\60\1\u018c\25\60",
-            "\1\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\2\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\22\60\1\u018e\7\60",
             "",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\1\u018f\31\60",
@@ -3144,49 +3144,49 @@ public class InternalPanoptesXLexer extends Lexer {
             "",
             "",
             "",
-            "\1\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\2\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
             "",
             "",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\15\60\1\u0194\14\60",
-            "\1\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\22\60\1\u0195\7\60",
+            "\2\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\22\60\1\u0195\7\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\23\60\1\u0197\6\60",
             "",
-            "\1\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\2\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\4\60\1\u0199\25\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\2\60\1\u019a\27\60",
             "",
-            "\1\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\2\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\13\60\1\u019c\16\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\15\60\1\u019d\14\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\23\60\1\u019e\6\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\21\60\1\u019f\10\60",
             "",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\22\60\1\u01a0\7\60",
-            "\1\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\2\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
             "",
-            "\1\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\2\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
             "",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\21\60\1\u01a3\10\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\24\60\1\u01a4\5\60",
             "",
-            "\1\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\2\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\22\60\1\u01a6\7\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\7\60\1\u01a7\22\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\4\60\1\u01a8\25\60",
-            "\1\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\2\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
             "",
             "",
             "\12\60\7\uffff\1\u01aa\31\60\4\uffff\1\60\1\uffff\32\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\23\60\1\u01ab\6\60",
             "",
-            "\1\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\2\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\14\60\1\u01ad\15\60",
-            "\1\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\2\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
             "",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\13\60\1\u01af\16\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\10\60\1\u01b0\21\60",
             "",
-            "\1\57\1\uffff\12\60\6\uffff\1\57\4\60\1\u01b2\14\60\1\u01b1\10\60\4\uffff\1\60\1\uffff\32\60",
+            "\2\57\1\uffff\12\60\6\uffff\1\57\4\60\1\u01b2\14\60\1\u01b1\10\60\4\uffff\1\60\1\uffff\32\60",
             "",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\6\60\1\u01b4\23\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\16\60\1\u01b5\13\60",
@@ -3198,7 +3198,7 @@ public class InternalPanoptesXLexer extends Lexer {
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\15\60\1\u01ba\14\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\4\60\1\u01bb\25\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\21\60\1\u01bc\10\60",
-            "\1\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\2\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\23\60\1\u01be\6\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\2\60\1\u01bf\27\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\10\60\1\u01c0\21\60",
@@ -3212,15 +3212,15 @@ public class InternalPanoptesXLexer extends Lexer {
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\4\60\1\u01c7\25\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\10\60\1\u01c8\21\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\14\60\1\u01c9\15\60",
-            "\1\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\2\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\16\60\1\u01cb\13\60",
-            "\1\57\1\uffff\12\60\6\uffff\1\57\4\60\1\u01cd\14\60\1\u01cc\10\60\4\uffff\1\60\1\uffff\32\60",
+            "\2\57\1\uffff\12\60\6\uffff\1\57\4\60\1\u01cd\14\60\1\u01cc\10\60\4\uffff\1\60\1\uffff\32\60",
             "",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\15\60\1\u01cf\14\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\24\60\1\u01d0\5\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\27\60\1\u01d1\2\60",
             "",
-            "\1\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\2\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\15\60\1\u01d3\14\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\4\60\1\u01d4\25\60",
             "",
@@ -3232,11 +3232,11 @@ public class InternalPanoptesXLexer extends Lexer {
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\23\60\1\u01da\6\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\4\60\1\u01db\25\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\10\60\1\u01dc\21\60",
-            "\1\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\2\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\16\60\1\u01de\13\60",
             "",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\15\60\1\u01df\14\60",
-            "\1\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\2\57\1\uffff\12\60\6\uffff\1\57\32\60\4\uffff\1\60\1\uffff\32\60",
             ""
     };
 
@@ -3270,7 +3270,7 @@ public class InternalPanoptesXLexer extends Lexer {
             this.transition = DFA13_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | RULE_PANOPTESSTRING | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
+            return "1:1: Tokens : ( T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | RULE_SAFESTRING | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;

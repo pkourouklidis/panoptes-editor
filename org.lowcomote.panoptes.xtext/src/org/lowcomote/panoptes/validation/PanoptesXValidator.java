@@ -104,6 +104,7 @@ public class PanoptesXValidator extends AbstractPanoptesXValidator {
 					break;
 				case("Real"):
 					try {
+						System.out.println(entry.getValue());
 						Double.parseDouble(entry.getValue());
 					}
 					catch(Exception e) {

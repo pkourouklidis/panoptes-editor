@@ -21,7 +21,7 @@ public class ServerLauncher {
 	public static void main(String[] args) {
 		Server server = new Server(new InetSocketAddress("0.0.0.0", 8080));
 		WebAppContext ctx = new WebAppContext();
-		ctx.setExtraClasspath("modelEditor_lib/ace-1.3.3.jar;modelEditor_lib/org.eclipse.xtext.web-2.25.0.jar;modelEditor_lib/requirejs-2.3.6.jar;modelEditor_lib/jquery-3.5.1.jar");
+//		ctx.setExtraClasspath("modelEditor_lib/ace-1.3.3.jar;modelEditor_lib/org.eclipse.xtext.web-2.25.0.jar;modelEditor_lib/requirejs-2.3.6.jar;modelEditor_lib/jquery-3.5.1.jar");
 		ctx.setResourceBase("WebRoot");
 		ctx.setWelcomeFiles(new String[] {"index.html"});
 		ctx.setContextPath("/");

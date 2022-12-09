@@ -3731,9 +3731,9 @@ ruleparameterValueEntry returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getParameterValueEntryAccess().getValueEStringParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getParameterValueEntryAccess().getValueParameterLiteralParserRuleCall_3_0());
 				}
-				lv_value_3_0=ruleEString
+				lv_value_3_0=ruleParameterLiteral
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getParameterValueEntryRule());
@@ -3742,7 +3742,7 @@ ruleparameterValueEntry returns [EObject current=null]
 						$current,
 						"value",
 						lv_value_3_0,
-						"org.lowcomote.panoptes.PanoptesX.EString");
+						"org.lowcomote.panoptes.PanoptesX.ParameterLiteral");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -3973,13 +3973,57 @@ ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()
 			newLeafNode(this_STRING_0, grammarAccess.getEStringAccess().getSTRINGTerminalRuleCall_0());
 		}
 		    |
-		this_PANOPTESSTRING_1=RULE_PANOPTESSTRING
+		this_SAFESTRING_1=RULE_SAFESTRING
 		{
-			$current.merge(this_PANOPTESSTRING_1);
+			$current.merge(this_SAFESTRING_1);
 		}
 		{
-			newLeafNode(this_PANOPTESSTRING_1, grammarAccess.getEStringAccess().getPANOPTESSTRINGTerminalRuleCall_1());
+			newLeafNode(this_SAFESTRING_1, grammarAccess.getEStringAccess().getSAFESTRINGTerminalRuleCall_1());
 		}
+	)
+;
+
+// Entry rule entryRuleParameterLiteral
+entryRuleParameterLiteral returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getParameterLiteralRule()); }
+	iv_ruleParameterLiteral=ruleParameterLiteral
+	{ $current=$iv_ruleParameterLiteral.current.getText(); }
+	EOF;
+
+// Rule ParameterLiteral
+ruleParameterLiteral returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			kw='-'
+			{
+				$current.merge(kw);
+				newLeafNode(kw, grammarAccess.getParameterLiteralAccess().getHyphenMinusKeyword_0());
+			}
+		)?
+		(
+			this_INT_1=RULE_INT
+			{
+				$current.merge(this_INT_1);
+			}
+			{
+				newLeafNode(this_INT_1, grammarAccess.getParameterLiteralAccess().getINTTerminalRuleCall_1());
+			}
+		)?
+		(
+			this_SAFESTRING_2=RULE_SAFESTRING
+			{
+				$current.merge(this_SAFESTRING_2);
+			}
+			{
+				newLeafNode(this_SAFESTRING_2, grammarAccess.getParameterLiteralAccess().getSAFESTRINGTerminalRuleCall_2());
+			}
+		)?
 	)
 ;
 
@@ -4112,7 +4156,7 @@ ruleparameterType returns [Enumerator current=null]
 	)
 ;
 
-RULE_PANOPTESSTRING : ('a'..'z'|'A'..'Z'|'_'|'.'|'@') ('a'..'z'|'A'..'Z'|'_'|'.'|'@'|'0'..'9')*;
+RULE_SAFESTRING : ('a'..'z'|'A'..'Z'|'_'|'.'|'@') ('a'..'z'|'A'..'Z'|'_'|'.'|'-'|'@'|'0'..'9')*;
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 

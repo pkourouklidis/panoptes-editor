@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_STRING", "RULE_PANOPTESSTRING", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Model'", "'{'", "'uses'", "','", "'outputs'", "'}'", "'FeatureStore'", "'features'", "'entities'", "'labels'", "'request'", "'data'", "'keys'", "':'", "'requires'", "'predicts'", "'Deployment'", "'model'", "'inputs'", "'BaseAlgorithm'", "'codebase'", "'runtime'", "'severity'", "'levels'", "'accepts'", "'only'", "'parameters'", "'HigherOrderAlgorithm'", "'BaseAlgorithmRuntime'", "'endpoint'", "'HigherOrderAlgorithmRuntime'", "'BaseAlgorithmExecution'", "'algorithm'", "'live'", "'historic'", "'actions'", "'parameter'", "'values'", "'HigherOrderAlgorithmExecution'", "'observed'", "'execution'", "'minimum'", "'min'", "'observations'", "'maximum'", "'max'", "'->'", "'Trigger'", "'or'", "'execute'", "'every'", "'one'", "'samples'", "'predictions'", "'Action'", "'mandatory'", "'='", "'ActionExecution'", "'action'", "'-'", "'continuous'", "'categorical'", "'ordered categorical'", "'hour'", "'day'", "'week'", "'month'", "'year'", "'Integer'", "'Real'", "'String'", "'Boolean'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_STRING", "RULE_SAFESTRING", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Model'", "'{'", "'uses'", "','", "'outputs'", "'}'", "'FeatureStore'", "'features'", "'entities'", "'labels'", "'request'", "'data'", "'keys'", "':'", "'requires'", "'predicts'", "'Deployment'", "'model'", "'inputs'", "'BaseAlgorithm'", "'codebase'", "'runtime'", "'severity'", "'levels'", "'accepts'", "'only'", "'parameters'", "'HigherOrderAlgorithm'", "'BaseAlgorithmRuntime'", "'endpoint'", "'HigherOrderAlgorithmRuntime'", "'BaseAlgorithmExecution'", "'algorithm'", "'live'", "'historic'", "'actions'", "'parameter'", "'values'", "'HigherOrderAlgorithmExecution'", "'observed'", "'execution'", "'minimum'", "'min'", "'observations'", "'maximum'", "'max'", "'->'", "'Trigger'", "'or'", "'execute'", "'every'", "'one'", "'samples'", "'predictions'", "'Action'", "'mandatory'", "'='", "'ActionExecution'", "'action'", "'-'", "'continuous'", "'categorical'", "'ordered categorical'", "'hour'", "'day'", "'week'", "'month'", "'year'", "'Integer'", "'Real'", "'String'", "'Boolean'"
     };
     public static final int T__50=50;
     public static final int T__19=19;
@@ -68,8 +68,8 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
     public static final int T__70=70;
     public static final int T__71=71;
     public static final int T__72=72;
-    public static final int RULE_PANOPTESSTRING=6;
     public static final int RULE_STRING=5;
+    public static final int RULE_SAFESTRING=6;
     public static final int RULE_SL_COMMENT=9;
     public static final int T__37=37;
     public static final int T__38=38;
@@ -2018,11 +2018,11 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
                         if ( LA13_0 == 26 && ( getUnorderedGroupHelper().canSelect(grammarAccess.getFeatureAccess().getUnorderedGroup_2_1(), 1) || getUnorderedGroupHelper().canSelect(grammarAccess.getFeatureAccess().getUnorderedGroup_2_1(), 0) ) ) {
                             int LA13_2 = input.LA(2);
 
-                            if ( LA13_2 == 22 && getUnorderedGroupHelper().canSelect(grammarAccess.getFeatureAccess().getUnorderedGroup_2_1(), 1) ) {
-                                alt13=2;
-                            }
-                            else if ( LA13_2 == 20 && getUnorderedGroupHelper().canSelect(grammarAccess.getFeatureAccess().getUnorderedGroup_2_1(), 0) ) {
+                            if ( LA13_2 == 20 && getUnorderedGroupHelper().canSelect(grammarAccess.getFeatureAccess().getUnorderedGroup_2_1(), 0) ) {
                                 alt13=1;
+                            }
+                            else if ( LA13_2 == 22 && getUnorderedGroupHelper().canSelect(grammarAccess.getFeatureAccess().getUnorderedGroup_2_1(), 1) ) {
+                                alt13=2;
                             }
 
 
@@ -7714,7 +7714,7 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
                 int alt42=5;
                 int LA42_0 = input.LA(1);
 
-                if ( ( LA42_0 >= RULE_STRING && LA42_0 <= RULE_PANOPTESSTRING || LA42_0 == 63 ) && getUnorderedGroupHelper().canSelect(grammarAccess.getCompositeTriggerAccess().getUnorderedGroup_2(), 0) ) {
+                if ( ( LA42_0 >= RULE_STRING && LA42_0 <= RULE_SAFESTRING || LA42_0 == 63 ) && getUnorderedGroupHelper().canSelect(grammarAccess.getCompositeTriggerAccess().getUnorderedGroup_2(), 0) ) {
                     alt42=1;
                 }
                 else if ( LA42_0 == 71 && ( getUnorderedGroupHelper().canSelect(grammarAccess.getCompositeTriggerAccess().getUnorderedGroup_2(), 3) || getUnorderedGroupHelper().canSelect(grammarAccess.getCompositeTriggerAccess().getUnorderedGroup_2(), 2) || getUnorderedGroupHelper().canSelect(grammarAccess.getCompositeTriggerAccess().getUnorderedGroup_2(), 1) ) ) {
@@ -8125,7 +8125,7 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
             if ( (LA43_0==63) ) {
                 alt43=1;
             }
-            else if ( ((LA43_0>=RULE_STRING && LA43_0<=RULE_PANOPTESSTRING)) ) {
+            else if ( ((LA43_0>=RULE_STRING && LA43_0<=RULE_SAFESTRING)) ) {
                 alt43=2;
             }
             else {
@@ -9271,7 +9271,7 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleparameterValueEntry"
-    // InternalPanoptesX.g:3693:1: ruleparameterValueEntry returns [EObject current=null] : ( () ( (lv_key_1_0= ruleEString ) ) otherlv_2= '=' ( (lv_value_3_0= ruleEString ) ) ) ;
+    // InternalPanoptesX.g:3693:1: ruleparameterValueEntry returns [EObject current=null] : ( () ( (lv_key_1_0= ruleEString ) ) otherlv_2= '=' ( (lv_value_3_0= ruleParameterLiteral ) ) ) ;
     public final EObject ruleparameterValueEntry() throws RecognitionException {
         EObject current = null;
 
@@ -9285,11 +9285,11 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalPanoptesX.g:3699:2: ( ( () ( (lv_key_1_0= ruleEString ) ) otherlv_2= '=' ( (lv_value_3_0= ruleEString ) ) ) )
-            // InternalPanoptesX.g:3700:2: ( () ( (lv_key_1_0= ruleEString ) ) otherlv_2= '=' ( (lv_value_3_0= ruleEString ) ) )
+            // InternalPanoptesX.g:3699:2: ( ( () ( (lv_key_1_0= ruleEString ) ) otherlv_2= '=' ( (lv_value_3_0= ruleParameterLiteral ) ) ) )
+            // InternalPanoptesX.g:3700:2: ( () ( (lv_key_1_0= ruleEString ) ) otherlv_2= '=' ( (lv_value_3_0= ruleParameterLiteral ) ) )
             {
-            // InternalPanoptesX.g:3700:2: ( () ( (lv_key_1_0= ruleEString ) ) otherlv_2= '=' ( (lv_value_3_0= ruleEString ) ) )
-            // InternalPanoptesX.g:3701:3: () ( (lv_key_1_0= ruleEString ) ) otherlv_2= '=' ( (lv_value_3_0= ruleEString ) )
+            // InternalPanoptesX.g:3700:2: ( () ( (lv_key_1_0= ruleEString ) ) otherlv_2= '=' ( (lv_value_3_0= ruleParameterLiteral ) ) )
+            // InternalPanoptesX.g:3701:3: () ( (lv_key_1_0= ruleEString ) ) otherlv_2= '=' ( (lv_value_3_0= ruleParameterLiteral ) )
             {
             // InternalPanoptesX.g:3701:3: ()
             // InternalPanoptesX.g:3702:4: 
@@ -9333,21 +9333,21 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,68,FOLLOW_4); 
+            otherlv_2=(Token)match(input,68,FOLLOW_58); 
 
             			newLeafNode(otherlv_2, grammarAccess.getParameterValueEntryAccess().getEqualsSignKeyword_2());
             		
-            // InternalPanoptesX.g:3731:3: ( (lv_value_3_0= ruleEString ) )
-            // InternalPanoptesX.g:3732:4: (lv_value_3_0= ruleEString )
+            // InternalPanoptesX.g:3731:3: ( (lv_value_3_0= ruleParameterLiteral ) )
+            // InternalPanoptesX.g:3732:4: (lv_value_3_0= ruleParameterLiteral )
             {
-            // InternalPanoptesX.g:3732:4: (lv_value_3_0= ruleEString )
-            // InternalPanoptesX.g:3733:5: lv_value_3_0= ruleEString
+            // InternalPanoptesX.g:3732:4: (lv_value_3_0= ruleParameterLiteral )
+            // InternalPanoptesX.g:3733:5: lv_value_3_0= ruleParameterLiteral
             {
 
-            					newCompositeNode(grammarAccess.getParameterValueEntryAccess().getValueEStringParserRuleCall_3_0());
+            					newCompositeNode(grammarAccess.getParameterValueEntryAccess().getValueParameterLiteralParserRuleCall_3_0());
             				
             pushFollow(FOLLOW_2);
-            lv_value_3_0=ruleEString();
+            lv_value_3_0=ruleParameterLiteral();
 
             state._fsp--;
 
@@ -9359,7 +9359,7 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
             						current,
             						"value",
             						lv_value_3_0,
-            						"org.lowcomote.panoptes.PanoptesX.EString");
+            						"org.lowcomote.panoptes.PanoptesX.ParameterLiteral");
             					afterParserOrEnumRuleCall();
             				
 
@@ -9501,7 +9501,7 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,13,FOLLOW_58); 
+            otherlv_3=(Token)match(input,13,FOLLOW_59); 
 
             			newLeafNode(otherlv_3, grammarAccess.getActionExecutionAccess().getLeftCurlyBracketKeyword_3());
             		
@@ -9575,7 +9575,7 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
 
             	    											newCompositeNode(grammarAccess.getActionExecutionAccess().getActionActionCrossReference_4_0_1_0());
             	    										
-            	    pushFollow(FOLLOW_59);
+            	    pushFollow(FOLLOW_60);
             	    ruleEString();
 
             	    state._fsp--;
@@ -9648,7 +9648,7 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
 
             	    											newCompositeNode(grammarAccess.getActionExecutionAccess().getParameterValueMapParameterValueEntryParserRuleCall_4_1_2_0());
             	    										
-            	    pushFollow(FOLLOW_60);
+            	    pushFollow(FOLLOW_61);
             	    lv_parameterValueMap_9_0=ruleparameterValueEntry();
 
             	    state._fsp--;
@@ -9698,7 +9698,7 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
 
             	    	    												newCompositeNode(grammarAccess.getActionExecutionAccess().getParameterValueMapParameterValueEntryParserRuleCall_4_1_3_1_0());
             	    	    											
-            	    	    pushFollow(FOLLOW_60);
+            	    	    pushFollow(FOLLOW_61);
             	    	    lv_parameterValueMap_11_0=ruleparameterValueEntry();
 
             	    	    state._fsp--;
@@ -9863,7 +9863,7 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
                 case 1 :
                     // InternalPanoptesX.g:3936:4: kw= '-'
                     {
-                    kw=(Token)match(input,71,FOLLOW_61); 
+                    kw=(Token)match(input,71,FOLLOW_62); 
 
                     				current.merge(kw);
                     				newLeafNode(kw, grammarAccess.getEIntegerObjectAccess().getHyphenMinusKeyword_0());
@@ -9940,28 +9940,28 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEString"
-    // InternalPanoptesX.g:3960:1: ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_STRING_0= RULE_STRING | this_PANOPTESSTRING_1= RULE_PANOPTESSTRING ) ;
+    // InternalPanoptesX.g:3960:1: ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_STRING_0= RULE_STRING | this_SAFESTRING_1= RULE_SAFESTRING ) ;
     public final AntlrDatatypeRuleToken ruleEString() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
         Token this_STRING_0=null;
-        Token this_PANOPTESSTRING_1=null;
+        Token this_SAFESTRING_1=null;
 
 
         	enterRule();
 
         try {
-            // InternalPanoptesX.g:3966:2: ( (this_STRING_0= RULE_STRING | this_PANOPTESSTRING_1= RULE_PANOPTESSTRING ) )
-            // InternalPanoptesX.g:3967:2: (this_STRING_0= RULE_STRING | this_PANOPTESSTRING_1= RULE_PANOPTESSTRING )
+            // InternalPanoptesX.g:3966:2: ( (this_STRING_0= RULE_STRING | this_SAFESTRING_1= RULE_SAFESTRING ) )
+            // InternalPanoptesX.g:3967:2: (this_STRING_0= RULE_STRING | this_SAFESTRING_1= RULE_SAFESTRING )
             {
-            // InternalPanoptesX.g:3967:2: (this_STRING_0= RULE_STRING | this_PANOPTESSTRING_1= RULE_PANOPTESSTRING )
+            // InternalPanoptesX.g:3967:2: (this_STRING_0= RULE_STRING | this_SAFESTRING_1= RULE_SAFESTRING )
             int alt51=2;
             int LA51_0 = input.LA(1);
 
             if ( (LA51_0==RULE_STRING) ) {
                 alt51=1;
             }
-            else if ( (LA51_0==RULE_PANOPTESSTRING) ) {
+            else if ( (LA51_0==RULE_SAFESTRING) ) {
                 alt51=2;
             }
             else {
@@ -9985,14 +9985,14 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalPanoptesX.g:3976:3: this_PANOPTESSTRING_1= RULE_PANOPTESSTRING
+                    // InternalPanoptesX.g:3976:3: this_SAFESTRING_1= RULE_SAFESTRING
                     {
-                    this_PANOPTESSTRING_1=(Token)match(input,RULE_PANOPTESSTRING,FOLLOW_2); 
+                    this_SAFESTRING_1=(Token)match(input,RULE_SAFESTRING,FOLLOW_2); 
 
-                    			current.merge(this_PANOPTESSTRING_1);
+                    			current.merge(this_SAFESTRING_1);
                     		
 
-                    			newLeafNode(this_PANOPTESSTRING_1, grammarAccess.getEStringAccess().getPANOPTESSTRINGTerminalRuleCall_1());
+                    			newLeafNode(this_SAFESTRING_1, grammarAccess.getEStringAccess().getSAFESTRINGTerminalRuleCall_1());
                     		
 
                     }
@@ -10019,8 +10019,155 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleEString"
 
 
+    // $ANTLR start "entryRuleParameterLiteral"
+    // InternalPanoptesX.g:3987:1: entryRuleParameterLiteral returns [String current=null] : iv_ruleParameterLiteral= ruleParameterLiteral EOF ;
+    public final String entryRuleParameterLiteral() throws RecognitionException {
+        String current = null;
+
+        AntlrDatatypeRuleToken iv_ruleParameterLiteral = null;
+
+
+        try {
+            // InternalPanoptesX.g:3987:56: (iv_ruleParameterLiteral= ruleParameterLiteral EOF )
+            // InternalPanoptesX.g:3988:2: iv_ruleParameterLiteral= ruleParameterLiteral EOF
+            {
+             newCompositeNode(grammarAccess.getParameterLiteralRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleParameterLiteral=ruleParameterLiteral();
+
+            state._fsp--;
+
+             current =iv_ruleParameterLiteral.getText(); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleParameterLiteral"
+
+
+    // $ANTLR start "ruleParameterLiteral"
+    // InternalPanoptesX.g:3994:1: ruleParameterLiteral returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (kw= '-' )? (this_INT_1= RULE_INT )? (this_SAFESTRING_2= RULE_SAFESTRING )? ) ;
+    public final AntlrDatatypeRuleToken ruleParameterLiteral() throws RecognitionException {
+        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
+
+        Token kw=null;
+        Token this_INT_1=null;
+        Token this_SAFESTRING_2=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalPanoptesX.g:4000:2: ( ( (kw= '-' )? (this_INT_1= RULE_INT )? (this_SAFESTRING_2= RULE_SAFESTRING )? ) )
+            // InternalPanoptesX.g:4001:2: ( (kw= '-' )? (this_INT_1= RULE_INT )? (this_SAFESTRING_2= RULE_SAFESTRING )? )
+            {
+            // InternalPanoptesX.g:4001:2: ( (kw= '-' )? (this_INT_1= RULE_INT )? (this_SAFESTRING_2= RULE_SAFESTRING )? )
+            // InternalPanoptesX.g:4002:3: (kw= '-' )? (this_INT_1= RULE_INT )? (this_SAFESTRING_2= RULE_SAFESTRING )?
+            {
+            // InternalPanoptesX.g:4002:3: (kw= '-' )?
+            int alt52=2;
+            int LA52_0 = input.LA(1);
+
+            if ( (LA52_0==71) ) {
+                alt52=1;
+            }
+            switch (alt52) {
+                case 1 :
+                    // InternalPanoptesX.g:4003:4: kw= '-'
+                    {
+                    kw=(Token)match(input,71,FOLLOW_63); 
+
+                    				current.merge(kw);
+                    				newLeafNode(kw, grammarAccess.getParameterLiteralAccess().getHyphenMinusKeyword_0());
+                    			
+
+                    }
+                    break;
+
+            }
+
+            // InternalPanoptesX.g:4009:3: (this_INT_1= RULE_INT )?
+            int alt53=2;
+            int LA53_0 = input.LA(1);
+
+            if ( (LA53_0==RULE_INT) ) {
+                alt53=1;
+            }
+            switch (alt53) {
+                case 1 :
+                    // InternalPanoptesX.g:4010:4: this_INT_1= RULE_INT
+                    {
+                    this_INT_1=(Token)match(input,RULE_INT,FOLLOW_64); 
+
+                    				current.merge(this_INT_1);
+                    			
+
+                    				newLeafNode(this_INT_1, grammarAccess.getParameterLiteralAccess().getINTTerminalRuleCall_1());
+                    			
+
+                    }
+                    break;
+
+            }
+
+            // InternalPanoptesX.g:4018:3: (this_SAFESTRING_2= RULE_SAFESTRING )?
+            int alt54=2;
+            int LA54_0 = input.LA(1);
+
+            if ( (LA54_0==RULE_SAFESTRING) ) {
+                alt54=1;
+            }
+            switch (alt54) {
+                case 1 :
+                    // InternalPanoptesX.g:4019:4: this_SAFESTRING_2= RULE_SAFESTRING
+                    {
+                    this_SAFESTRING_2=(Token)match(input,RULE_SAFESTRING,FOLLOW_2); 
+
+                    				current.merge(this_SAFESTRING_2);
+                    			
+
+                    				newLeafNode(this_SAFESTRING_2, grammarAccess.getParameterLiteralAccess().getSAFESTRINGTerminalRuleCall_2());
+                    			
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleParameterLiteral"
+
+
     // $ANTLR start "rulestatisticalVariableType"
-    // InternalPanoptesX.g:3987:1: rulestatisticalVariableType returns [Enumerator current=null] : ( (enumLiteral_0= 'continuous' ) | (enumLiteral_1= 'categorical' ) | (enumLiteral_2= 'ordered categorical' ) ) ;
+    // InternalPanoptesX.g:4031:1: rulestatisticalVariableType returns [Enumerator current=null] : ( (enumLiteral_0= 'continuous' ) | (enumLiteral_1= 'categorical' ) | (enumLiteral_2= 'ordered categorical' ) ) ;
     public final Enumerator rulestatisticalVariableType() throws RecognitionException {
         Enumerator current = null;
 
@@ -10032,40 +10179,40 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalPanoptesX.g:3993:2: ( ( (enumLiteral_0= 'continuous' ) | (enumLiteral_1= 'categorical' ) | (enumLiteral_2= 'ordered categorical' ) ) )
-            // InternalPanoptesX.g:3994:2: ( (enumLiteral_0= 'continuous' ) | (enumLiteral_1= 'categorical' ) | (enumLiteral_2= 'ordered categorical' ) )
+            // InternalPanoptesX.g:4037:2: ( ( (enumLiteral_0= 'continuous' ) | (enumLiteral_1= 'categorical' ) | (enumLiteral_2= 'ordered categorical' ) ) )
+            // InternalPanoptesX.g:4038:2: ( (enumLiteral_0= 'continuous' ) | (enumLiteral_1= 'categorical' ) | (enumLiteral_2= 'ordered categorical' ) )
             {
-            // InternalPanoptesX.g:3994:2: ( (enumLiteral_0= 'continuous' ) | (enumLiteral_1= 'categorical' ) | (enumLiteral_2= 'ordered categorical' ) )
-            int alt52=3;
+            // InternalPanoptesX.g:4038:2: ( (enumLiteral_0= 'continuous' ) | (enumLiteral_1= 'categorical' ) | (enumLiteral_2= 'ordered categorical' ) )
+            int alt55=3;
             switch ( input.LA(1) ) {
             case 72:
                 {
-                alt52=1;
+                alt55=1;
                 }
                 break;
             case 73:
                 {
-                alt52=2;
+                alt55=2;
                 }
                 break;
             case 74:
                 {
-                alt52=3;
+                alt55=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 52, 0, input);
+                    new NoViableAltException("", 55, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt52) {
+            switch (alt55) {
                 case 1 :
-                    // InternalPanoptesX.g:3995:3: (enumLiteral_0= 'continuous' )
+                    // InternalPanoptesX.g:4039:3: (enumLiteral_0= 'continuous' )
                     {
-                    // InternalPanoptesX.g:3995:3: (enumLiteral_0= 'continuous' )
-                    // InternalPanoptesX.g:3996:4: enumLiteral_0= 'continuous'
+                    // InternalPanoptesX.g:4039:3: (enumLiteral_0= 'continuous' )
+                    // InternalPanoptesX.g:4040:4: enumLiteral_0= 'continuous'
                     {
                     enumLiteral_0=(Token)match(input,72,FOLLOW_2); 
 
@@ -10079,10 +10226,10 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalPanoptesX.g:4003:3: (enumLiteral_1= 'categorical' )
+                    // InternalPanoptesX.g:4047:3: (enumLiteral_1= 'categorical' )
                     {
-                    // InternalPanoptesX.g:4003:3: (enumLiteral_1= 'categorical' )
-                    // InternalPanoptesX.g:4004:4: enumLiteral_1= 'categorical'
+                    // InternalPanoptesX.g:4047:3: (enumLiteral_1= 'categorical' )
+                    // InternalPanoptesX.g:4048:4: enumLiteral_1= 'categorical'
                     {
                     enumLiteral_1=(Token)match(input,73,FOLLOW_2); 
 
@@ -10096,10 +10243,10 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalPanoptesX.g:4011:3: (enumLiteral_2= 'ordered categorical' )
+                    // InternalPanoptesX.g:4055:3: (enumLiteral_2= 'ordered categorical' )
                     {
-                    // InternalPanoptesX.g:4011:3: (enumLiteral_2= 'ordered categorical' )
-                    // InternalPanoptesX.g:4012:4: enumLiteral_2= 'ordered categorical'
+                    // InternalPanoptesX.g:4055:3: (enumLiteral_2= 'ordered categorical' )
+                    // InternalPanoptesX.g:4056:4: enumLiteral_2= 'ordered categorical'
                     {
                     enumLiteral_2=(Token)match(input,74,FOLLOW_2); 
 
@@ -10135,7 +10282,7 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulefrequencyEnum"
-    // InternalPanoptesX.g:4022:1: rulefrequencyEnum returns [Enumerator current=null] : ( (enumLiteral_0= 'hour' ) | (enumLiteral_1= 'day' ) | (enumLiteral_2= 'week' ) | (enumLiteral_3= 'month' ) | (enumLiteral_4= 'year' ) ) ;
+    // InternalPanoptesX.g:4066:1: rulefrequencyEnum returns [Enumerator current=null] : ( (enumLiteral_0= 'hour' ) | (enumLiteral_1= 'day' ) | (enumLiteral_2= 'week' ) | (enumLiteral_3= 'month' ) | (enumLiteral_4= 'year' ) ) ;
     public final Enumerator rulefrequencyEnum() throws RecognitionException {
         Enumerator current = null;
 
@@ -10149,50 +10296,50 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalPanoptesX.g:4028:2: ( ( (enumLiteral_0= 'hour' ) | (enumLiteral_1= 'day' ) | (enumLiteral_2= 'week' ) | (enumLiteral_3= 'month' ) | (enumLiteral_4= 'year' ) ) )
-            // InternalPanoptesX.g:4029:2: ( (enumLiteral_0= 'hour' ) | (enumLiteral_1= 'day' ) | (enumLiteral_2= 'week' ) | (enumLiteral_3= 'month' ) | (enumLiteral_4= 'year' ) )
+            // InternalPanoptesX.g:4072:2: ( ( (enumLiteral_0= 'hour' ) | (enumLiteral_1= 'day' ) | (enumLiteral_2= 'week' ) | (enumLiteral_3= 'month' ) | (enumLiteral_4= 'year' ) ) )
+            // InternalPanoptesX.g:4073:2: ( (enumLiteral_0= 'hour' ) | (enumLiteral_1= 'day' ) | (enumLiteral_2= 'week' ) | (enumLiteral_3= 'month' ) | (enumLiteral_4= 'year' ) )
             {
-            // InternalPanoptesX.g:4029:2: ( (enumLiteral_0= 'hour' ) | (enumLiteral_1= 'day' ) | (enumLiteral_2= 'week' ) | (enumLiteral_3= 'month' ) | (enumLiteral_4= 'year' ) )
-            int alt53=5;
+            // InternalPanoptesX.g:4073:2: ( (enumLiteral_0= 'hour' ) | (enumLiteral_1= 'day' ) | (enumLiteral_2= 'week' ) | (enumLiteral_3= 'month' ) | (enumLiteral_4= 'year' ) )
+            int alt56=5;
             switch ( input.LA(1) ) {
             case 75:
                 {
-                alt53=1;
+                alt56=1;
                 }
                 break;
             case 76:
                 {
-                alt53=2;
+                alt56=2;
                 }
                 break;
             case 77:
                 {
-                alt53=3;
+                alt56=3;
                 }
                 break;
             case 78:
                 {
-                alt53=4;
+                alt56=4;
                 }
                 break;
             case 79:
                 {
-                alt53=5;
+                alt56=5;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 53, 0, input);
+                    new NoViableAltException("", 56, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt53) {
+            switch (alt56) {
                 case 1 :
-                    // InternalPanoptesX.g:4030:3: (enumLiteral_0= 'hour' )
+                    // InternalPanoptesX.g:4074:3: (enumLiteral_0= 'hour' )
                     {
-                    // InternalPanoptesX.g:4030:3: (enumLiteral_0= 'hour' )
-                    // InternalPanoptesX.g:4031:4: enumLiteral_0= 'hour'
+                    // InternalPanoptesX.g:4074:3: (enumLiteral_0= 'hour' )
+                    // InternalPanoptesX.g:4075:4: enumLiteral_0= 'hour'
                     {
                     enumLiteral_0=(Token)match(input,75,FOLLOW_2); 
 
@@ -10206,10 +10353,10 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalPanoptesX.g:4038:3: (enumLiteral_1= 'day' )
+                    // InternalPanoptesX.g:4082:3: (enumLiteral_1= 'day' )
                     {
-                    // InternalPanoptesX.g:4038:3: (enumLiteral_1= 'day' )
-                    // InternalPanoptesX.g:4039:4: enumLiteral_1= 'day'
+                    // InternalPanoptesX.g:4082:3: (enumLiteral_1= 'day' )
+                    // InternalPanoptesX.g:4083:4: enumLiteral_1= 'day'
                     {
                     enumLiteral_1=(Token)match(input,76,FOLLOW_2); 
 
@@ -10223,10 +10370,10 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalPanoptesX.g:4046:3: (enumLiteral_2= 'week' )
+                    // InternalPanoptesX.g:4090:3: (enumLiteral_2= 'week' )
                     {
-                    // InternalPanoptesX.g:4046:3: (enumLiteral_2= 'week' )
-                    // InternalPanoptesX.g:4047:4: enumLiteral_2= 'week'
+                    // InternalPanoptesX.g:4090:3: (enumLiteral_2= 'week' )
+                    // InternalPanoptesX.g:4091:4: enumLiteral_2= 'week'
                     {
                     enumLiteral_2=(Token)match(input,77,FOLLOW_2); 
 
@@ -10240,10 +10387,10 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalPanoptesX.g:4054:3: (enumLiteral_3= 'month' )
+                    // InternalPanoptesX.g:4098:3: (enumLiteral_3= 'month' )
                     {
-                    // InternalPanoptesX.g:4054:3: (enumLiteral_3= 'month' )
-                    // InternalPanoptesX.g:4055:4: enumLiteral_3= 'month'
+                    // InternalPanoptesX.g:4098:3: (enumLiteral_3= 'month' )
+                    // InternalPanoptesX.g:4099:4: enumLiteral_3= 'month'
                     {
                     enumLiteral_3=(Token)match(input,78,FOLLOW_2); 
 
@@ -10257,10 +10404,10 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalPanoptesX.g:4062:3: (enumLiteral_4= 'year' )
+                    // InternalPanoptesX.g:4106:3: (enumLiteral_4= 'year' )
                     {
-                    // InternalPanoptesX.g:4062:3: (enumLiteral_4= 'year' )
-                    // InternalPanoptesX.g:4063:4: enumLiteral_4= 'year'
+                    // InternalPanoptesX.g:4106:3: (enumLiteral_4= 'year' )
+                    // InternalPanoptesX.g:4107:4: enumLiteral_4= 'year'
                     {
                     enumLiteral_4=(Token)match(input,79,FOLLOW_2); 
 
@@ -10296,7 +10443,7 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleparameterType"
-    // InternalPanoptesX.g:4073:1: ruleparameterType returns [Enumerator current=null] : ( (enumLiteral_0= 'Integer' ) | (enumLiteral_1= 'Real' ) | (enumLiteral_2= 'String' ) | (enumLiteral_3= 'Boolean' ) ) ;
+    // InternalPanoptesX.g:4117:1: ruleparameterType returns [Enumerator current=null] : ( (enumLiteral_0= 'Integer' ) | (enumLiteral_1= 'Real' ) | (enumLiteral_2= 'String' ) | (enumLiteral_3= 'Boolean' ) ) ;
     public final Enumerator ruleparameterType() throws RecognitionException {
         Enumerator current = null;
 
@@ -10309,45 +10456,45 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalPanoptesX.g:4079:2: ( ( (enumLiteral_0= 'Integer' ) | (enumLiteral_1= 'Real' ) | (enumLiteral_2= 'String' ) | (enumLiteral_3= 'Boolean' ) ) )
-            // InternalPanoptesX.g:4080:2: ( (enumLiteral_0= 'Integer' ) | (enumLiteral_1= 'Real' ) | (enumLiteral_2= 'String' ) | (enumLiteral_3= 'Boolean' ) )
+            // InternalPanoptesX.g:4123:2: ( ( (enumLiteral_0= 'Integer' ) | (enumLiteral_1= 'Real' ) | (enumLiteral_2= 'String' ) | (enumLiteral_3= 'Boolean' ) ) )
+            // InternalPanoptesX.g:4124:2: ( (enumLiteral_0= 'Integer' ) | (enumLiteral_1= 'Real' ) | (enumLiteral_2= 'String' ) | (enumLiteral_3= 'Boolean' ) )
             {
-            // InternalPanoptesX.g:4080:2: ( (enumLiteral_0= 'Integer' ) | (enumLiteral_1= 'Real' ) | (enumLiteral_2= 'String' ) | (enumLiteral_3= 'Boolean' ) )
-            int alt54=4;
+            // InternalPanoptesX.g:4124:2: ( (enumLiteral_0= 'Integer' ) | (enumLiteral_1= 'Real' ) | (enumLiteral_2= 'String' ) | (enumLiteral_3= 'Boolean' ) )
+            int alt57=4;
             switch ( input.LA(1) ) {
             case 80:
                 {
-                alt54=1;
+                alt57=1;
                 }
                 break;
             case 81:
                 {
-                alt54=2;
+                alt57=2;
                 }
                 break;
             case 82:
                 {
-                alt54=3;
+                alt57=3;
                 }
                 break;
             case 83:
                 {
-                alt54=4;
+                alt57=4;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 54, 0, input);
+                    new NoViableAltException("", 57, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt54) {
+            switch (alt57) {
                 case 1 :
-                    // InternalPanoptesX.g:4081:3: (enumLiteral_0= 'Integer' )
+                    // InternalPanoptesX.g:4125:3: (enumLiteral_0= 'Integer' )
                     {
-                    // InternalPanoptesX.g:4081:3: (enumLiteral_0= 'Integer' )
-                    // InternalPanoptesX.g:4082:4: enumLiteral_0= 'Integer'
+                    // InternalPanoptesX.g:4125:3: (enumLiteral_0= 'Integer' )
+                    // InternalPanoptesX.g:4126:4: enumLiteral_0= 'Integer'
                     {
                     enumLiteral_0=(Token)match(input,80,FOLLOW_2); 
 
@@ -10361,10 +10508,10 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalPanoptesX.g:4089:3: (enumLiteral_1= 'Real' )
+                    // InternalPanoptesX.g:4133:3: (enumLiteral_1= 'Real' )
                     {
-                    // InternalPanoptesX.g:4089:3: (enumLiteral_1= 'Real' )
-                    // InternalPanoptesX.g:4090:4: enumLiteral_1= 'Real'
+                    // InternalPanoptesX.g:4133:3: (enumLiteral_1= 'Real' )
+                    // InternalPanoptesX.g:4134:4: enumLiteral_1= 'Real'
                     {
                     enumLiteral_1=(Token)match(input,81,FOLLOW_2); 
 
@@ -10378,10 +10525,10 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalPanoptesX.g:4097:3: (enumLiteral_2= 'String' )
+                    // InternalPanoptesX.g:4141:3: (enumLiteral_2= 'String' )
                     {
-                    // InternalPanoptesX.g:4097:3: (enumLiteral_2= 'String' )
-                    // InternalPanoptesX.g:4098:4: enumLiteral_2= 'String'
+                    // InternalPanoptesX.g:4141:3: (enumLiteral_2= 'String' )
+                    // InternalPanoptesX.g:4142:4: enumLiteral_2= 'String'
                     {
                     enumLiteral_2=(Token)match(input,82,FOLLOW_2); 
 
@@ -10395,10 +10542,10 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalPanoptesX.g:4105:3: (enumLiteral_3= 'Boolean' )
+                    // InternalPanoptesX.g:4149:3: (enumLiteral_3= 'Boolean' )
                     {
-                    // InternalPanoptesX.g:4105:3: (enumLiteral_3= 'Boolean' )
-                    // InternalPanoptesX.g:4106:4: enumLiteral_3= 'Boolean'
+                    // InternalPanoptesX.g:4149:3: (enumLiteral_3= 'Boolean' )
+                    // InternalPanoptesX.g:4150:4: enumLiteral_3= 'Boolean'
                     {
                     enumLiteral_3=(Token)match(input,83,FOLLOW_2); 
 
@@ -10494,9 +10641,12 @@ public class InternalPanoptesXParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_55 = new BitSet(new long[]{0x0000024000028000L});
     public static final BitSet FOLLOW_56 = new BitSet(new long[]{0x0000000000000000L,0x00000000000F0000L});
     public static final BitSet FOLLOW_57 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000010L});
-    public static final BitSet FOLLOW_58 = new BitSet(new long[]{0x0001000000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_59 = new BitSet(new long[]{0x0001000000020000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_60 = new BitSet(new long[]{0x0001000000028000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_61 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_58 = new BitSet(new long[]{0x0000000000000050L,0x0000000000000080L});
+    public static final BitSet FOLLOW_59 = new BitSet(new long[]{0x0001000000000000L,0x0000000000000040L});
+    public static final BitSet FOLLOW_60 = new BitSet(new long[]{0x0001000000020000L,0x0000000000000040L});
+    public static final BitSet FOLLOW_61 = new BitSet(new long[]{0x0001000000028000L,0x0000000000000040L});
+    public static final BitSet FOLLOW_62 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_63 = new BitSet(new long[]{0x0000000000000052L});
+    public static final BitSet FOLLOW_64 = new BitSet(new long[]{0x0000000000000042L});
 
 }

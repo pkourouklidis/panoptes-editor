@@ -177,9 +177,9 @@ public class PanoptesXSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *         (
 	 *             algorithm=[BaseAlgorithm|EString]? 
 	 *             (ActionExecutionMap+=actionExecutionEntry ActionExecutionMap+=actionExecutionEntry*)? 
+	 *             (historicIOValues+=[ModelIO|EString] historicIOValues+=[ModelIO|EString]*)? 
 	 *             (currentIOValues+=[ModelIO|EString] currentIOValues+=[ModelIO|EString]*)? 
-	 *             (parameterValueMap+=parameterValueEntry parameterValueMap+=parameterValueEntry*)? 
-	 *             (historicIOValues+=[ModelIO|EString] historicIOValues+=[ModelIO|EString]*)?
+	 *             (parameterValueMap+=parameterValueEntry parameterValueMap+=parameterValueEntry*)?
 	 *         )+
 	 *     )
 	 */
@@ -571,7 +571,7 @@ public class PanoptesXSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     parameterValueEntry returns parameterValueEntry
 	 *
 	 * Constraint:
-	 *     (key=EString value=EString)
+	 *     (key=EString value=ParameterLiteral)
 	 */
 	protected void sequence_parameterValueEntry(ISerializationContext context, parameterValueEntry semanticObject) {
 		if (errorAcceptor != null) {
@@ -582,7 +582,7 @@ public class PanoptesXSemanticSequencer extends AbstractDelegatingSemanticSequen
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getParameterValueEntryAccess().getKeyEStringParserRuleCall_1_0(), semanticObject.getKey());
-		feeder.accept(grammarAccess.getParameterValueEntryAccess().getValueEStringParserRuleCall_3_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getParameterValueEntryAccess().getValueParameterLiteralParserRuleCall_3_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	

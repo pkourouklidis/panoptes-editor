@@ -2494,20 +2494,20 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final RuleCall cKeyEStringParserRuleCall_1_0 = (RuleCall)cKeyAssignment_1.eContents().get(0);
 		private final Keyword cEqualsSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cValueAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cValueEStringParserRuleCall_3_0 = (RuleCall)cValueAssignment_3.eContents().get(0);
+		private final RuleCall cValueParameterLiteralParserRuleCall_3_0 = (RuleCall)cValueAssignment_3.eContents().get(0);
 		
 		//parameterValueEntry returns parameterValueEntry:
 		//    {parameterValueEntry}
 		//    key=EString
 		//    '='
-		//    value=EString
+		//    value=ParameterLiteral
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{parameterValueEntry}
 		//key=EString
 		//'='
-		//value=EString
+		//value=ParameterLiteral
 		public Group getGroup() { return cGroup; }
 		
 		//{parameterValueEntry}
@@ -2522,11 +2522,11 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//'='
 		public Keyword getEqualsSignKeyword_2() { return cEqualsSignKeyword_2; }
 		
-		//value=EString
+		//value=ParameterLiteral
 		public Assignment getValueAssignment_3() { return cValueAssignment_3; }
 		
-		//EString
-		public RuleCall getValueEStringParserRuleCall_3_0() { return cValueEStringParserRuleCall_3_0; }
+		//ParameterLiteral
+		public RuleCall getValueParameterLiteralParserRuleCall_3_0() { return cValueParameterLiteralParserRuleCall_3_0; }
 	}
 	public class ActionExecutionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.lowcomote.panoptes.PanoptesX.ActionExecution");
@@ -2665,39 +2665,43 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.lowcomote.panoptes.PanoptesX.EString");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cSTRINGTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cPANOPTESSTRINGTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cSAFESTRINGTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//EString returns ecore::EString:
-		//    STRING | PANOPTESSTRING;
+		//    STRING | SAFESTRING;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//STRING | PANOPTESSTRING
+		//STRING | SAFESTRING
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//STRING
 		public RuleCall getSTRINGTerminalRuleCall_0() { return cSTRINGTerminalRuleCall_0; }
 		
-		//PANOPTESSTRING
-		public RuleCall getPANOPTESSTRINGTerminalRuleCall_1() { return cPANOPTESSTRINGTerminalRuleCall_1; }
+		//SAFESTRING
+		public RuleCall getSAFESTRINGTerminalRuleCall_1() { return cSAFESTRINGTerminalRuleCall_1; }
 	}
-	public class EBooleanElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.lowcomote.panoptes.PanoptesX.EBoolean");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Keyword cTrueKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
-		private final Keyword cFalseKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
+	public class ParameterLiteralElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.lowcomote.panoptes.PanoptesX.ParameterLiteral");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cHyphenMinusKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final RuleCall cINTTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final RuleCall cSAFESTRINGTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
 		
-		//EBoolean returns ecore::EBoolean:
-		//    'true' | 'false';
+		//ParameterLiteral returns ecore::EString:
+		//    '-'? (INT)? (SAFESTRING)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'true' | 'false'
-		public Alternatives getAlternatives() { return cAlternatives; }
+		//'-'? (INT)? (SAFESTRING)?
+		public Group getGroup() { return cGroup; }
 		
-		//'true'
-		public Keyword getTrueKeyword_0() { return cTrueKeyword_0; }
+		//'-'?
+		public Keyword getHyphenMinusKeyword_0() { return cHyphenMinusKeyword_0; }
 		
-		//'false'
-		public Keyword getFalseKeyword_1() { return cFalseKeyword_1; }
+		//(INT)?
+		public RuleCall getINTTerminalRuleCall_1() { return cINTTerminalRuleCall_1; }
+		
+		//(SAFESTRING)?
+		public RuleCall getSAFESTRINGTerminalRuleCall_2() { return cSAFESTRINGTerminalRuleCall_2; }
 	}
 	
 	public class StatisticalVariableTypeElements extends AbstractElementFinder.AbstractEnumRuleElementFinder {
@@ -2867,8 +2871,8 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 	private final ActionExecutionElements pActionExecution;
 	private final EIntegerObjectElements pEIntegerObject;
 	private final EStringElements pEString;
-	private final EBooleanElements pEBoolean;
-	private final TerminalRule tPANOPTESSTRING;
+	private final ParameterLiteralElements pParameterLiteral;
+	private final TerminalRule tSAFESTRING;
 	
 	private final Grammar grammar;
 	
@@ -2916,8 +2920,8 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		this.pActionExecution = new ActionExecutionElements();
 		this.pEIntegerObject = new EIntegerObjectElements();
 		this.pEString = new EStringElements();
-		this.pEBoolean = new EBooleanElements();
-		this.tPANOPTESSTRING = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.lowcomote.panoptes.PanoptesX.PANOPTESSTRING");
+		this.pParameterLiteral = new ParameterLiteralElements();
+		this.tSAFESTRING = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.lowcomote.panoptes.PanoptesX.SAFESTRING");
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -3425,7 +3429,7 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 	//    {parameterValueEntry}
 	//    key=EString
 	//    '='
-	//    value=EString
+	//    value=ParameterLiteral
 	//;
 	public ParameterValueEntryElements getParameterValueEntryAccess() {
 		return pParameterValueEntry;
@@ -3464,7 +3468,7 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 	}
 	
 	//EString returns ecore::EString:
-	//    STRING | PANOPTESSTRING;
+	//    STRING | SAFESTRING;
 	public EStringElements getEStringAccess() {
 		return pEString;
 	}
@@ -3473,19 +3477,19 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		return getEStringAccess().getRule();
 	}
 	
-	//EBoolean returns ecore::EBoolean:
-	//    'true' | 'false';
-	public EBooleanElements getEBooleanAccess() {
-		return pEBoolean;
+	//ParameterLiteral returns ecore::EString:
+	//    '-'? (INT)? (SAFESTRING)?;
+	public ParameterLiteralElements getParameterLiteralAccess() {
+		return pParameterLiteral;
 	}
 	
-	public ParserRule getEBooleanRule() {
-		return getEBooleanAccess().getRule();
+	public ParserRule getParameterLiteralRule() {
+		return getParameterLiteralAccess().getRule();
 	}
 	
-	//terminal PANOPTESSTRING: ('a'..'z'|'A'..'Z'|'_'|'.'|'@') ('a'..'z'|'A'..'Z'|'_'|'.'|'@'|'0'..'9')*;
-	public TerminalRule getPANOPTESSTRINGRule() {
-		return tPANOPTESSTRING;
+	//terminal SAFESTRING: ('a'..'z'|'A'..'Z'|'_'|'.'|'@') ('a'..'z'|'A'..'Z'|'_'|'.'|'-'|'@'|'0'..'9')*;
+	public TerminalRule getSAFESTRINGRule() {
+		return tSAFESTRING;
 	}
 	
 	//terminal ID: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;

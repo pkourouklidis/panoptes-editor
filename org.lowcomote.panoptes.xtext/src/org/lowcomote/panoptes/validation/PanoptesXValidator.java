@@ -5,36 +5,98 @@ package org.lowcomote.panoptes.validation;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.xtext.validation.Check;
 
 import panoptesDSL.Execution;
+import panoptesDSL.Feature;
 import panoptesDSL.HigherOrderAlgorithmExecution;
+import panoptesDSL.Label;
+import panoptesDSL.ModelIO;
 import panoptesDSL.PanoptesDSLPackage;
 import panoptesDSL.Parameter;
+import panoptesDSL.Prediction;
 import panoptesDSL.parameterValueEntry;
+import panoptesDSL.statisticalVariableType;
 import panoptesDSL.ActionExecution;
 import panoptesDSL.BaseAlgorithmExecution;
+import panoptesDSL.Deployment;
 
 /**
- * This class contains custom validation rules. 
+ * This class contains custom validation rules.
  *
- * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#validation
+ * See
+ * https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#validation
  */
 public class PanoptesXValidator extends AbstractPanoptesXValidator {
 	public static final String MANDTORY_PARAMETER_MISSING = "mandatoryParameterMissing";
 	public static final String UNKNOWN_PARAMETER = "unknownParameter";
 	public static final String WRONG_TYPE = "wrongType";
-	
+
 	@Check
-	public void checkFeatureTypes(Execution execution) {
-		//TODO
+	public void checkModelIOTypes(BaseAlgorithmExecution execution) {
+		EList<statisticalVariableType> allowedTypes = execution.getAlgorithm().getSupportedTypes();
+		if (allowedTypes.size() != 0) {
+			for (ModelIO io : execution.getCurrentIOValues()) {
+				checkModelIOTypesHelper(io, allowedTypes, execution.getAlgorithm().getName(),
+						PanoptesDSLPackage.Literals.BASE_ALGORITHM_EXECUTION__CURRENT_IO_VALUES,
+						execution.getAlgorithm().isStrict());
+			}
+			
+			for (ModelIO io: execution.getHistoricIOValues()) {
+				checkModelIOTypesHelper(io, allowedTypes, execution.getAlgorithm().getName(),
+						PanoptesDSLPackage.Literals.BASE_ALGORITHM_EXECUTION__HISTORIC_IO_VALUES,
+						execution.getAlgorithm().isStrict());
+			}
+		}
+
 	}
-	
+
+	private void checkModelIOTypesHelper(ModelIO io, EList<statisticalVariableType> allowedTypes, String AlgorithmName,
+			EReference referenceLiteral, boolean strict) {
+		switch (io.eClass().getName()) {
+		case ("Feature"):
+			Feature f = (Feature) io;
+			if (!allowedTypes.contains(f.getType()) && strict) {
+				error("Algorithm " + AlgorithmName + " does not accept inputs of type: " + f.getType().getLiteral(),
+						referenceLiteral, WRONG_TYPE);
+			} else if (!allowedTypes.contains(f.getType()) && !strict) {
+				warning("Algorithm " + AlgorithmName + " does not accept inputs of type: " + f.getType().getLiteral(),
+						referenceLiteral, WRONG_TYPE);
+			}
+			break;
+		case ("Label"):
+			Label l = (Label) io;
+			if (!allowedTypes.contains(l.getType()) && strict) {
+				error("Algorithm " + AlgorithmName + " does not accept inputs of type: "
+						+ l.getType().getLiteral(),
+						referenceLiteral, WRONG_TYPE);
+			} else if (!allowedTypes.contains(l.getType()) && !strict) {
+				warning("Algorithm " + AlgorithmName + " does not accept inputs of type: "
+						+ l.getType().getLiteral(),
+						referenceLiteral, WRONG_TYPE);
+			}
+			break;
+		case ("Prediction"):
+			Prediction p = (Prediction) io;
+			if (!allowedTypes.contains(p.getLabel().getType()) && strict) {
+				error("Algorithm " + AlgorithmName + " does not accept inputs of type: "
+						+ p.getLabel().getType().getLiteral(),
+						referenceLiteral, WRONG_TYPE);
+			} else if (!allowedTypes.contains(p.getLabel().getType()) && !strict) {
+				warning("Algorithm " + AlgorithmName + " does not accept inputs of type: "
+						+ p.getLabel().getType().getLiteral(),
+						referenceLiteral, WRONG_TYPE);
+			}
+			break;
+		}
+	}
+
 	@Check
-	public void checkDeploymentInputs(Execution execution) {
-		//TODO
+	public void checkDeploymentInputs(Deployment deployment) {
+		// TODO
 	}
-	
+
 	@Check
 	public void checkMandatoryParameters(Execution execution) {
 		for (Parameter p : getAdditionalParameters(execution)) {
@@ -48,13 +110,12 @@ public class PanoptesXValidator extends AbstractPanoptesXValidator {
 				}
 				if (!found) {
 					error("No value provided for mandatory parameter " + p.getName(),
-							PanoptesDSLPackage.Literals.EXECUTION__PARAMETER_VALUE_MAP,
-							UNKNOWN_PARAMETER);
+							PanoptesDSLPackage.Literals.EXECUTION__PARAMETER_VALUE_MAP, UNKNOWN_PARAMETER);
 				}
 			}
 		}
 	}
-	
+
 	@Check
 	public void checkUnknownParameters(Execution execution) {
 		for (parameterValueEntry entry : execution.getParameterValueMap()) {
@@ -67,12 +128,11 @@ public class PanoptesXValidator extends AbstractPanoptesXValidator {
 			}
 			if (!found) {
 				warning("Unknown parameter " + entry.getKey(),
-						PanoptesDSLPackage.Literals.EXECUTION__PARAMETER_VALUE_MAP,
-						MANDTORY_PARAMETER_MISSING);
+						PanoptesDSLPackage.Literals.EXECUTION__PARAMETER_VALUE_MAP, MANDTORY_PARAMETER_MISSING);
 			}
 		}
 	}
-	
+
 	@Check
 	public void checkParameterTypes(Execution execution) {
 		for (parameterValueEntry entry : execution.getParameterValueMap()) {
@@ -83,51 +143,44 @@ public class PanoptesXValidator extends AbstractPanoptesXValidator {
 					break;
 				}
 			}
-			if (parameter != null & parameter.getType()!=null) {
-				switch(parameter.getType().getLiteral()) {
-				case("Integer"):
+			if (parameter != null & parameter.getType() != null) {
+				switch (parameter.getType().getLiteral()) {
+				case ("Integer"):
 					try {
 						Integer.parseInt(entry.getValue());
-					}
-					catch(Exception e){
+					} catch (Exception e) {
 						error("Value of parameter " + entry.getKey() + " is not a valid Integer",
-								PanoptesDSLPackage.Literals.EXECUTION__PARAMETER_VALUE_MAP,
-								WRONG_TYPE);
+								PanoptesDSLPackage.Literals.EXECUTION__PARAMETER_VALUE_MAP, WRONG_TYPE);
 					}
 					break;
-				case("Boolean"):
-					if ( !entry.getValue().equals("true")  & !entry.getValue().equals("false")){
-							error("Value of parameter " + entry.getKey() + " is not a valid Boolean",
-									PanoptesDSLPackage.Literals.EXECUTION__PARAMETER_VALUE_MAP,
-									WRONG_TYPE);
+				case ("Boolean"):
+					if (!entry.getValue().equals("true") & !entry.getValue().equals("false")) {
+						error("Value of parameter " + entry.getKey() + " is not a valid Boolean",
+								PanoptesDSLPackage.Literals.EXECUTION__PARAMETER_VALUE_MAP, WRONG_TYPE);
 					}
 					break;
-				case("Real"):
+				case ("Real"):
 					try {
 						System.out.println(entry.getValue());
 						Double.parseDouble(entry.getValue());
-					}
-					catch(Exception e) {
+					} catch (Exception e) {
 						error("Value of parameter " + entry.getKey() + " is not a valid Real",
-								PanoptesDSLPackage.Literals.EXECUTION__PARAMETER_VALUE_MAP,
-								WRONG_TYPE);
+								PanoptesDSLPackage.Literals.EXECUTION__PARAMETER_VALUE_MAP, WRONG_TYPE);
 					}
 					break;
 				}
 			}
 		}
 	}
-	
-	private EList<Parameter> getAdditionalParameters(EObject execution){
+
+	private EList<Parameter> getAdditionalParameters(EObject execution) {
 		EList<Parameter> parameters = null;
-		if (execution.eClass().getClassifierID()==PanoptesDSLPackage.BASE_ALGORITHM_EXECUTION){
-			parameters = ((BaseAlgorithmExecution)execution).getAlgorithm().getAdditionalParameters();
-		}
-		else if (execution.eClass().getClassifierID()==PanoptesDSLPackage.HIGHER_ORDER_ALGORITHM_EXECUTION) {
-			parameters = ((HigherOrderAlgorithmExecution)execution).getAlgorithm().getAdditionalParameters();
-		}
-		else if (execution.eClass().getClassifierID()==PanoptesDSLPackage.ACTION_EXECUTION) {
-			parameters = ((ActionExecution)execution).getAction().getAdditionalParameters();
+		if (execution.eClass().getClassifierID() == PanoptesDSLPackage.BASE_ALGORITHM_EXECUTION) {
+			parameters = ((BaseAlgorithmExecution) execution).getAlgorithm().getAdditionalParameters();
+		} else if (execution.eClass().getClassifierID() == PanoptesDSLPackage.HIGHER_ORDER_ALGORITHM_EXECUTION) {
+			parameters = ((HigherOrderAlgorithmExecution) execution).getAlgorithm().getAdditionalParameters();
+		} else if (execution.eClass().getClassifierID() == PanoptesDSLPackage.ACTION_EXECUTION) {
+			parameters = ((ActionExecution) execution).getAction().getAdditionalParameters();
 		}
 		return parameters;
 	}

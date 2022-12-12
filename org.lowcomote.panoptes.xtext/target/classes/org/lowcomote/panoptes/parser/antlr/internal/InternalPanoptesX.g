@@ -2311,9 +2311,9 @@ ruleBaseAlgorithmExecution returns [EObject current=null]
 					{
 						getUnorderedGroupHelper().select(grammarAccess.getBaseAlgorithmExecutionAccess().getUnorderedGroup_4(), 2);
 					}
-								({true}?=>(otherlv_12='historic'
+								({true}?=>(otherlv_12='historical'
 								{
-									newLeafNode(otherlv_12, grammarAccess.getBaseAlgorithmExecutionAccess().getHistoricKeyword_4_2_0());
+									newLeafNode(otherlv_12, grammarAccess.getBaseAlgorithmExecutionAccess().getHistoricalKeyword_4_2_0());
 								}
 								otherlv_13='data'
 								{

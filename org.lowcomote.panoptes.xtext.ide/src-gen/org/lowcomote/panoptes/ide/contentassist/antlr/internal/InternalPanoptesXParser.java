@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalPanoptesXParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_SAFESTRING", "RULE_INT", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'minimum'", "'min'", "'maximum'", "'max'", "'continuous'", "'categorical'", "'ordered categorical'", "'hour'", "'day'", "'week'", "'month'", "'year'", "'Integer'", "'Real'", "'String'", "'Boolean'", "'Model'", "'{'", "'}'", "'uses'", "','", "'outputs'", "'FeatureStore'", "'features'", "'entities'", "'labels'", "'request'", "'data'", "'keys'", "':'", "'requires'", "'predicts'", "'Deployment'", "'model'", "'inputs'", "'BaseAlgorithm'", "'codebase'", "'runtime'", "'severity'", "'levels'", "'accepts'", "'parameters'", "'HigherOrderAlgorithm'", "'BaseAlgorithmRuntime'", "'endpoint'", "'HigherOrderAlgorithmRuntime'", "'BaseAlgorithmExecution'", "'algorithm'", "'live'", "'historic'", "'actions'", "'parameter'", "'values'", "'HigherOrderAlgorithmExecution'", "'observed'", "'execution'", "'observations'", "'->'", "'Trigger'", "'execute'", "'or'", "'every'", "'one'", "'samples'", "'predictions'", "'Action'", "'='", "'ActionExecution'", "'action'", "'-'", "'only'", "'mandatory'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_SAFESTRING", "RULE_INT", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'minimum'", "'min'", "'maximum'", "'max'", "'continuous'", "'categorical'", "'ordered categorical'", "'hour'", "'day'", "'week'", "'month'", "'year'", "'Integer'", "'Real'", "'String'", "'Boolean'", "'Model'", "'{'", "'}'", "'uses'", "','", "'outputs'", "'FeatureStore'", "'features'", "'entities'", "'labels'", "'request'", "'data'", "'keys'", "':'", "'requires'", "'predicts'", "'Deployment'", "'model'", "'inputs'", "'BaseAlgorithm'", "'codebase'", "'runtime'", "'severity'", "'levels'", "'accepts'", "'parameters'", "'HigherOrderAlgorithm'", "'BaseAlgorithmRuntime'", "'endpoint'", "'HigherOrderAlgorithmRuntime'", "'BaseAlgorithmExecution'", "'algorithm'", "'live'", "'historical'", "'actions'", "'parameter'", "'values'", "'HigherOrderAlgorithmExecution'", "'observed'", "'execution'", "'observations'", "'->'", "'Trigger'", "'execute'", "'or'", "'every'", "'one'", "'samples'", "'predictions'", "'Action'", "'='", "'ActionExecution'", "'action'", "'-'", "'only'", "'mandatory'"
     };
     public static final int T__50=50;
     public static final int T__19=19;
@@ -17475,21 +17475,21 @@ public class InternalPanoptesXParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__BaseAlgorithmExecution__Group_4_2__0__Impl"
-    // InternalPanoptesX.g:5722:1: rule__BaseAlgorithmExecution__Group_4_2__0__Impl : ( 'historic' ) ;
+    // InternalPanoptesX.g:5722:1: rule__BaseAlgorithmExecution__Group_4_2__0__Impl : ( 'historical' ) ;
     public final void rule__BaseAlgorithmExecution__Group_4_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPanoptesX.g:5726:1: ( ( 'historic' ) )
-            // InternalPanoptesX.g:5727:1: ( 'historic' )
+            // InternalPanoptesX.g:5726:1: ( ( 'historical' ) )
+            // InternalPanoptesX.g:5727:1: ( 'historical' )
             {
-            // InternalPanoptesX.g:5727:1: ( 'historic' )
-            // InternalPanoptesX.g:5728:2: 'historic'
+            // InternalPanoptesX.g:5727:1: ( 'historical' )
+            // InternalPanoptesX.g:5728:2: 'historical'
             {
-             before(grammarAccess.getBaseAlgorithmExecutionAccess().getHistoricKeyword_4_2_0()); 
+             before(grammarAccess.getBaseAlgorithmExecutionAccess().getHistoricalKeyword_4_2_0()); 
             match(input,61,FOLLOW_2); 
-             after(grammarAccess.getBaseAlgorithmExecutionAccess().getHistoricKeyword_4_2_0()); 
+             after(grammarAccess.getBaseAlgorithmExecutionAccess().getHistoricalKeyword_4_2_0()); 
 
             }
 

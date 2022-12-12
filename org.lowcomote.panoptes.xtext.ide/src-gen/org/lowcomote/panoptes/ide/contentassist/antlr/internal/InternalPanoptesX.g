@@ -5725,9 +5725,9 @@ rule__BaseAlgorithmExecution__Group_4_2__0__Impl
 	}
 :
 (
-	{ before(grammarAccess.getBaseAlgorithmExecutionAccess().getHistoricKeyword_4_2_0()); }
-	'historic'
-	{ after(grammarAccess.getBaseAlgorithmExecutionAccess().getHistoricKeyword_4_2_0()); }
+	{ before(grammarAccess.getBaseAlgorithmExecutionAccess().getHistoricalKeyword_4_2_0()); }
+	'historical'
+	{ after(grammarAccess.getBaseAlgorithmExecutionAccess().getHistoricalKeyword_4_2_0()); }
 )
 ;
 finally {

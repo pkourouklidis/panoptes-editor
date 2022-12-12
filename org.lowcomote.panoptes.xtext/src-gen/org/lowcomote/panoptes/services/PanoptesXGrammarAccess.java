@@ -1510,7 +1510,7 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final CrossReference cCurrentIOValuesModelIOCrossReference_4_1_3_1_0 = (CrossReference)cCurrentIOValuesAssignment_4_1_3_1.eContents().get(0);
 		private final RuleCall cCurrentIOValuesModelIOEStringParserRuleCall_4_1_3_1_0_1 = (RuleCall)cCurrentIOValuesModelIOCrossReference_4_1_3_1_0.eContents().get(1);
 		private final Group cGroup_4_2 = (Group)cUnorderedGroup_4.eContents().get(2);
-		private final Keyword cHistoricKeyword_4_2_0 = (Keyword)cGroup_4_2.eContents().get(0);
+		private final Keyword cHistoricalKeyword_4_2_0 = (Keyword)cGroup_4_2.eContents().get(0);
 		private final Keyword cDataKeyword_4_2_1 = (Keyword)cGroup_4_2.eContents().get(1);
 		private final Assignment cHistoricIOValuesAssignment_4_2_2 = (Assignment)cGroup_4_2.eContents().get(2);
 		private final CrossReference cHistoricIOValuesModelIOCrossReference_4_2_2_0 = (CrossReference)cHistoricIOValuesAssignment_4_2_2.eContents().get(0);
@@ -1547,7 +1547,7 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//        (
 		//            ('algorithm' algorithm=[BaseAlgorithm|EString]) &
 		//            ('live' 'data' currentIOValues+=[ModelIO|EString] ( "," currentIOValues+=[ModelIO|EString])*)? &
-		//            ('historic' 'data' historicIOValues+=[ModelIO|EString] ( "," historicIOValues+=[ModelIO|EString])*)? &
+		//            ('historical' 'data' historicIOValues+=[ModelIO|EString] ( "," historicIOValues+=[ModelIO|EString])*)? &
 		//            ('actions' ActionExecutionMap+=actionExecutionEntry ( "," ActionExecutionMap+=actionExecutionEntry)*) &
 		//            ('parameter' 'values' parameterValueMap+=parameterValueEntry ( "," parameterValueMap+=parameterValueEntry)*)?
 		//        )
@@ -1561,7 +1561,7 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//    (
 		//        ('algorithm' algorithm=[BaseAlgorithm|EString]) &
 		//        ('live' 'data' currentIOValues+=[ModelIO|EString] ( "," currentIOValues+=[ModelIO|EString])*)? &
-		//        ('historic' 'data' historicIOValues+=[ModelIO|EString] ( "," historicIOValues+=[ModelIO|EString])*)? &
+		//        ('historical' 'data' historicIOValues+=[ModelIO|EString] ( "," historicIOValues+=[ModelIO|EString])*)? &
 		//        ('actions' ActionExecutionMap+=actionExecutionEntry ( "," ActionExecutionMap+=actionExecutionEntry)*) &
 		//        ('parameter' 'values' parameterValueMap+=parameterValueEntry ( "," parameterValueMap+=parameterValueEntry)*)?
 		//    )
@@ -1586,7 +1586,7 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//(
 		//    ('algorithm' algorithm=[BaseAlgorithm|EString]) &
 		//    ('live' 'data' currentIOValues+=[ModelIO|EString] ( "," currentIOValues+=[ModelIO|EString])*)? &
-		//    ('historic' 'data' historicIOValues+=[ModelIO|EString] ( "," historicIOValues+=[ModelIO|EString])*)? &
+		//    ('historical' 'data' historicIOValues+=[ModelIO|EString] ( "," historicIOValues+=[ModelIO|EString])*)? &
 		//    ('actions' ActionExecutionMap+=actionExecutionEntry ( "," ActionExecutionMap+=actionExecutionEntry)*) &
 		//    ('parameter' 'values' parameterValueMap+=parameterValueEntry ( "," parameterValueMap+=parameterValueEntry)*)?
 		//)
@@ -1640,11 +1640,11 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//EString
 		public RuleCall getCurrentIOValuesModelIOEStringParserRuleCall_4_1_3_1_0_1() { return cCurrentIOValuesModelIOEStringParserRuleCall_4_1_3_1_0_1; }
 		
-		//('historic' 'data' historicIOValues+=[ModelIO|EString] ( "," historicIOValues+=[ModelIO|EString])*)?
+		//('historical' 'data' historicIOValues+=[ModelIO|EString] ( "," historicIOValues+=[ModelIO|EString])*)?
 		public Group getGroup_4_2() { return cGroup_4_2; }
 		
-		//'historic'
-		public Keyword getHistoricKeyword_4_2_0() { return cHistoricKeyword_4_2_0; }
+		//'historical'
+		public Keyword getHistoricalKeyword_4_2_0() { return cHistoricalKeyword_4_2_0; }
 		
 		//'data'
 		public Keyword getDataKeyword_4_2_1() { return cDataKeyword_4_2_1; }
@@ -3246,7 +3246,7 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 	//        (
 	//            ('algorithm' algorithm=[BaseAlgorithm|EString]) &
 	//            ('live' 'data' currentIOValues+=[ModelIO|EString] ( "," currentIOValues+=[ModelIO|EString])*)? &
-	//            ('historic' 'data' historicIOValues+=[ModelIO|EString] ( "," historicIOValues+=[ModelIO|EString])*)? &
+	//            ('historical' 'data' historicIOValues+=[ModelIO|EString] ( "," historicIOValues+=[ModelIO|EString])*)? &
 	//            ('actions' ActionExecutionMap+=actionExecutionEntry ( "," ActionExecutionMap+=actionExecutionEntry)*) &
 	//            ('parameter' 'values' parameterValueMap+=parameterValueEntry ( "," parameterValueMap+=parameterValueEntry)*)?
 	//        )

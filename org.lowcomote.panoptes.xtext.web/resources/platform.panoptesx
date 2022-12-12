@@ -13,6 +13,11 @@ Model PTP_XGBOOST{
     uses INVOICE_TOTAL_GROSS_AMOUNT
 }
 
+Model PTP_XGBOOST2{
+    outputs PTP_XGBOOST_PRED predicts INVOICE_PAID_ON_TIME
+    uses INVOICE_TOTAL_GROSS_AMOUNT
+}
+
 BaseAlgorithmRuntime PythonFunction{
 	endpoint  "https://domain.com"
 }
@@ -21,7 +26,7 @@ BaseAlgorithm kolmogorovSmirnov{
 	codebase "https://domain.com"
 	runtime PythonFunction
 	severity levels 2
-	accepts only continuous
+	accepts only categorical
 	parameters pValue:Boolean
 }
 
@@ -52,8 +57,8 @@ Deployment PTP{
 	
 		BaseAlgorithmExecution KS_INVOICE_TOTAL_GROSS_AMOUNT{
 		algorithm kolmogorovSmirnov
-		live data INVOICE_TOTAL_GROSS_AMOUNT
-	    historic data INVOICE_TOTAL_GROSS_AMOUNT
+		live data INVOICE_TOTAL_GROSS_AMOUNT, INVOICE_PAID_ON_TIME
+	    historical data INVOICE_TOTAL_GROSS_AMOUNT
 		actions 1->emailMe
 		parameter values pValue = true
 	}

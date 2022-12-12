@@ -19,7 +19,7 @@ Platform returns Platform:
 Model returns Model:
 	{Model}
 	'Model'
-	name=EString
+	name=(STRING|SAFESTRING)
 	'{'
 		(
 			('uses' inputs+=[Feature|EString] ( "," inputs+=[Feature|EString])*) &
@@ -41,7 +41,7 @@ FeatureStore returns FeatureStore:
 ;
 
 Entity returns Entity:
-	name=EString
+	name=(STRING|SAFESTRING)
 	'{'
 		'keys' keys+=Key ( "," keys+=Key)*
 	'}'
@@ -51,7 +51,7 @@ ModelIO returns ModelIO:
 	Feature | Prediction | Label;
 	
 Feature returns Feature:
-	name=EString
+	name=(STRING|SAFESTRING)
 	(':' type=statisticalVariableType)?
 	('{'
 		(
@@ -63,13 +63,13 @@ Feature returns Feature:
 
 Prediction returns Prediction:
 	{Prediction}
-	name=EString
+	name=(STRING|SAFESTRING)
 	('predicts' label=[Label|EString])?
 ;
 
 Label returns Label:
 	{Label}
-	name=EString
+	name=(STRING|SAFESTRING)
 	(':' type=statisticalVariableType)?
 ;
 	
@@ -78,18 +78,18 @@ DeploymentIO returns DeploymentIO:
 
 RequestData returns RequestData:
 	{RequestData}
-	name=EString;
+	name=(STRING|SAFESTRING);
 
 Key returns Key:
 	{Key}
-	name=EString;
+	name=(STRING|SAFESTRING);
 
 enum statisticalVariableType returns statisticalVariableType:
 	continuous = 'continuous' | categorical = 'categorical' | orderedCategorical = 'ordered categorical';
 	
 Deployment returns Deployment:
 	'Deployment'
-	name=EString
+	name=(STRING|SAFESTRING)
 	'{'
 		(
 			'model' mlModel=[Model|EString] |
@@ -106,10 +106,10 @@ Algorithm returns Algorithm:
 
 BaseAlgorithm returns BaseAlgorithm:
 	'BaseAlgorithm'
-	name=EString
+	name=(STRING|SAFESTRING)
 	'{'
 		(
-			('codebase' codebase=EString) &
+			('codebase' codebase=(STRING|SAFESTRING)) &
 			('runtime' runtime=[BaseAlgorithmRuntime|EString]) &
 			('severity' 'levels' driftLevels=EIntegerObject) &
 			('accepts' (strict?='only')? supportedTypes+=statisticalVariableType ( "," supportedTypes+=statisticalVariableType)*)? &
@@ -120,10 +120,10 @@ BaseAlgorithm returns BaseAlgorithm:
 HigherOrderAlgorithm returns HigherOrderAlgorithm:
 	{HigherOrderAlgorithm}
 	'HigherOrderAlgorithm'
-	name=EString
+	name=(STRING|SAFESTRING)
 	'{'
 		(
-			('codebase' codebase=EString) &
+			('codebase' codebase=(STRING|SAFESTRING)) &
 			('runtime' runtime=[HigherOrderAlgorithmRuntime|EString]) &
 			('severity' 'levels' driftLevels=EIntegerObject) &
 			('parameters' additionalParameters+=Parameter ( "," additionalParameters+=Parameter)*)?
@@ -137,17 +137,17 @@ AlgorithmRuntime returns AlgorithmRuntime:
 BaseAlgorithmRuntime returns BaseAlgorithmRuntime:
 	{BaseAlgorithmRuntime}
 	'BaseAlgorithmRuntime'
-	name=EString
+	name=(STRING|SAFESTRING)
 	('{'
-		'endpoint' endpoint=EString
+		'endpoint' endpoint=(STRING|SAFESTRING)
 	'}')?;
 
 HigherOrderAlgorithmRuntime returns HigherOrderAlgorithmRuntime:
 	{HigherOrderAlgorithmRuntime}
 	'HigherOrderAlgorithmRuntime'
-	name=EString
+	name=(STRING|SAFESTRING)
 	('{'
-		'endpoint' endpoint=EString
+		'endpoint' endpoint=(STRING|SAFESTRING)
 	'}')?;
 
 AlgorithmExecution returns AlgorithmExecution:
@@ -156,7 +156,7 @@ AlgorithmExecution returns AlgorithmExecution:
 BaseAlgorithmExecution returns BaseAlgorithmExecution:
 	{BaseAlgorithmExecution}
 	'BaseAlgorithmExecution'
-	name=EString
+	name=(STRING|SAFESTRING)
 	'{'
 		(
 			('algorithm' algorithm=[BaseAlgorithm|EString]) &
@@ -171,7 +171,7 @@ BaseAlgorithmExecution returns BaseAlgorithmExecution:
 HigherOrderAlgorithmExecution returns HigherOrderAlgorithmExecution:
 	{HigherOrderAlgorithmExecution}
 	'HigherOrderAlgorithmExecution'
-	name=EString
+	name=(STRING|SAFESTRING)
 	'{'
 		(
 			('algorithm' algorithm=[HigherOrderAlgorithm|EString]) &
@@ -193,7 +193,7 @@ actionExecutionEntry returns actionExecutionEntry:
 TriggerGroup returns TriggerGroup:
 	{TriggerGroup}
 	'Trigger'
-	name=EString
+	name=(STRING|SAFESTRING)
 	'{'
 	compositeTriggers+=CompositeTrigger ("or" compositeTriggers+=CompositeTrigger)*
 	'execute' targets+=[BaseAlgorithmExecution|EString] ("," targets+=[BaseAlgorithmExecution|EString])*
@@ -212,7 +212,7 @@ CompositeTrigger returns CompositeTrigger:
 
 TemporalTrigger returns TemporalTrigger:
 	{TemporalTrigger}
-	('one' frequency=frequencyEnum) | (cronString=EString);
+	('one' frequency=frequencyEnum) | (cronString=STRING);
 
 enum frequencyEnum returns frequencyEnum:
 	hourly = 'hour' | daily = 'day' | weekly = 'week' | monthly = 'month' | yearly = 'year';
@@ -232,10 +232,10 @@ LabelBasedTrigger returns LabelBasedTrigger:
 Action returns Action:
 	{Action}
 	('Action')
-	name=EString
+	name=(STRING|SAFESTRING)
 	'{'
 		(
-			('endpoint' endpoint=EString)? &
+			('endpoint' endpoint=(STRING|SAFESTRING))? &
 			('parameters' additionalParameters+=Parameter ( ',' additionalParameters+=Parameter)*)?
 		)
 	'}';
@@ -243,7 +243,7 @@ Action returns Action:
 Parameter returns Parameter:
 	{Parameter}
 	(mandatory?='mandatory')?
-	name=EString
+	name=(STRING|SAFESTRING)
 	 (':' type=parameterType)?
 ;
 
@@ -252,15 +252,15 @@ enum parameterType returns parameterType:
 
 parameterValueEntry returns parameterValueEntry:
 	{parameterValueEntry}
-	key=EString
+	key=(STRING|SAFESTRING)
 	'='
-	value=ParameterLiteral
+	value=EString
 ;
 
 ActionExecution returns ActionExecution:
 	{ActionExecution}
 	('ActionExecution')
-	name=EString
+	name=(STRING|SAFESTRING)
 	'{'
 	(
 		('action' action=[Action|EString]) &
@@ -269,12 +269,14 @@ ActionExecution returns ActionExecution:
 	'}';
 
 EIntegerObject returns ecore::EIntegerObject:
-	'-'? INT;
+	INT;
 
 EString returns ecore::EString:
-	STRING | SAFESTRING;
-	
-ParameterLiteral returns ecore::EString:
-	'-'? (INT)? (SAFESTRING)?;
+	FLOAT | INT | STRING | SAFESTRING;
+
+terminal FLOAT returns ecore::EFloat: '-'? ('0'..'9') '.' ('0'..'9')+;
+
+@Override 
+terminal INT returns ecore::EInt: '-'? ('0'..'9')+;
 
 terminal SAFESTRING: ('a'..'z'|'A'..'Z'|'_'|'.'|'@') ('a'..'z'|'A'..'Z'|'_'|'.'|'-'|'@'|'0'..'9')*;

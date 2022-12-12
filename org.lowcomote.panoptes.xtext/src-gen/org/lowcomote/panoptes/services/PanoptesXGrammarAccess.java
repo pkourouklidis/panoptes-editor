@@ -107,7 +107,9 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final Action cModelAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cModelKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Alternatives cNameAlternatives_2_0 = (Alternatives)cNameAssignment_2.eContents().get(0);
+		private final RuleCall cNameSTRINGTerminalRuleCall_2_0_0 = (RuleCall)cNameAlternatives_2_0.eContents().get(0);
+		private final RuleCall cNameSAFESTRINGTerminalRuleCall_2_0_1 = (RuleCall)cNameAlternatives_2_0.eContents().get(1);
 		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final UnorderedGroup cUnorderedGroup_4 = (UnorderedGroup)cGroup.eContents().get(4);
 		private final Group cGroup_4_0 = (Group)cUnorderedGroup_4.eContents().get(0);
@@ -129,7 +131,7 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//Model returns Model:
 		//    {Model}
 		//    'Model'
-		//    name=EString
+		//    name=(STRING|SAFESTRING)
 		//    '{'
 		//        (
 		//            ('uses' inputs+=[Feature|EString] ( "," inputs+=[Feature|EString])*) &
@@ -140,7 +142,7 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		
 		//{Model}
 		//'Model'
-		//name=EString
+		//name=(STRING|SAFESTRING)
 		//'{'
 		//    (
 		//        ('uses' inputs+=[Feature|EString] ( "," inputs+=[Feature|EString])*) &
@@ -155,11 +157,17 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//'Model'
 		public Keyword getModelKeyword_1() { return cModelKeyword_1; }
 		
-		//name=EString
+		//name=(STRING|SAFESTRING)
 		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
 		
-		//EString
-		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
+		//(STRING|SAFESTRING)
+		public Alternatives getNameAlternatives_2_0() { return cNameAlternatives_2_0; }
+		
+		//STRING
+		public RuleCall getNameSTRINGTerminalRuleCall_2_0_0() { return cNameSTRINGTerminalRuleCall_2_0_0; }
+		
+		//SAFESTRING
+		public RuleCall getNameSAFESTRINGTerminalRuleCall_2_0_1() { return cNameSAFESTRINGTerminalRuleCall_2_0_1; }
 		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
@@ -406,7 +414,9 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.lowcomote.panoptes.PanoptesX.Entity");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cNameEStringParserRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
+		private final Alternatives cNameAlternatives_0_0 = (Alternatives)cNameAssignment_0.eContents().get(0);
+		private final RuleCall cNameSTRINGTerminalRuleCall_0_0_0 = (RuleCall)cNameAlternatives_0_0.eContents().get(0);
+		private final RuleCall cNameSAFESTRINGTerminalRuleCall_0_0_1 = (RuleCall)cNameAlternatives_0_0.eContents().get(1);
 		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Keyword cKeysKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cKeysAssignment_3 = (Assignment)cGroup.eContents().get(3);
@@ -418,24 +428,30 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//Entity returns Entity:
-		//    name=EString
+		//    name=(STRING|SAFESTRING)
 		//    '{'
 		//        'keys' keys+=Key ( "," keys+=Key)*
 		//    '}'
 		//    ;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=EString
+		//name=(STRING|SAFESTRING)
 		//'{'
 		//    'keys' keys+=Key ( "," keys+=Key)*
 		//'}'
 		public Group getGroup() { return cGroup; }
 		
-		//name=EString
+		//name=(STRING|SAFESTRING)
 		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
 		
-		//EString
-		public RuleCall getNameEStringParserRuleCall_0_0() { return cNameEStringParserRuleCall_0_0; }
+		//(STRING|SAFESTRING)
+		public Alternatives getNameAlternatives_0_0() { return cNameAlternatives_0_0; }
+		
+		//STRING
+		public RuleCall getNameSTRINGTerminalRuleCall_0_0_0() { return cNameSTRINGTerminalRuleCall_0_0_0; }
+		
+		//SAFESTRING
+		public RuleCall getNameSAFESTRINGTerminalRuleCall_0_0_1() { return cNameSAFESTRINGTerminalRuleCall_0_0_1; }
 		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
@@ -491,7 +507,9 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.lowcomote.panoptes.PanoptesX.Feature");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cNameEStringParserRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
+		private final Alternatives cNameAlternatives_0_0 = (Alternatives)cNameAssignment_0.eContents().get(0);
+		private final RuleCall cNameSTRINGTerminalRuleCall_0_0_0 = (RuleCall)cNameAlternatives_0_0.eContents().get(0);
+		private final RuleCall cNameSAFESTRINGTerminalRuleCall_0_0_1 = (RuleCall)cNameAlternatives_0_0.eContents().get(1);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Keyword cColonKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final Assignment cTypeAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
@@ -525,7 +543,7 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final Keyword cRightCurlyBracketKeyword_2_2 = (Keyword)cGroup_2.eContents().get(2);
 		
 		//Feature returns Feature:
-		//    name=EString
+		//    name=(STRING|SAFESTRING)
 		//    (':' type=statisticalVariableType)?
 		//    ('{'
 		//        (
@@ -536,7 +554,7 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=EString
+		//name=(STRING|SAFESTRING)
 		//(':' type=statisticalVariableType)?
 		//('{'
 		//    (
@@ -546,11 +564,17 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//'}')?
 		public Group getGroup() { return cGroup; }
 		
-		//name=EString
+		//name=(STRING|SAFESTRING)
 		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
 		
-		//EString
-		public RuleCall getNameEStringParserRuleCall_0_0() { return cNameEStringParserRuleCall_0_0; }
+		//(STRING|SAFESTRING)
+		public Alternatives getNameAlternatives_0_0() { return cNameAlternatives_0_0; }
+		
+		//STRING
+		public RuleCall getNameSTRINGTerminalRuleCall_0_0_0() { return cNameSTRINGTerminalRuleCall_0_0_0; }
+		
+		//SAFESTRING
+		public RuleCall getNameSAFESTRINGTerminalRuleCall_0_0_1() { return cNameSAFESTRINGTerminalRuleCall_0_0_1; }
 		
 		//(':' type=statisticalVariableType)?
 		public Group getGroup_1() { return cGroup_1; }
@@ -658,7 +682,9 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cPredictionAction_0 = (Action)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameEStringParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Alternatives cNameAlternatives_1_0 = (Alternatives)cNameAssignment_1.eContents().get(0);
+		private final RuleCall cNameSTRINGTerminalRuleCall_1_0_0 = (RuleCall)cNameAlternatives_1_0.eContents().get(0);
+		private final RuleCall cNameSAFESTRINGTerminalRuleCall_1_0_1 = (RuleCall)cNameAlternatives_1_0.eContents().get(1);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
 		private final Keyword cPredictsKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Assignment cLabelAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
@@ -667,24 +693,30 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		
 		//Prediction returns Prediction:
 		//    {Prediction}
-		//    name=EString
+		//    name=(STRING|SAFESTRING)
 		//    ('predicts' label=[Label|EString])?
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{Prediction}
-		//name=EString
+		//name=(STRING|SAFESTRING)
 		//('predicts' label=[Label|EString])?
 		public Group getGroup() { return cGroup; }
 		
 		//{Prediction}
 		public Action getPredictionAction_0() { return cPredictionAction_0; }
 		
-		//name=EString
+		//name=(STRING|SAFESTRING)
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
-		//EString
-		public RuleCall getNameEStringParserRuleCall_1_0() { return cNameEStringParserRuleCall_1_0; }
+		//(STRING|SAFESTRING)
+		public Alternatives getNameAlternatives_1_0() { return cNameAlternatives_1_0; }
+		
+		//STRING
+		public RuleCall getNameSTRINGTerminalRuleCall_1_0_0() { return cNameSTRINGTerminalRuleCall_1_0_0; }
+		
+		//SAFESTRING
+		public RuleCall getNameSAFESTRINGTerminalRuleCall_1_0_1() { return cNameSAFESTRINGTerminalRuleCall_1_0_1; }
 		
 		//('predicts' label=[Label|EString])?
 		public Group getGroup_2() { return cGroup_2; }
@@ -706,7 +738,9 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cLabelAction_0 = (Action)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameEStringParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Alternatives cNameAlternatives_1_0 = (Alternatives)cNameAssignment_1.eContents().get(0);
+		private final RuleCall cNameSTRINGTerminalRuleCall_1_0_0 = (RuleCall)cNameAlternatives_1_0.eContents().get(0);
+		private final RuleCall cNameSAFESTRINGTerminalRuleCall_1_0_1 = (RuleCall)cNameAlternatives_1_0.eContents().get(1);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
 		private final Keyword cColonKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Assignment cTypeAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
@@ -714,24 +748,30 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		
 		//Label returns Label:
 		//    {Label}
-		//    name=EString
+		//    name=(STRING|SAFESTRING)
 		//    (':' type=statisticalVariableType)?
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{Label}
-		//name=EString
+		//name=(STRING|SAFESTRING)
 		//(':' type=statisticalVariableType)?
 		public Group getGroup() { return cGroup; }
 		
 		//{Label}
 		public Action getLabelAction_0() { return cLabelAction_0; }
 		
-		//name=EString
+		//name=(STRING|SAFESTRING)
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
-		//EString
-		public RuleCall getNameEStringParserRuleCall_1_0() { return cNameEStringParserRuleCall_1_0; }
+		//(STRING|SAFESTRING)
+		public Alternatives getNameAlternatives_1_0() { return cNameAlternatives_1_0; }
+		
+		//STRING
+		public RuleCall getNameSTRINGTerminalRuleCall_1_0_0() { return cNameSTRINGTerminalRuleCall_1_0_0; }
+		
+		//SAFESTRING
+		public RuleCall getNameSAFESTRINGTerminalRuleCall_1_0_1() { return cNameSAFESTRINGTerminalRuleCall_1_0_1; }
 		
 		//(':' type=statisticalVariableType)?
 		public Group getGroup_2() { return cGroup_2; }
@@ -769,57 +809,75 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cRequestDataAction_0 = (Action)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameEStringParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Alternatives cNameAlternatives_1_0 = (Alternatives)cNameAssignment_1.eContents().get(0);
+		private final RuleCall cNameSTRINGTerminalRuleCall_1_0_0 = (RuleCall)cNameAlternatives_1_0.eContents().get(0);
+		private final RuleCall cNameSAFESTRINGTerminalRuleCall_1_0_1 = (RuleCall)cNameAlternatives_1_0.eContents().get(1);
 		
 		//RequestData returns RequestData:
 		//    {RequestData}
-		//    name=EString;
+		//    name=(STRING|SAFESTRING);
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{RequestData}
-		//name=EString
+		//name=(STRING|SAFESTRING)
 		public Group getGroup() { return cGroup; }
 		
 		//{RequestData}
 		public Action getRequestDataAction_0() { return cRequestDataAction_0; }
 		
-		//name=EString
+		//name=(STRING|SAFESTRING)
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
-		//EString
-		public RuleCall getNameEStringParserRuleCall_1_0() { return cNameEStringParserRuleCall_1_0; }
+		//(STRING|SAFESTRING)
+		public Alternatives getNameAlternatives_1_0() { return cNameAlternatives_1_0; }
+		
+		//STRING
+		public RuleCall getNameSTRINGTerminalRuleCall_1_0_0() { return cNameSTRINGTerminalRuleCall_1_0_0; }
+		
+		//SAFESTRING
+		public RuleCall getNameSAFESTRINGTerminalRuleCall_1_0_1() { return cNameSAFESTRINGTerminalRuleCall_1_0_1; }
 	}
 	public class KeyElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.lowcomote.panoptes.PanoptesX.Key");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cKeyAction_0 = (Action)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameEStringParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Alternatives cNameAlternatives_1_0 = (Alternatives)cNameAssignment_1.eContents().get(0);
+		private final RuleCall cNameSTRINGTerminalRuleCall_1_0_0 = (RuleCall)cNameAlternatives_1_0.eContents().get(0);
+		private final RuleCall cNameSAFESTRINGTerminalRuleCall_1_0_1 = (RuleCall)cNameAlternatives_1_0.eContents().get(1);
 		
 		//Key returns Key:
 		//    {Key}
-		//    name=EString;
+		//    name=(STRING|SAFESTRING);
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{Key}
-		//name=EString
+		//name=(STRING|SAFESTRING)
 		public Group getGroup() { return cGroup; }
 		
 		//{Key}
 		public Action getKeyAction_0() { return cKeyAction_0; }
 		
-		//name=EString
+		//name=(STRING|SAFESTRING)
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
-		//EString
-		public RuleCall getNameEStringParserRuleCall_1_0() { return cNameEStringParserRuleCall_1_0; }
+		//(STRING|SAFESTRING)
+		public Alternatives getNameAlternatives_1_0() { return cNameAlternatives_1_0; }
+		
+		//STRING
+		public RuleCall getNameSTRINGTerminalRuleCall_1_0_0() { return cNameSTRINGTerminalRuleCall_1_0_0; }
+		
+		//SAFESTRING
+		public RuleCall getNameSAFESTRINGTerminalRuleCall_1_0_1() { return cNameSAFESTRINGTerminalRuleCall_1_0_1; }
 	}
 	public class DeploymentElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.lowcomote.panoptes.PanoptesX.Deployment");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cDeploymentKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameEStringParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Alternatives cNameAlternatives_1_0 = (Alternatives)cNameAssignment_1.eContents().get(0);
+		private final RuleCall cNameSTRINGTerminalRuleCall_1_0_0 = (RuleCall)cNameAlternatives_1_0.eContents().get(0);
+		private final RuleCall cNameSAFESTRINGTerminalRuleCall_1_0_1 = (RuleCall)cNameAlternatives_1_0.eContents().get(1);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Alternatives cAlternatives_3 = (Alternatives)cGroup.eContents().get(3);
 		private final Group cGroup_3_0 = (Group)cAlternatives_3.eContents().get(0);
@@ -847,7 +905,7 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		
 		//Deployment returns Deployment:
 		//    'Deployment'
-		//    name=EString
+		//    name=(STRING|SAFESTRING)
 		//    '{'
 		//        (
 		//            'model' mlModel=[Model|EString] |
@@ -860,7 +918,7 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Deployment'
-		//name=EString
+		//name=(STRING|SAFESTRING)
 		//'{'
 		//    (
 		//        'model' mlModel=[Model|EString] |
@@ -875,11 +933,17 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//'Deployment'
 		public Keyword getDeploymentKeyword_0() { return cDeploymentKeyword_0; }
 		
-		//name=EString
+		//name=(STRING|SAFESTRING)
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
-		//EString
-		public RuleCall getNameEStringParserRuleCall_1_0() { return cNameEStringParserRuleCall_1_0; }
+		//(STRING|SAFESTRING)
+		public Alternatives getNameAlternatives_1_0() { return cNameAlternatives_1_0; }
+		
+		//STRING
+		public RuleCall getNameSTRINGTerminalRuleCall_1_0_0() { return cNameSTRINGTerminalRuleCall_1_0_0; }
+		
+		//SAFESTRING
+		public RuleCall getNameSAFESTRINGTerminalRuleCall_1_0_1() { return cNameSAFESTRINGTerminalRuleCall_1_0_1; }
 		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
@@ -983,13 +1047,17 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cBaseAlgorithmKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameEStringParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Alternatives cNameAlternatives_1_0 = (Alternatives)cNameAssignment_1.eContents().get(0);
+		private final RuleCall cNameSTRINGTerminalRuleCall_1_0_0 = (RuleCall)cNameAlternatives_1_0.eContents().get(0);
+		private final RuleCall cNameSAFESTRINGTerminalRuleCall_1_0_1 = (RuleCall)cNameAlternatives_1_0.eContents().get(1);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final UnorderedGroup cUnorderedGroup_3 = (UnorderedGroup)cGroup.eContents().get(3);
 		private final Group cGroup_3_0 = (Group)cUnorderedGroup_3.eContents().get(0);
 		private final Keyword cCodebaseKeyword_3_0_0 = (Keyword)cGroup_3_0.eContents().get(0);
 		private final Assignment cCodebaseAssignment_3_0_1 = (Assignment)cGroup_3_0.eContents().get(1);
-		private final RuleCall cCodebaseEStringParserRuleCall_3_0_1_0 = (RuleCall)cCodebaseAssignment_3_0_1.eContents().get(0);
+		private final Alternatives cCodebaseAlternatives_3_0_1_0 = (Alternatives)cCodebaseAssignment_3_0_1.eContents().get(0);
+		private final RuleCall cCodebaseSTRINGTerminalRuleCall_3_0_1_0_0 = (RuleCall)cCodebaseAlternatives_3_0_1_0.eContents().get(0);
+		private final RuleCall cCodebaseSAFESTRINGTerminalRuleCall_3_0_1_0_1 = (RuleCall)cCodebaseAlternatives_3_0_1_0.eContents().get(1);
 		private final Group cGroup_3_1 = (Group)cUnorderedGroup_3.eContents().get(1);
 		private final Keyword cRuntimeKeyword_3_1_0 = (Keyword)cGroup_3_1.eContents().get(0);
 		private final Assignment cRuntimeAssignment_3_1_1 = (Assignment)cGroup_3_1.eContents().get(1);
@@ -1022,10 +1090,10 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		
 		//BaseAlgorithm returns BaseAlgorithm:
 		//    'BaseAlgorithm'
-		//    name=EString
+		//    name=(STRING|SAFESTRING)
 		//    '{'
 		//        (
-		//            ('codebase' codebase=EString) &
+		//            ('codebase' codebase=(STRING|SAFESTRING)) &
 		//            ('runtime' runtime=[BaseAlgorithmRuntime|EString]) &
 		//            ('severity' 'levels' driftLevels=EIntegerObject) &
 		//            ('accepts' (strict?='only')? supportedTypes+=statisticalVariableType ( "," supportedTypes+=statisticalVariableType)*)? &
@@ -1035,10 +1103,10 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'BaseAlgorithm'
-		//name=EString
+		//name=(STRING|SAFESTRING)
 		//'{'
 		//    (
-		//        ('codebase' codebase=EString) &
+		//        ('codebase' codebase=(STRING|SAFESTRING)) &
 		//        ('runtime' runtime=[BaseAlgorithmRuntime|EString]) &
 		//        ('severity' 'levels' driftLevels=EIntegerObject) &
 		//        ('accepts' (strict?='only')? supportedTypes+=statisticalVariableType ( "," supportedTypes+=statisticalVariableType)*)? &
@@ -1050,17 +1118,23 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//'BaseAlgorithm'
 		public Keyword getBaseAlgorithmKeyword_0() { return cBaseAlgorithmKeyword_0; }
 		
-		//name=EString
+		//name=(STRING|SAFESTRING)
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
-		//EString
-		public RuleCall getNameEStringParserRuleCall_1_0() { return cNameEStringParserRuleCall_1_0; }
+		//(STRING|SAFESTRING)
+		public Alternatives getNameAlternatives_1_0() { return cNameAlternatives_1_0; }
+		
+		//STRING
+		public RuleCall getNameSTRINGTerminalRuleCall_1_0_0() { return cNameSTRINGTerminalRuleCall_1_0_0; }
+		
+		//SAFESTRING
+		public RuleCall getNameSAFESTRINGTerminalRuleCall_1_0_1() { return cNameSAFESTRINGTerminalRuleCall_1_0_1; }
 		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
 		//(
-		//    ('codebase' codebase=EString) &
+		//    ('codebase' codebase=(STRING|SAFESTRING)) &
 		//    ('runtime' runtime=[BaseAlgorithmRuntime|EString]) &
 		//    ('severity' 'levels' driftLevels=EIntegerObject) &
 		//    ('accepts' (strict?='only')? supportedTypes+=statisticalVariableType ( "," supportedTypes+=statisticalVariableType)*)? &
@@ -1068,17 +1142,23 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//)
 		public UnorderedGroup getUnorderedGroup_3() { return cUnorderedGroup_3; }
 		
-		//('codebase' codebase=EString)
+		//('codebase' codebase=(STRING|SAFESTRING))
 		public Group getGroup_3_0() { return cGroup_3_0; }
 		
 		//'codebase'
 		public Keyword getCodebaseKeyword_3_0_0() { return cCodebaseKeyword_3_0_0; }
 		
-		//codebase=EString
+		//codebase=(STRING|SAFESTRING)
 		public Assignment getCodebaseAssignment_3_0_1() { return cCodebaseAssignment_3_0_1; }
 		
-		//EString
-		public RuleCall getCodebaseEStringParserRuleCall_3_0_1_0() { return cCodebaseEStringParserRuleCall_3_0_1_0; }
+		//(STRING|SAFESTRING)
+		public Alternatives getCodebaseAlternatives_3_0_1_0() { return cCodebaseAlternatives_3_0_1_0; }
+		
+		//STRING
+		public RuleCall getCodebaseSTRINGTerminalRuleCall_3_0_1_0_0() { return cCodebaseSTRINGTerminalRuleCall_3_0_1_0_0; }
+		
+		//SAFESTRING
+		public RuleCall getCodebaseSAFESTRINGTerminalRuleCall_3_0_1_0_1() { return cCodebaseSAFESTRINGTerminalRuleCall_3_0_1_0_1; }
 		
 		//('runtime' runtime=[BaseAlgorithmRuntime|EString])
 		public Group getGroup_3_1() { return cGroup_3_1; }
@@ -1173,13 +1253,17 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final Action cHigherOrderAlgorithmAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cHigherOrderAlgorithmKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Alternatives cNameAlternatives_2_0 = (Alternatives)cNameAssignment_2.eContents().get(0);
+		private final RuleCall cNameSTRINGTerminalRuleCall_2_0_0 = (RuleCall)cNameAlternatives_2_0.eContents().get(0);
+		private final RuleCall cNameSAFESTRINGTerminalRuleCall_2_0_1 = (RuleCall)cNameAlternatives_2_0.eContents().get(1);
 		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final UnorderedGroup cUnorderedGroup_4 = (UnorderedGroup)cGroup.eContents().get(4);
 		private final Group cGroup_4_0 = (Group)cUnorderedGroup_4.eContents().get(0);
 		private final Keyword cCodebaseKeyword_4_0_0 = (Keyword)cGroup_4_0.eContents().get(0);
 		private final Assignment cCodebaseAssignment_4_0_1 = (Assignment)cGroup_4_0.eContents().get(1);
-		private final RuleCall cCodebaseEStringParserRuleCall_4_0_1_0 = (RuleCall)cCodebaseAssignment_4_0_1.eContents().get(0);
+		private final Alternatives cCodebaseAlternatives_4_0_1_0 = (Alternatives)cCodebaseAssignment_4_0_1.eContents().get(0);
+		private final RuleCall cCodebaseSTRINGTerminalRuleCall_4_0_1_0_0 = (RuleCall)cCodebaseAlternatives_4_0_1_0.eContents().get(0);
+		private final RuleCall cCodebaseSAFESTRINGTerminalRuleCall_4_0_1_0_1 = (RuleCall)cCodebaseAlternatives_4_0_1_0.eContents().get(1);
 		private final Group cGroup_4_1 = (Group)cUnorderedGroup_4.eContents().get(1);
 		private final Keyword cRuntimeKeyword_4_1_0 = (Keyword)cGroup_4_1.eContents().get(0);
 		private final Assignment cRuntimeAssignment_4_1_1 = (Assignment)cGroup_4_1.eContents().get(1);
@@ -1203,10 +1287,10 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//HigherOrderAlgorithm returns HigherOrderAlgorithm:
 		//    {HigherOrderAlgorithm}
 		//    'HigherOrderAlgorithm'
-		//    name=EString
+		//    name=(STRING|SAFESTRING)
 		//    '{'
 		//        (
-		//            ('codebase' codebase=EString) &
+		//            ('codebase' codebase=(STRING|SAFESTRING)) &
 		//            ('runtime' runtime=[HigherOrderAlgorithmRuntime|EString]) &
 		//            ('severity' 'levels' driftLevels=EIntegerObject) &
 		//            ('parameters' additionalParameters+=Parameter ( "," additionalParameters+=Parameter)*)?
@@ -1216,10 +1300,10 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		
 		//{HigherOrderAlgorithm}
 		//'HigherOrderAlgorithm'
-		//name=EString
+		//name=(STRING|SAFESTRING)
 		//'{'
 		//    (
-		//        ('codebase' codebase=EString) &
+		//        ('codebase' codebase=(STRING|SAFESTRING)) &
 		//        ('runtime' runtime=[HigherOrderAlgorithmRuntime|EString]) &
 		//        ('severity' 'levels' driftLevels=EIntegerObject) &
 		//        ('parameters' additionalParameters+=Parameter ( "," additionalParameters+=Parameter)*)?
@@ -1233,34 +1317,46 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//'HigherOrderAlgorithm'
 		public Keyword getHigherOrderAlgorithmKeyword_1() { return cHigherOrderAlgorithmKeyword_1; }
 		
-		//name=EString
+		//name=(STRING|SAFESTRING)
 		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
 		
-		//EString
-		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
+		//(STRING|SAFESTRING)
+		public Alternatives getNameAlternatives_2_0() { return cNameAlternatives_2_0; }
+		
+		//STRING
+		public RuleCall getNameSTRINGTerminalRuleCall_2_0_0() { return cNameSTRINGTerminalRuleCall_2_0_0; }
+		
+		//SAFESTRING
+		public RuleCall getNameSAFESTRINGTerminalRuleCall_2_0_1() { return cNameSAFESTRINGTerminalRuleCall_2_0_1; }
 		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 		
 		//(
-		//    ('codebase' codebase=EString) &
+		//    ('codebase' codebase=(STRING|SAFESTRING)) &
 		//    ('runtime' runtime=[HigherOrderAlgorithmRuntime|EString]) &
 		//    ('severity' 'levels' driftLevels=EIntegerObject) &
 		//    ('parameters' additionalParameters+=Parameter ( "," additionalParameters+=Parameter)*)?
 		//)
 		public UnorderedGroup getUnorderedGroup_4() { return cUnorderedGroup_4; }
 		
-		//('codebase' codebase=EString)
+		//('codebase' codebase=(STRING|SAFESTRING))
 		public Group getGroup_4_0() { return cGroup_4_0; }
 		
 		//'codebase'
 		public Keyword getCodebaseKeyword_4_0_0() { return cCodebaseKeyword_4_0_0; }
 		
-		//codebase=EString
+		//codebase=(STRING|SAFESTRING)
 		public Assignment getCodebaseAssignment_4_0_1() { return cCodebaseAssignment_4_0_1; }
 		
-		//EString
-		public RuleCall getCodebaseEStringParserRuleCall_4_0_1_0() { return cCodebaseEStringParserRuleCall_4_0_1_0; }
+		//(STRING|SAFESTRING)
+		public Alternatives getCodebaseAlternatives_4_0_1_0() { return cCodebaseAlternatives_4_0_1_0; }
+		
+		//STRING
+		public RuleCall getCodebaseSTRINGTerminalRuleCall_4_0_1_0_0() { return cCodebaseSTRINGTerminalRuleCall_4_0_1_0_0; }
+		
+		//SAFESTRING
+		public RuleCall getCodebaseSAFESTRINGTerminalRuleCall_4_0_1_0_1() { return cCodebaseSAFESTRINGTerminalRuleCall_4_0_1_0_1; }
 		
 		//('runtime' runtime=[HigherOrderAlgorithmRuntime|EString])
 		public Group getGroup_4_1() { return cGroup_4_1; }
@@ -1345,28 +1441,32 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final Action cBaseAlgorithmRuntimeAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cBaseAlgorithmRuntimeKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Alternatives cNameAlternatives_2_0 = (Alternatives)cNameAssignment_2.eContents().get(0);
+		private final RuleCall cNameSTRINGTerminalRuleCall_2_0_0 = (RuleCall)cNameAlternatives_2_0.eContents().get(0);
+		private final RuleCall cNameSAFESTRINGTerminalRuleCall_2_0_1 = (RuleCall)cNameAlternatives_2_0.eContents().get(1);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
 		private final Keyword cLeftCurlyBracketKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
 		private final Keyword cEndpointKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
 		private final Assignment cEndpointAssignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
-		private final RuleCall cEndpointEStringParserRuleCall_3_2_0 = (RuleCall)cEndpointAssignment_3_2.eContents().get(0);
+		private final Alternatives cEndpointAlternatives_3_2_0 = (Alternatives)cEndpointAssignment_3_2.eContents().get(0);
+		private final RuleCall cEndpointSTRINGTerminalRuleCall_3_2_0_0 = (RuleCall)cEndpointAlternatives_3_2_0.eContents().get(0);
+		private final RuleCall cEndpointSAFESTRINGTerminalRuleCall_3_2_0_1 = (RuleCall)cEndpointAlternatives_3_2_0.eContents().get(1);
 		private final Keyword cRightCurlyBracketKeyword_3_3 = (Keyword)cGroup_3.eContents().get(3);
 		
 		//BaseAlgorithmRuntime returns BaseAlgorithmRuntime:
 		//    {BaseAlgorithmRuntime}
 		//    'BaseAlgorithmRuntime'
-		//    name=EString
+		//    name=(STRING|SAFESTRING)
 		//    ('{'
-		//        'endpoint' endpoint=EString
+		//        'endpoint' endpoint=(STRING|SAFESTRING)
 		//    '}')?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{BaseAlgorithmRuntime}
 		//'BaseAlgorithmRuntime'
-		//name=EString
+		//name=(STRING|SAFESTRING)
 		//('{'
-		//    'endpoint' endpoint=EString
+		//    'endpoint' endpoint=(STRING|SAFESTRING)
 		//'}')?
 		public Group getGroup() { return cGroup; }
 		
@@ -1376,14 +1476,20 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//'BaseAlgorithmRuntime'
 		public Keyword getBaseAlgorithmRuntimeKeyword_1() { return cBaseAlgorithmRuntimeKeyword_1; }
 		
-		//name=EString
+		//name=(STRING|SAFESTRING)
 		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
 		
-		//EString
-		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
+		//(STRING|SAFESTRING)
+		public Alternatives getNameAlternatives_2_0() { return cNameAlternatives_2_0; }
+		
+		//STRING
+		public RuleCall getNameSTRINGTerminalRuleCall_2_0_0() { return cNameSTRINGTerminalRuleCall_2_0_0; }
+		
+		//SAFESTRING
+		public RuleCall getNameSAFESTRINGTerminalRuleCall_2_0_1() { return cNameSAFESTRINGTerminalRuleCall_2_0_1; }
 		
 		//('{'
-		//    'endpoint' endpoint=EString
+		//    'endpoint' endpoint=(STRING|SAFESTRING)
 		//'}')?
 		public Group getGroup_3() { return cGroup_3; }
 		
@@ -1393,11 +1499,17 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//'endpoint'
 		public Keyword getEndpointKeyword_3_1() { return cEndpointKeyword_3_1; }
 		
-		//endpoint=EString
+		//endpoint=(STRING|SAFESTRING)
 		public Assignment getEndpointAssignment_3_2() { return cEndpointAssignment_3_2; }
 		
-		//EString
-		public RuleCall getEndpointEStringParserRuleCall_3_2_0() { return cEndpointEStringParserRuleCall_3_2_0; }
+		//(STRING|SAFESTRING)
+		public Alternatives getEndpointAlternatives_3_2_0() { return cEndpointAlternatives_3_2_0; }
+		
+		//STRING
+		public RuleCall getEndpointSTRINGTerminalRuleCall_3_2_0_0() { return cEndpointSTRINGTerminalRuleCall_3_2_0_0; }
+		
+		//SAFESTRING
+		public RuleCall getEndpointSAFESTRINGTerminalRuleCall_3_2_0_1() { return cEndpointSAFESTRINGTerminalRuleCall_3_2_0_1; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_3_3() { return cRightCurlyBracketKeyword_3_3; }
@@ -1408,28 +1520,32 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final Action cHigherOrderAlgorithmRuntimeAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cHigherOrderAlgorithmRuntimeKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Alternatives cNameAlternatives_2_0 = (Alternatives)cNameAssignment_2.eContents().get(0);
+		private final RuleCall cNameSTRINGTerminalRuleCall_2_0_0 = (RuleCall)cNameAlternatives_2_0.eContents().get(0);
+		private final RuleCall cNameSAFESTRINGTerminalRuleCall_2_0_1 = (RuleCall)cNameAlternatives_2_0.eContents().get(1);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
 		private final Keyword cLeftCurlyBracketKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
 		private final Keyword cEndpointKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
 		private final Assignment cEndpointAssignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
-		private final RuleCall cEndpointEStringParserRuleCall_3_2_0 = (RuleCall)cEndpointAssignment_3_2.eContents().get(0);
+		private final Alternatives cEndpointAlternatives_3_2_0 = (Alternatives)cEndpointAssignment_3_2.eContents().get(0);
+		private final RuleCall cEndpointSTRINGTerminalRuleCall_3_2_0_0 = (RuleCall)cEndpointAlternatives_3_2_0.eContents().get(0);
+		private final RuleCall cEndpointSAFESTRINGTerminalRuleCall_3_2_0_1 = (RuleCall)cEndpointAlternatives_3_2_0.eContents().get(1);
 		private final Keyword cRightCurlyBracketKeyword_3_3 = (Keyword)cGroup_3.eContents().get(3);
 		
 		//HigherOrderAlgorithmRuntime returns HigherOrderAlgorithmRuntime:
 		//    {HigherOrderAlgorithmRuntime}
 		//    'HigherOrderAlgorithmRuntime'
-		//    name=EString
+		//    name=(STRING|SAFESTRING)
 		//    ('{'
-		//        'endpoint' endpoint=EString
+		//        'endpoint' endpoint=(STRING|SAFESTRING)
 		//    '}')?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{HigherOrderAlgorithmRuntime}
 		//'HigherOrderAlgorithmRuntime'
-		//name=EString
+		//name=(STRING|SAFESTRING)
 		//('{'
-		//    'endpoint' endpoint=EString
+		//    'endpoint' endpoint=(STRING|SAFESTRING)
 		//'}')?
 		public Group getGroup() { return cGroup; }
 		
@@ -1439,14 +1555,20 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//'HigherOrderAlgorithmRuntime'
 		public Keyword getHigherOrderAlgorithmRuntimeKeyword_1() { return cHigherOrderAlgorithmRuntimeKeyword_1; }
 		
-		//name=EString
+		//name=(STRING|SAFESTRING)
 		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
 		
-		//EString
-		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
+		//(STRING|SAFESTRING)
+		public Alternatives getNameAlternatives_2_0() { return cNameAlternatives_2_0; }
+		
+		//STRING
+		public RuleCall getNameSTRINGTerminalRuleCall_2_0_0() { return cNameSTRINGTerminalRuleCall_2_0_0; }
+		
+		//SAFESTRING
+		public RuleCall getNameSAFESTRINGTerminalRuleCall_2_0_1() { return cNameSAFESTRINGTerminalRuleCall_2_0_1; }
 		
 		//('{'
-		//    'endpoint' endpoint=EString
+		//    'endpoint' endpoint=(STRING|SAFESTRING)
 		//'}')?
 		public Group getGroup_3() { return cGroup_3; }
 		
@@ -1456,11 +1578,17 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//'endpoint'
 		public Keyword getEndpointKeyword_3_1() { return cEndpointKeyword_3_1; }
 		
-		//endpoint=EString
+		//endpoint=(STRING|SAFESTRING)
 		public Assignment getEndpointAssignment_3_2() { return cEndpointAssignment_3_2; }
 		
-		//EString
-		public RuleCall getEndpointEStringParserRuleCall_3_2_0() { return cEndpointEStringParserRuleCall_3_2_0; }
+		//(STRING|SAFESTRING)
+		public Alternatives getEndpointAlternatives_3_2_0() { return cEndpointAlternatives_3_2_0; }
+		
+		//STRING
+		public RuleCall getEndpointSTRINGTerminalRuleCall_3_2_0_0() { return cEndpointSTRINGTerminalRuleCall_3_2_0_0; }
+		
+		//SAFESTRING
+		public RuleCall getEndpointSAFESTRINGTerminalRuleCall_3_2_0_1() { return cEndpointSAFESTRINGTerminalRuleCall_3_2_0_1; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_3_3() { return cRightCurlyBracketKeyword_3_3; }
@@ -1490,7 +1618,9 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final Action cBaseAlgorithmExecutionAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cBaseAlgorithmExecutionKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Alternatives cNameAlternatives_2_0 = (Alternatives)cNameAssignment_2.eContents().get(0);
+		private final RuleCall cNameSTRINGTerminalRuleCall_2_0_0 = (RuleCall)cNameAlternatives_2_0.eContents().get(0);
+		private final RuleCall cNameSAFESTRINGTerminalRuleCall_2_0_1 = (RuleCall)cNameAlternatives_2_0.eContents().get(1);
 		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final UnorderedGroup cUnorderedGroup_4 = (UnorderedGroup)cGroup.eContents().get(4);
 		private final Group cGroup_4_0 = (Group)cUnorderedGroup_4.eContents().get(0);
@@ -1542,7 +1672,7 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//BaseAlgorithmExecution returns BaseAlgorithmExecution:
 		//    {BaseAlgorithmExecution}
 		//    'BaseAlgorithmExecution'
-		//    name=EString
+		//    name=(STRING|SAFESTRING)
 		//    '{'
 		//        (
 		//            ('algorithm' algorithm=[BaseAlgorithm|EString]) &
@@ -1556,7 +1686,7 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		
 		//{BaseAlgorithmExecution}
 		//'BaseAlgorithmExecution'
-		//name=EString
+		//name=(STRING|SAFESTRING)
 		//'{'
 		//    (
 		//        ('algorithm' algorithm=[BaseAlgorithm|EString]) &
@@ -1574,11 +1704,17 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//'BaseAlgorithmExecution'
 		public Keyword getBaseAlgorithmExecutionKeyword_1() { return cBaseAlgorithmExecutionKeyword_1; }
 		
-		//name=EString
+		//name=(STRING|SAFESTRING)
 		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
 		
-		//EString
-		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
+		//(STRING|SAFESTRING)
+		public Alternatives getNameAlternatives_2_0() { return cNameAlternatives_2_0; }
+		
+		//STRING
+		public RuleCall getNameSTRINGTerminalRuleCall_2_0_0() { return cNameSTRINGTerminalRuleCall_2_0_0; }
+		
+		//SAFESTRING
+		public RuleCall getNameSAFESTRINGTerminalRuleCall_2_0_1() { return cNameSAFESTRINGTerminalRuleCall_2_0_1; }
 		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
@@ -1733,7 +1869,9 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final Action cHigherOrderAlgorithmExecutionAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cHigherOrderAlgorithmExecutionKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Alternatives cNameAlternatives_2_0 = (Alternatives)cNameAssignment_2.eContents().get(0);
+		private final RuleCall cNameSTRINGTerminalRuleCall_2_0_0 = (RuleCall)cNameAlternatives_2_0.eContents().get(0);
+		private final RuleCall cNameSAFESTRINGTerminalRuleCall_2_0_1 = (RuleCall)cNameAlternatives_2_0.eContents().get(1);
 		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final UnorderedGroup cUnorderedGroup_4 = (UnorderedGroup)cGroup.eContents().get(4);
 		private final Group cGroup_4_0 = (Group)cUnorderedGroup_4.eContents().get(0);
@@ -1783,7 +1921,7 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//HigherOrderAlgorithmExecution returns HigherOrderAlgorithmExecution:
 		//    {HigherOrderAlgorithmExecution}
 		//    'HigherOrderAlgorithmExecution'
-		//    name=EString
+		//    name=(STRING|SAFESTRING)
 		//    '{'
 		//        (
 		//            ('algorithm' algorithm=[HigherOrderAlgorithm|EString]) &
@@ -1798,7 +1936,7 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		
 		//{HigherOrderAlgorithmExecution}
 		//'HigherOrderAlgorithmExecution'
-		//name=EString
+		//name=(STRING|SAFESTRING)
 		//'{'
 		//    (
 		//        ('algorithm' algorithm=[HigherOrderAlgorithm|EString]) &
@@ -1817,11 +1955,17 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//'HigherOrderAlgorithmExecution'
 		public Keyword getHigherOrderAlgorithmExecutionKeyword_1() { return cHigherOrderAlgorithmExecutionKeyword_1; }
 		
-		//name=EString
+		//name=(STRING|SAFESTRING)
 		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
 		
-		//EString
-		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
+		//(STRING|SAFESTRING)
+		public Alternatives getNameAlternatives_2_0() { return cNameAlternatives_2_0; }
+		
+		//STRING
+		public RuleCall getNameSTRINGTerminalRuleCall_2_0_0() { return cNameSTRINGTerminalRuleCall_2_0_0; }
+		
+		//SAFESTRING
+		public RuleCall getNameSAFESTRINGTerminalRuleCall_2_0_1() { return cNameSAFESTRINGTerminalRuleCall_2_0_1; }
 		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
@@ -2017,7 +2161,9 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final Action cTriggerGroupAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cTriggerKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Alternatives cNameAlternatives_2_0 = (Alternatives)cNameAssignment_2.eContents().get(0);
+		private final RuleCall cNameSTRINGTerminalRuleCall_2_0_0 = (RuleCall)cNameAlternatives_2_0.eContents().get(0);
+		private final RuleCall cNameSAFESTRINGTerminalRuleCall_2_0_1 = (RuleCall)cNameAlternatives_2_0.eContents().get(1);
 		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cCompositeTriggersAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cCompositeTriggersCompositeTriggerParserRuleCall_4_0 = (RuleCall)cCompositeTriggersAssignment_4.eContents().get(0);
@@ -2039,7 +2185,7 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//TriggerGroup returns TriggerGroup:
 		//    {TriggerGroup}
 		//    'Trigger'
-		//    name=EString
+		//    name=(STRING|SAFESTRING)
 		//    '{'
 		//    compositeTriggers+=CompositeTrigger ("or" compositeTriggers+=CompositeTrigger)*
 		//    'execute' targets+=[BaseAlgorithmExecution|EString] ("," targets+=[BaseAlgorithmExecution|EString])*
@@ -2049,7 +2195,7 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		
 		//{TriggerGroup}
 		//'Trigger'
-		//name=EString
+		//name=(STRING|SAFESTRING)
 		//'{'
 		//compositeTriggers+=CompositeTrigger ("or" compositeTriggers+=CompositeTrigger)*
 		//'execute' targets+=[BaseAlgorithmExecution|EString] ("," targets+=[BaseAlgorithmExecution|EString])*
@@ -2062,11 +2208,17 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//'Trigger'
 		public Keyword getTriggerKeyword_1() { return cTriggerKeyword_1; }
 		
-		//name=EString
+		//name=(STRING|SAFESTRING)
 		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
 		
-		//EString
-		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
+		//(STRING|SAFESTRING)
+		public Alternatives getNameAlternatives_2_0() { return cNameAlternatives_2_0; }
+		
+		//STRING
+		public RuleCall getNameSTRINGTerminalRuleCall_2_0_0() { return cNameSTRINGTerminalRuleCall_2_0_0; }
+		
+		//SAFESTRING
+		public RuleCall getNameSAFESTRINGTerminalRuleCall_2_0_1() { return cNameSAFESTRINGTerminalRuleCall_2_0_1; }
 		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
@@ -2203,15 +2355,15 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final Assignment cFrequencyAssignment_0_1_1 = (Assignment)cGroup_0_1.eContents().get(1);
 		private final RuleCall cFrequencyFrequencyEnumEnumRuleCall_0_1_1_0 = (RuleCall)cFrequencyAssignment_0_1_1.eContents().get(0);
 		private final Assignment cCronStringAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
-		private final RuleCall cCronStringEStringParserRuleCall_1_0 = (RuleCall)cCronStringAssignment_1.eContents().get(0);
+		private final RuleCall cCronStringSTRINGTerminalRuleCall_1_0 = (RuleCall)cCronStringAssignment_1.eContents().get(0);
 		
 		//TemporalTrigger returns TemporalTrigger:
 		//    {TemporalTrigger}
-		//    ('one' frequency=frequencyEnum) | (cronString=EString);
+		//    ('one' frequency=frequencyEnum) | (cronString=STRING);
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{TemporalTrigger}
-		//('one' frequency=frequencyEnum) | (cronString=EString)
+		//('one' frequency=frequencyEnum) | (cronString=STRING)
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//{TemporalTrigger}
@@ -2233,11 +2385,11 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//frequencyEnum
 		public RuleCall getFrequencyFrequencyEnumEnumRuleCall_0_1_1_0() { return cFrequencyFrequencyEnumEnumRuleCall_0_1_1_0; }
 		
-		//(cronString=EString)
+		//(cronString=STRING)
 		public Assignment getCronStringAssignment_1() { return cCronStringAssignment_1; }
 		
-		//EString
-		public RuleCall getCronStringEStringParserRuleCall_1_0() { return cCronStringEStringParserRuleCall_1_0; }
+		//STRING
+		public RuleCall getCronStringSTRINGTerminalRuleCall_1_0() { return cCronStringSTRINGTerminalRuleCall_1_0; }
 	}
 	public class SampleBasedTriggerElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.lowcomote.panoptes.PanoptesX.SampleBasedTrigger");
@@ -2332,13 +2484,17 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final Action cActionAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cActionKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Alternatives cNameAlternatives_2_0 = (Alternatives)cNameAssignment_2.eContents().get(0);
+		private final RuleCall cNameSTRINGTerminalRuleCall_2_0_0 = (RuleCall)cNameAlternatives_2_0.eContents().get(0);
+		private final RuleCall cNameSAFESTRINGTerminalRuleCall_2_0_1 = (RuleCall)cNameAlternatives_2_0.eContents().get(1);
 		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final UnorderedGroup cUnorderedGroup_4 = (UnorderedGroup)cGroup.eContents().get(4);
 		private final Group cGroup_4_0 = (Group)cUnorderedGroup_4.eContents().get(0);
 		private final Keyword cEndpointKeyword_4_0_0 = (Keyword)cGroup_4_0.eContents().get(0);
 		private final Assignment cEndpointAssignment_4_0_1 = (Assignment)cGroup_4_0.eContents().get(1);
-		private final RuleCall cEndpointEStringParserRuleCall_4_0_1_0 = (RuleCall)cEndpointAssignment_4_0_1.eContents().get(0);
+		private final Alternatives cEndpointAlternatives_4_0_1_0 = (Alternatives)cEndpointAssignment_4_0_1.eContents().get(0);
+		private final RuleCall cEndpointSTRINGTerminalRuleCall_4_0_1_0_0 = (RuleCall)cEndpointAlternatives_4_0_1_0.eContents().get(0);
+		private final RuleCall cEndpointSAFESTRINGTerminalRuleCall_4_0_1_0_1 = (RuleCall)cEndpointAlternatives_4_0_1_0.eContents().get(1);
 		private final Group cGroup_4_1 = (Group)cUnorderedGroup_4.eContents().get(1);
 		private final Keyword cParametersKeyword_4_1_0 = (Keyword)cGroup_4_1.eContents().get(0);
 		private final Assignment cAdditionalParametersAssignment_4_1_1 = (Assignment)cGroup_4_1.eContents().get(1);
@@ -2352,10 +2508,10 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//Action returns Action:
 		//    {Action}
 		//    ('Action')
-		//    name=EString
+		//    name=(STRING|SAFESTRING)
 		//    '{'
 		//        (
-		//            ('endpoint' endpoint=EString)? &
+		//            ('endpoint' endpoint=(STRING|SAFESTRING))? &
 		//            ('parameters' additionalParameters+=Parameter ( ',' additionalParameters+=Parameter)*)?
 		//        )
 		//    '}';
@@ -2363,10 +2519,10 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		
 		//{Action}
 		//('Action')
-		//name=EString
+		//name=(STRING|SAFESTRING)
 		//'{'
 		//    (
-		//        ('endpoint' endpoint=EString)? &
+		//        ('endpoint' endpoint=(STRING|SAFESTRING))? &
 		//        ('parameters' additionalParameters+=Parameter ( ',' additionalParameters+=Parameter)*)?
 		//    )
 		//'}'
@@ -2378,32 +2534,44 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//('Action')
 		public Keyword getActionKeyword_1() { return cActionKeyword_1; }
 		
-		//name=EString
+		//name=(STRING|SAFESTRING)
 		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
 		
-		//EString
-		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
+		//(STRING|SAFESTRING)
+		public Alternatives getNameAlternatives_2_0() { return cNameAlternatives_2_0; }
+		
+		//STRING
+		public RuleCall getNameSTRINGTerminalRuleCall_2_0_0() { return cNameSTRINGTerminalRuleCall_2_0_0; }
+		
+		//SAFESTRING
+		public RuleCall getNameSAFESTRINGTerminalRuleCall_2_0_1() { return cNameSAFESTRINGTerminalRuleCall_2_0_1; }
 		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 		
 		//(
-		//    ('endpoint' endpoint=EString)? &
+		//    ('endpoint' endpoint=(STRING|SAFESTRING))? &
 		//    ('parameters' additionalParameters+=Parameter ( ',' additionalParameters+=Parameter)*)?
 		//)
 		public UnorderedGroup getUnorderedGroup_4() { return cUnorderedGroup_4; }
 		
-		//('endpoint' endpoint=EString)?
+		//('endpoint' endpoint=(STRING|SAFESTRING))?
 		public Group getGroup_4_0() { return cGroup_4_0; }
 		
 		//'endpoint'
 		public Keyword getEndpointKeyword_4_0_0() { return cEndpointKeyword_4_0_0; }
 		
-		//endpoint=EString
+		//endpoint=(STRING|SAFESTRING)
 		public Assignment getEndpointAssignment_4_0_1() { return cEndpointAssignment_4_0_1; }
 		
-		//EString
-		public RuleCall getEndpointEStringParserRuleCall_4_0_1_0() { return cEndpointEStringParserRuleCall_4_0_1_0; }
+		//(STRING|SAFESTRING)
+		public Alternatives getEndpointAlternatives_4_0_1_0() { return cEndpointAlternatives_4_0_1_0; }
+		
+		//STRING
+		public RuleCall getEndpointSTRINGTerminalRuleCall_4_0_1_0_0() { return cEndpointSTRINGTerminalRuleCall_4_0_1_0_0; }
+		
+		//SAFESTRING
+		public RuleCall getEndpointSAFESTRINGTerminalRuleCall_4_0_1_0_1() { return cEndpointSAFESTRINGTerminalRuleCall_4_0_1_0_1; }
 		
 		//('parameters' additionalParameters+=Parameter ( ',' additionalParameters+=Parameter)*)?
 		public Group getGroup_4_1() { return cGroup_4_1; }
@@ -2439,7 +2607,9 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final Assignment cMandatoryAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final Keyword cMandatoryMandatoryKeyword_1_0 = (Keyword)cMandatoryAssignment_1.eContents().get(0);
 		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Alternatives cNameAlternatives_2_0 = (Alternatives)cNameAssignment_2.eContents().get(0);
+		private final RuleCall cNameSTRINGTerminalRuleCall_2_0_0 = (RuleCall)cNameAlternatives_2_0.eContents().get(0);
+		private final RuleCall cNameSAFESTRINGTerminalRuleCall_2_0_1 = (RuleCall)cNameAlternatives_2_0.eContents().get(1);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
 		private final Keyword cColonKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
 		private final Assignment cTypeAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
@@ -2448,14 +2618,14 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//Parameter returns Parameter:
 		//    {Parameter}
 		//    (mandatory?='mandatory')?
-		//    name=EString
+		//    name=(STRING|SAFESTRING)
 		//     (':' type=parameterType)?
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{Parameter}
 		//(mandatory?='mandatory')?
-		//name=EString
+		//name=(STRING|SAFESTRING)
 		// (':' type=parameterType)?
 		public Group getGroup() { return cGroup; }
 		
@@ -2468,11 +2638,17 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//'mandatory'
 		public Keyword getMandatoryMandatoryKeyword_1_0() { return cMandatoryMandatoryKeyword_1_0; }
 		
-		//name=EString
+		//name=(STRING|SAFESTRING)
 		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
 		
-		//EString
-		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
+		//(STRING|SAFESTRING)
+		public Alternatives getNameAlternatives_2_0() { return cNameAlternatives_2_0; }
+		
+		//STRING
+		public RuleCall getNameSTRINGTerminalRuleCall_2_0_0() { return cNameSTRINGTerminalRuleCall_2_0_0; }
+		
+		//SAFESTRING
+		public RuleCall getNameSAFESTRINGTerminalRuleCall_2_0_1() { return cNameSAFESTRINGTerminalRuleCall_2_0_1; }
 		
 		//(':' type=parameterType)?
 		public Group getGroup_3() { return cGroup_3; }
@@ -2491,42 +2667,50 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cParameterValueEntryAction_0 = (Action)cGroup.eContents().get(0);
 		private final Assignment cKeyAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cKeyEStringParserRuleCall_1_0 = (RuleCall)cKeyAssignment_1.eContents().get(0);
+		private final Alternatives cKeyAlternatives_1_0 = (Alternatives)cKeyAssignment_1.eContents().get(0);
+		private final RuleCall cKeySTRINGTerminalRuleCall_1_0_0 = (RuleCall)cKeyAlternatives_1_0.eContents().get(0);
+		private final RuleCall cKeySAFESTRINGTerminalRuleCall_1_0_1 = (RuleCall)cKeyAlternatives_1_0.eContents().get(1);
 		private final Keyword cEqualsSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cValueAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cValueParameterLiteralParserRuleCall_3_0 = (RuleCall)cValueAssignment_3.eContents().get(0);
+		private final RuleCall cValueEStringParserRuleCall_3_0 = (RuleCall)cValueAssignment_3.eContents().get(0);
 		
 		//parameterValueEntry returns parameterValueEntry:
 		//    {parameterValueEntry}
-		//    key=EString
+		//    key=(STRING|SAFESTRING)
 		//    '='
-		//    value=ParameterLiteral
+		//    value=EString
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{parameterValueEntry}
-		//key=EString
+		//key=(STRING|SAFESTRING)
 		//'='
-		//value=ParameterLiteral
+		//value=EString
 		public Group getGroup() { return cGroup; }
 		
 		//{parameterValueEntry}
 		public Action getParameterValueEntryAction_0() { return cParameterValueEntryAction_0; }
 		
-		//key=EString
+		//key=(STRING|SAFESTRING)
 		public Assignment getKeyAssignment_1() { return cKeyAssignment_1; }
 		
-		//EString
-		public RuleCall getKeyEStringParserRuleCall_1_0() { return cKeyEStringParserRuleCall_1_0; }
+		//(STRING|SAFESTRING)
+		public Alternatives getKeyAlternatives_1_0() { return cKeyAlternatives_1_0; }
+		
+		//STRING
+		public RuleCall getKeySTRINGTerminalRuleCall_1_0_0() { return cKeySTRINGTerminalRuleCall_1_0_0; }
+		
+		//SAFESTRING
+		public RuleCall getKeySAFESTRINGTerminalRuleCall_1_0_1() { return cKeySAFESTRINGTerminalRuleCall_1_0_1; }
 		
 		//'='
 		public Keyword getEqualsSignKeyword_2() { return cEqualsSignKeyword_2; }
 		
-		//value=ParameterLiteral
+		//value=EString
 		public Assignment getValueAssignment_3() { return cValueAssignment_3; }
 		
-		//ParameterLiteral
-		public RuleCall getValueParameterLiteralParserRuleCall_3_0() { return cValueParameterLiteralParserRuleCall_3_0; }
+		//EString
+		public RuleCall getValueEStringParserRuleCall_3_0() { return cValueEStringParserRuleCall_3_0; }
 	}
 	public class ActionExecutionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.lowcomote.panoptes.PanoptesX.ActionExecution");
@@ -2534,7 +2718,9 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final Action cActionExecutionAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cActionExecutionKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Alternatives cNameAlternatives_2_0 = (Alternatives)cNameAssignment_2.eContents().get(0);
+		private final RuleCall cNameSTRINGTerminalRuleCall_2_0_0 = (RuleCall)cNameAlternatives_2_0.eContents().get(0);
+		private final RuleCall cNameSAFESTRINGTerminalRuleCall_2_0_1 = (RuleCall)cNameAlternatives_2_0.eContents().get(1);
 		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final UnorderedGroup cUnorderedGroup_4 = (UnorderedGroup)cGroup.eContents().get(4);
 		private final Group cGroup_4_0 = (Group)cUnorderedGroup_4.eContents().get(0);
@@ -2556,7 +2742,7 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//ActionExecution returns ActionExecution:
 		//    {ActionExecution}
 		//    ('ActionExecution')
-		//    name=EString
+		//    name=(STRING|SAFESTRING)
 		//    '{'
 		//    (
 		//        ('action' action=[Action|EString]) &
@@ -2567,7 +2753,7 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		
 		//{ActionExecution}
 		//('ActionExecution')
-		//name=EString
+		//name=(STRING|SAFESTRING)
 		//'{'
 		//(
 		//    ('action' action=[Action|EString]) &
@@ -2582,11 +2768,17 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//('ActionExecution')
 		public Keyword getActionExecutionKeyword_1() { return cActionExecutionKeyword_1; }
 		
-		//name=EString
+		//name=(STRING|SAFESTRING)
 		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
 		
-		//EString
-		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
+		//(STRING|SAFESTRING)
+		public Alternatives getNameAlternatives_2_0() { return cNameAlternatives_2_0; }
+		
+		//STRING
+		public RuleCall getNameSTRINGTerminalRuleCall_2_0_0() { return cNameSTRINGTerminalRuleCall_2_0_0; }
+		
+		//SAFESTRING
+		public RuleCall getNameSAFESTRINGTerminalRuleCall_2_0_1() { return cNameSAFESTRINGTerminalRuleCall_2_0_1; }
 		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
@@ -2644,64 +2836,41 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 	}
 	public class EIntegerObjectElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.lowcomote.panoptes.PanoptesX.EIntegerObject");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cHyphenMinusKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final RuleCall cINTTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final RuleCall cINTTerminalRuleCall = (RuleCall)rule.eContents().get(1);
 		
 		//EIntegerObject returns ecore::EIntegerObject:
-		//    '-'? INT;
+		//    INT;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'-'? INT
-		public Group getGroup() { return cGroup; }
-		
-		//'-'?
-		public Keyword getHyphenMinusKeyword_0() { return cHyphenMinusKeyword_0; }
-		
 		//INT
-		public RuleCall getINTTerminalRuleCall_1() { return cINTTerminalRuleCall_1; }
+		public RuleCall getINTTerminalRuleCall() { return cINTTerminalRuleCall; }
 	}
 	public class EStringElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.lowcomote.panoptes.PanoptesX.EString");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cSTRINGTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cSAFESTRINGTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cFLOATTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cINTTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cSTRINGTerminalRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cSAFESTRINGTerminalRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		
 		//EString returns ecore::EString:
-		//    STRING | SAFESTRING;
+		//    FLOAT | INT | STRING | SAFESTRING;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//STRING | SAFESTRING
+		//FLOAT | INT | STRING | SAFESTRING
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//STRING
-		public RuleCall getSTRINGTerminalRuleCall_0() { return cSTRINGTerminalRuleCall_0; }
+		//FLOAT
+		public RuleCall getFLOATTerminalRuleCall_0() { return cFLOATTerminalRuleCall_0; }
 		
-		//SAFESTRING
-		public RuleCall getSAFESTRINGTerminalRuleCall_1() { return cSAFESTRINGTerminalRuleCall_1; }
-	}
-	public class ParameterLiteralElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.lowcomote.panoptes.PanoptesX.ParameterLiteral");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cHyphenMinusKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final RuleCall cINTTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
-		private final RuleCall cSAFESTRINGTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
-		
-		//ParameterLiteral returns ecore::EString:
-		//    '-'? (INT)? (SAFESTRING)?;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'-'? (INT)? (SAFESTRING)?
-		public Group getGroup() { return cGroup; }
-		
-		//'-'?
-		public Keyword getHyphenMinusKeyword_0() { return cHyphenMinusKeyword_0; }
-		
-		//(INT)?
+		//INT
 		public RuleCall getINTTerminalRuleCall_1() { return cINTTerminalRuleCall_1; }
 		
-		//(SAFESTRING)?
-		public RuleCall getSAFESTRINGTerminalRuleCall_2() { return cSAFESTRINGTerminalRuleCall_2; }
+		//STRING
+		public RuleCall getSTRINGTerminalRuleCall_2() { return cSTRINGTerminalRuleCall_2; }
+		
+		//SAFESTRING
+		public RuleCall getSAFESTRINGTerminalRuleCall_3() { return cSAFESTRINGTerminalRuleCall_3; }
 	}
 	
 	public class StatisticalVariableTypeElements extends AbstractElementFinder.AbstractEnumRuleElementFinder {
@@ -2871,7 +3040,8 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 	private final ActionExecutionElements pActionExecution;
 	private final EIntegerObjectElements pEIntegerObject;
 	private final EStringElements pEString;
-	private final ParameterLiteralElements pParameterLiteral;
+	private final TerminalRule tFLOAT;
+	private final TerminalRule tINT;
 	private final TerminalRule tSAFESTRING;
 	
 	private final Grammar grammar;
@@ -2920,7 +3090,8 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		this.pActionExecution = new ActionExecutionElements();
 		this.pEIntegerObject = new EIntegerObjectElements();
 		this.pEString = new EStringElements();
-		this.pParameterLiteral = new ParameterLiteralElements();
+		this.tFLOAT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.lowcomote.panoptes.PanoptesX.FLOAT");
+		this.tINT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.lowcomote.panoptes.PanoptesX.INT");
 		this.tSAFESTRING = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.lowcomote.panoptes.PanoptesX.SAFESTRING");
 	}
 	
@@ -2972,7 +3143,7 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 	//Model returns Model:
 	//    {Model}
 	//    'Model'
-	//    name=EString
+	//    name=(STRING|SAFESTRING)
 	//    '{'
 	//        (
 	//            ('uses' inputs+=[Feature|EString] ( "," inputs+=[Feature|EString])*) &
@@ -3008,7 +3179,7 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 	}
 	
 	//Entity returns Entity:
-	//    name=EString
+	//    name=(STRING|SAFESTRING)
 	//    '{'
 	//        'keys' keys+=Key ( "," keys+=Key)*
 	//    '}'
@@ -3032,7 +3203,7 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 	}
 	
 	//Feature returns Feature:
-	//    name=EString
+	//    name=(STRING|SAFESTRING)
 	//    (':' type=statisticalVariableType)?
 	//    ('{'
 	//        (
@@ -3051,7 +3222,7 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 	
 	//Prediction returns Prediction:
 	//    {Prediction}
-	//    name=EString
+	//    name=(STRING|SAFESTRING)
 	//    ('predicts' label=[Label|EString])?
 	//;
 	public PredictionElements getPredictionAccess() {
@@ -3064,7 +3235,7 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 	
 	//Label returns Label:
 	//    {Label}
-	//    name=EString
+	//    name=(STRING|SAFESTRING)
 	//    (':' type=statisticalVariableType)?
 	//;
 	public LabelElements getLabelAccess() {
@@ -3087,7 +3258,7 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 	
 	//RequestData returns RequestData:
 	//    {RequestData}
-	//    name=EString;
+	//    name=(STRING|SAFESTRING);
 	public RequestDataElements getRequestDataAccess() {
 		return pRequestData;
 	}
@@ -3098,7 +3269,7 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 	
 	//Key returns Key:
 	//    {Key}
-	//    name=EString;
+	//    name=(STRING|SAFESTRING);
 	public KeyElements getKeyAccess() {
 		return pKey;
 	}
@@ -3119,7 +3290,7 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 	
 	//Deployment returns Deployment:
 	//    'Deployment'
-	//    name=EString
+	//    name=(STRING|SAFESTRING)
 	//    '{'
 	//        (
 	//            'model' mlModel=[Model|EString] |
@@ -3149,10 +3320,10 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 	
 	//BaseAlgorithm returns BaseAlgorithm:
 	//    'BaseAlgorithm'
-	//    name=EString
+	//    name=(STRING|SAFESTRING)
 	//    '{'
 	//        (
-	//            ('codebase' codebase=EString) &
+	//            ('codebase' codebase=(STRING|SAFESTRING)) &
 	//            ('runtime' runtime=[BaseAlgorithmRuntime|EString]) &
 	//            ('severity' 'levels' driftLevels=EIntegerObject) &
 	//            ('accepts' (strict?='only')? supportedTypes+=statisticalVariableType ( "," supportedTypes+=statisticalVariableType)*)? &
@@ -3170,10 +3341,10 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 	//HigherOrderAlgorithm returns HigherOrderAlgorithm:
 	//    {HigherOrderAlgorithm}
 	//    'HigherOrderAlgorithm'
-	//    name=EString
+	//    name=(STRING|SAFESTRING)
 	//    '{'
 	//        (
-	//            ('codebase' codebase=EString) &
+	//            ('codebase' codebase=(STRING|SAFESTRING)) &
 	//            ('runtime' runtime=[HigherOrderAlgorithmRuntime|EString]) &
 	//            ('severity' 'levels' driftLevels=EIntegerObject) &
 	//            ('parameters' additionalParameters+=Parameter ( "," additionalParameters+=Parameter)*)?
@@ -3201,9 +3372,9 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 	//BaseAlgorithmRuntime returns BaseAlgorithmRuntime:
 	//    {BaseAlgorithmRuntime}
 	//    'BaseAlgorithmRuntime'
-	//    name=EString
+	//    name=(STRING|SAFESTRING)
 	//    ('{'
-	//        'endpoint' endpoint=EString
+	//        'endpoint' endpoint=(STRING|SAFESTRING)
 	//    '}')?;
 	public BaseAlgorithmRuntimeElements getBaseAlgorithmRuntimeAccess() {
 		return pBaseAlgorithmRuntime;
@@ -3216,9 +3387,9 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 	//HigherOrderAlgorithmRuntime returns HigherOrderAlgorithmRuntime:
 	//    {HigherOrderAlgorithmRuntime}
 	//    'HigherOrderAlgorithmRuntime'
-	//    name=EString
+	//    name=(STRING|SAFESTRING)
 	//    ('{'
-	//        'endpoint' endpoint=EString
+	//        'endpoint' endpoint=(STRING|SAFESTRING)
 	//    '}')?;
 	public HigherOrderAlgorithmRuntimeElements getHigherOrderAlgorithmRuntimeAccess() {
 		return pHigherOrderAlgorithmRuntime;
@@ -3241,7 +3412,7 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 	//BaseAlgorithmExecution returns BaseAlgorithmExecution:
 	//    {BaseAlgorithmExecution}
 	//    'BaseAlgorithmExecution'
-	//    name=EString
+	//    name=(STRING|SAFESTRING)
 	//    '{'
 	//        (
 	//            ('algorithm' algorithm=[BaseAlgorithm|EString]) &
@@ -3262,7 +3433,7 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 	//HigherOrderAlgorithmExecution returns HigherOrderAlgorithmExecution:
 	//    {HigherOrderAlgorithmExecution}
 	//    'HigherOrderAlgorithmExecution'
-	//    name=EString
+	//    name=(STRING|SAFESTRING)
 	//    '{'
 	//        (
 	//            ('algorithm' algorithm=[HigherOrderAlgorithm|EString]) &
@@ -3298,7 +3469,7 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 	//TriggerGroup returns TriggerGroup:
 	//    {TriggerGroup}
 	//    'Trigger'
-	//    name=EString
+	//    name=(STRING|SAFESTRING)
 	//    '{'
 	//    compositeTriggers+=CompositeTrigger ("or" compositeTriggers+=CompositeTrigger)*
 	//    'execute' targets+=[BaseAlgorithmExecution|EString] ("," targets+=[BaseAlgorithmExecution|EString])*
@@ -3331,7 +3502,7 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 	
 	//TemporalTrigger returns TemporalTrigger:
 	//    {TemporalTrigger}
-	//    ('one' frequency=frequencyEnum) | (cronString=EString);
+	//    ('one' frequency=frequencyEnum) | (cronString=STRING);
 	public TemporalTriggerElements getTemporalTriggerAccess() {
 		return pTemporalTrigger;
 	}
@@ -3386,10 +3557,10 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 	//Action returns Action:
 	//    {Action}
 	//    ('Action')
-	//    name=EString
+	//    name=(STRING|SAFESTRING)
 	//    '{'
 	//        (
-	//            ('endpoint' endpoint=EString)? &
+	//            ('endpoint' endpoint=(STRING|SAFESTRING))? &
 	//            ('parameters' additionalParameters+=Parameter ( ',' additionalParameters+=Parameter)*)?
 	//        )
 	//    '}';
@@ -3404,7 +3575,7 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 	//Parameter returns Parameter:
 	//    {Parameter}
 	//    (mandatory?='mandatory')?
-	//    name=EString
+	//    name=(STRING|SAFESTRING)
 	//     (':' type=parameterType)?
 	//;
 	public ParameterElements getParameterAccess() {
@@ -3427,9 +3598,9 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 	
 	//parameterValueEntry returns parameterValueEntry:
 	//    {parameterValueEntry}
-	//    key=EString
+	//    key=(STRING|SAFESTRING)
 	//    '='
-	//    value=ParameterLiteral
+	//    value=EString
 	//;
 	public ParameterValueEntryElements getParameterValueEntryAccess() {
 		return pParameterValueEntry;
@@ -3442,7 +3613,7 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 	//ActionExecution returns ActionExecution:
 	//    {ActionExecution}
 	//    ('ActionExecution')
-	//    name=EString
+	//    name=(STRING|SAFESTRING)
 	//    '{'
 	//    (
 	//        ('action' action=[Action|EString]) &
@@ -3458,7 +3629,7 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 	}
 	
 	//EIntegerObject returns ecore::EIntegerObject:
-	//    '-'? INT;
+	//    INT;
 	public EIntegerObjectElements getEIntegerObjectAccess() {
 		return pEIntegerObject;
 	}
@@ -3468,7 +3639,7 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 	}
 	
 	//EString returns ecore::EString:
-	//    STRING | SAFESTRING;
+	//    FLOAT | INT | STRING | SAFESTRING;
 	public EStringElements getEStringAccess() {
 		return pEString;
 	}
@@ -3477,14 +3648,15 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		return getEStringAccess().getRule();
 	}
 	
-	//ParameterLiteral returns ecore::EString:
-	//    '-'? (INT)? (SAFESTRING)?;
-	public ParameterLiteralElements getParameterLiteralAccess() {
-		return pParameterLiteral;
+	//terminal FLOAT returns ecore::EFloat: '-'? ('0'..'9') '.' ('0'..'9')+;
+	public TerminalRule getFLOATRule() {
+		return tFLOAT;
 	}
 	
-	public ParserRule getParameterLiteralRule() {
-		return getParameterLiteralAccess().getRule();
+	//@Override
+	//terminal INT returns ecore::EInt: '-'? ('0'..'9')+;
+	public TerminalRule getINTRule() {
+		return tINT;
 	}
 	
 	//terminal SAFESTRING: ('a'..'z'|'A'..'Z'|'_'|'.'|'@') ('a'..'z'|'A'..'Z'|'_'|'.'|'-'|'@'|'0'..'9')*;
@@ -3495,11 +3667,6 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 	//terminal ID: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 	public TerminalRule getIDRule() {
 		return gaTerminals.getIDRule();
-	}
-	
-	//terminal INT returns ecore::EInt: ('0'..'9')+;
-	public TerminalRule getINTRule() {
-		return gaTerminals.getINTRule();
 	}
 	
 	//terminal STRING:

@@ -32,15 +32,39 @@ public class PanoptesXParser extends AbstractContentAssistParser {
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, PanoptesXGrammarAccess grammarAccess) {
 			builder.put(grammarAccess.getPlatformAccess().getAlternatives(), "rule__Platform__Alternatives");
+			builder.put(grammarAccess.getModelAccess().getNameAlternatives_2_0(), "rule__Model__NameAlternatives_2_0");
+			builder.put(grammarAccess.getEntityAccess().getNameAlternatives_0_0(), "rule__Entity__NameAlternatives_0_0");
 			builder.put(grammarAccess.getModelIOAccess().getAlternatives(), "rule__ModelIO__Alternatives");
+			builder.put(grammarAccess.getFeatureAccess().getNameAlternatives_0_0(), "rule__Feature__NameAlternatives_0_0");
+			builder.put(grammarAccess.getPredictionAccess().getNameAlternatives_1_0(), "rule__Prediction__NameAlternatives_1_0");
+			builder.put(grammarAccess.getLabelAccess().getNameAlternatives_1_0(), "rule__Label__NameAlternatives_1_0");
 			builder.put(grammarAccess.getDeploymentIOAccess().getAlternatives(), "rule__DeploymentIO__Alternatives");
+			builder.put(grammarAccess.getRequestDataAccess().getNameAlternatives_1_0(), "rule__RequestData__NameAlternatives_1_0");
+			builder.put(grammarAccess.getKeyAccess().getNameAlternatives_1_0(), "rule__Key__NameAlternatives_1_0");
+			builder.put(grammarAccess.getDeploymentAccess().getNameAlternatives_1_0(), "rule__Deployment__NameAlternatives_1_0");
 			builder.put(grammarAccess.getDeploymentAccess().getAlternatives_3(), "rule__Deployment__Alternatives_3");
 			builder.put(grammarAccess.getAlgorithmAccess().getAlternatives(), "rule__Algorithm__Alternatives");
+			builder.put(grammarAccess.getBaseAlgorithmAccess().getNameAlternatives_1_0(), "rule__BaseAlgorithm__NameAlternatives_1_0");
+			builder.put(grammarAccess.getBaseAlgorithmAccess().getCodebaseAlternatives_3_0_1_0(), "rule__BaseAlgorithm__CodebaseAlternatives_3_0_1_0");
+			builder.put(grammarAccess.getHigherOrderAlgorithmAccess().getNameAlternatives_2_0(), "rule__HigherOrderAlgorithm__NameAlternatives_2_0");
+			builder.put(grammarAccess.getHigherOrderAlgorithmAccess().getCodebaseAlternatives_4_0_1_0(), "rule__HigherOrderAlgorithm__CodebaseAlternatives_4_0_1_0");
 			builder.put(grammarAccess.getAlgorithmRuntimeAccess().getAlternatives(), "rule__AlgorithmRuntime__Alternatives");
+			builder.put(grammarAccess.getBaseAlgorithmRuntimeAccess().getNameAlternatives_2_0(), "rule__BaseAlgorithmRuntime__NameAlternatives_2_0");
+			builder.put(grammarAccess.getBaseAlgorithmRuntimeAccess().getEndpointAlternatives_3_2_0(), "rule__BaseAlgorithmRuntime__EndpointAlternatives_3_2_0");
+			builder.put(grammarAccess.getHigherOrderAlgorithmRuntimeAccess().getNameAlternatives_2_0(), "rule__HigherOrderAlgorithmRuntime__NameAlternatives_2_0");
+			builder.put(grammarAccess.getHigherOrderAlgorithmRuntimeAccess().getEndpointAlternatives_3_2_0(), "rule__HigherOrderAlgorithmRuntime__EndpointAlternatives_3_2_0");
 			builder.put(grammarAccess.getAlgorithmExecutionAccess().getAlternatives(), "rule__AlgorithmExecution__Alternatives");
+			builder.put(grammarAccess.getBaseAlgorithmExecutionAccess().getNameAlternatives_2_0(), "rule__BaseAlgorithmExecution__NameAlternatives_2_0");
+			builder.put(grammarAccess.getHigherOrderAlgorithmExecutionAccess().getNameAlternatives_2_0(), "rule__HigherOrderAlgorithmExecution__NameAlternatives_2_0");
 			builder.put(grammarAccess.getHigherOrderAlgorithmExecutionAccess().getAlternatives_4_3_0(), "rule__HigherOrderAlgorithmExecution__Alternatives_4_3_0");
 			builder.put(grammarAccess.getHigherOrderAlgorithmExecutionAccess().getAlternatives_4_4_0(), "rule__HigherOrderAlgorithmExecution__Alternatives_4_4_0");
+			builder.put(grammarAccess.getTriggerGroupAccess().getNameAlternatives_2_0(), "rule__TriggerGroup__NameAlternatives_2_0");
 			builder.put(grammarAccess.getTemporalTriggerAccess().getAlternatives(), "rule__TemporalTrigger__Alternatives");
+			builder.put(grammarAccess.getActionAccess().getNameAlternatives_2_0(), "rule__Action__NameAlternatives_2_0");
+			builder.put(grammarAccess.getActionAccess().getEndpointAlternatives_4_0_1_0(), "rule__Action__EndpointAlternatives_4_0_1_0");
+			builder.put(grammarAccess.getParameterAccess().getNameAlternatives_2_0(), "rule__Parameter__NameAlternatives_2_0");
+			builder.put(grammarAccess.getParameterValueEntryAccess().getKeyAlternatives_1_0(), "rule__ParameterValueEntry__KeyAlternatives_1_0");
+			builder.put(grammarAccess.getActionExecutionAccess().getNameAlternatives_2_0(), "rule__ActionExecution__NameAlternatives_2_0");
 			builder.put(grammarAccess.getEStringAccess().getAlternatives(), "rule__EString__Alternatives");
 			builder.put(grammarAccess.getStatisticalVariableTypeAccess().getAlternatives(), "rule__StatisticalVariableType__Alternatives");
 			builder.put(grammarAccess.getFrequencyEnumAccess().getAlternatives(), "rule__FrequencyEnum__Alternatives");
@@ -135,8 +159,6 @@ public class PanoptesXParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getActionExecutionAccess().getGroup_4_0(), "rule__ActionExecution__Group_4_0__0");
 			builder.put(grammarAccess.getActionExecutionAccess().getGroup_4_1(), "rule__ActionExecution__Group_4_1__0");
 			builder.put(grammarAccess.getActionExecutionAccess().getGroup_4_1_3(), "rule__ActionExecution__Group_4_1_3__0");
-			builder.put(grammarAccess.getEIntegerObjectAccess().getGroup(), "rule__EIntegerObject__Group__0");
-			builder.put(grammarAccess.getParameterLiteralAccess().getGroup(), "rule__ParameterLiteral__Group__0");
 			builder.put(grammarAccess.getPlatformAccess().getFeatureStoreAssignment_0(), "rule__Platform__FeatureStoreAssignment_0");
 			builder.put(grammarAccess.getPlatformAccess().getMlModelsAssignment_1(), "rule__Platform__MlModelsAssignment_1");
 			builder.put(grammarAccess.getPlatformAccess().getDeploymentsAssignment_2(), "rule__Platform__DeploymentsAssignment_2");

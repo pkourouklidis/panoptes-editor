@@ -228,21 +228,37 @@ ruleModel returns [EObject current=null]
 		}
 		(
 			(
-				{
-					newCompositeNode(grammarAccess.getModelAccess().getNameEStringParserRuleCall_2_0());
-				}
-				lv_name_2_0=ruleEString
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getModelRule());
+				(
+					lv_name_2_1=RULE_STRING
+					{
+						newLeafNode(lv_name_2_1, grammarAccess.getModelAccess().getNameSTRINGTerminalRuleCall_2_0_0());
 					}
-					set(
-						$current,
-						"name",
-						lv_name_2_0,
-						"org.lowcomote.panoptes.PanoptesX.EString");
-					afterParserOrEnumRuleCall();
-				}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getModelRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"name",
+							lv_name_2_1,
+							"org.eclipse.xtext.common.Terminals.STRING");
+					}
+					    |
+					lv_name_2_2=RULE_SAFESTRING
+					{
+						newLeafNode(lv_name_2_2, grammarAccess.getModelAccess().getNameSAFESTRINGTerminalRuleCall_2_0_1());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getModelRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"name",
+							lv_name_2_2,
+							"org.lowcomote.panoptes.PanoptesX.SAFESTRING");
+					}
+				)
 			)
 		)
 		otherlv_3='{'
@@ -668,21 +684,37 @@ ruleEntity returns [EObject current=null]
 	(
 		(
 			(
-				{
-					newCompositeNode(grammarAccess.getEntityAccess().getNameEStringParserRuleCall_0_0());
-				}
-				lv_name_0_0=ruleEString
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getEntityRule());
+				(
+					lv_name_0_1=RULE_STRING
+					{
+						newLeafNode(lv_name_0_1, grammarAccess.getEntityAccess().getNameSTRINGTerminalRuleCall_0_0_0());
 					}
-					set(
-						$current,
-						"name",
-						lv_name_0_0,
-						"org.lowcomote.panoptes.PanoptesX.EString");
-					afterParserOrEnumRuleCall();
-				}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getEntityRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"name",
+							lv_name_0_1,
+							"org.eclipse.xtext.common.Terminals.STRING");
+					}
+					    |
+					lv_name_0_2=RULE_SAFESTRING
+					{
+						newLeafNode(lv_name_0_2, grammarAccess.getEntityAccess().getNameSAFESTRINGTerminalRuleCall_0_0_1());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getEntityRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"name",
+							lv_name_0_2,
+							"org.lowcomote.panoptes.PanoptesX.SAFESTRING");
+					}
+				)
 			)
 		)
 		otherlv_1='{'
@@ -762,21 +794,37 @@ ruleFeature returns [EObject current=null]
 	(
 		(
 			(
-				{
-					newCompositeNode(grammarAccess.getFeatureAccess().getNameEStringParserRuleCall_0_0());
-				}
-				lv_name_0_0=ruleEString
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getFeatureRule());
+				(
+					lv_name_0_1=RULE_STRING
+					{
+						newLeafNode(lv_name_0_1, grammarAccess.getFeatureAccess().getNameSTRINGTerminalRuleCall_0_0_0());
 					}
-					set(
-						$current,
-						"name",
-						lv_name_0_0,
-						"org.lowcomote.panoptes.PanoptesX.EString");
-					afterParserOrEnumRuleCall();
-				}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getFeatureRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"name",
+							lv_name_0_1,
+							"org.eclipse.xtext.common.Terminals.STRING");
+					}
+					    |
+					lv_name_0_2=RULE_SAFESTRING
+					{
+						newLeafNode(lv_name_0_2, grammarAccess.getFeatureAccess().getNameSAFESTRINGTerminalRuleCall_0_0_1());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getFeatureRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"name",
+							lv_name_0_2,
+							"org.lowcomote.panoptes.PanoptesX.SAFESTRING");
+					}
+				)
 			)
 		)
 		(
@@ -974,21 +1022,37 @@ rulePrediction returns [EObject current=null]
 		)
 		(
 			(
-				{
-					newCompositeNode(grammarAccess.getPredictionAccess().getNameEStringParserRuleCall_1_0());
-				}
-				lv_name_1_0=ruleEString
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getPredictionRule());
+				(
+					lv_name_1_1=RULE_STRING
+					{
+						newLeafNode(lv_name_1_1, grammarAccess.getPredictionAccess().getNameSTRINGTerminalRuleCall_1_0_0());
 					}
-					set(
-						$current,
-						"name",
-						lv_name_1_0,
-						"org.lowcomote.panoptes.PanoptesX.EString");
-					afterParserOrEnumRuleCall();
-				}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getPredictionRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"name",
+							lv_name_1_1,
+							"org.eclipse.xtext.common.Terminals.STRING");
+					}
+					    |
+					lv_name_1_2=RULE_SAFESTRING
+					{
+						newLeafNode(lv_name_1_2, grammarAccess.getPredictionAccess().getNameSAFESTRINGTerminalRuleCall_1_0_1());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getPredictionRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"name",
+							lv_name_1_2,
+							"org.lowcomote.panoptes.PanoptesX.SAFESTRING");
+					}
+				)
 			)
 		)
 		(
@@ -1041,21 +1105,37 @@ ruleLabel returns [EObject current=null]
 		)
 		(
 			(
-				{
-					newCompositeNode(grammarAccess.getLabelAccess().getNameEStringParserRuleCall_1_0());
-				}
-				lv_name_1_0=ruleEString
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getLabelRule());
+				(
+					lv_name_1_1=RULE_STRING
+					{
+						newLeafNode(lv_name_1_1, grammarAccess.getLabelAccess().getNameSTRINGTerminalRuleCall_1_0_0());
 					}
-					set(
-						$current,
-						"name",
-						lv_name_1_0,
-						"org.lowcomote.panoptes.PanoptesX.EString");
-					afterParserOrEnumRuleCall();
-				}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getLabelRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"name",
+							lv_name_1_1,
+							"org.eclipse.xtext.common.Terminals.STRING");
+					}
+					    |
+					lv_name_1_2=RULE_SAFESTRING
+					{
+						newLeafNode(lv_name_1_2, grammarAccess.getLabelAccess().getNameSAFESTRINGTerminalRuleCall_1_0_1());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getLabelRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"name",
+							lv_name_1_2,
+							"org.lowcomote.panoptes.PanoptesX.SAFESTRING");
+					}
+				)
 			)
 		)
 		(
@@ -1111,21 +1191,37 @@ ruleRequestData returns [EObject current=null]
 		)
 		(
 			(
-				{
-					newCompositeNode(grammarAccess.getRequestDataAccess().getNameEStringParserRuleCall_1_0());
-				}
-				lv_name_1_0=ruleEString
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getRequestDataRule());
+				(
+					lv_name_1_1=RULE_STRING
+					{
+						newLeafNode(lv_name_1_1, grammarAccess.getRequestDataAccess().getNameSTRINGTerminalRuleCall_1_0_0());
 					}
-					set(
-						$current,
-						"name",
-						lv_name_1_0,
-						"org.lowcomote.panoptes.PanoptesX.EString");
-					afterParserOrEnumRuleCall();
-				}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getRequestDataRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"name",
+							lv_name_1_1,
+							"org.eclipse.xtext.common.Terminals.STRING");
+					}
+					    |
+					lv_name_1_2=RULE_SAFESTRING
+					{
+						newLeafNode(lv_name_1_2, grammarAccess.getRequestDataAccess().getNameSAFESTRINGTerminalRuleCall_1_0_1());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getRequestDataRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"name",
+							lv_name_1_2,
+							"org.lowcomote.panoptes.PanoptesX.SAFESTRING");
+					}
+				)
 			)
 		)
 	)
@@ -1156,21 +1252,37 @@ ruleKey returns [EObject current=null]
 		)
 		(
 			(
-				{
-					newCompositeNode(grammarAccess.getKeyAccess().getNameEStringParserRuleCall_1_0());
-				}
-				lv_name_1_0=ruleEString
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getKeyRule());
+				(
+					lv_name_1_1=RULE_STRING
+					{
+						newLeafNode(lv_name_1_1, grammarAccess.getKeyAccess().getNameSTRINGTerminalRuleCall_1_0_0());
 					}
-					set(
-						$current,
-						"name",
-						lv_name_1_0,
-						"org.lowcomote.panoptes.PanoptesX.EString");
-					afterParserOrEnumRuleCall();
-				}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getKeyRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"name",
+							lv_name_1_1,
+							"org.eclipse.xtext.common.Terminals.STRING");
+					}
+					    |
+					lv_name_1_2=RULE_SAFESTRING
+					{
+						newLeafNode(lv_name_1_2, grammarAccess.getKeyAccess().getNameSAFESTRINGTerminalRuleCall_1_0_1());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getKeyRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"name",
+							lv_name_1_2,
+							"org.lowcomote.panoptes.PanoptesX.SAFESTRING");
+					}
+				)
 			)
 		)
 	)
@@ -1198,21 +1310,37 @@ ruleDeployment returns [EObject current=null]
 		}
 		(
 			(
-				{
-					newCompositeNode(grammarAccess.getDeploymentAccess().getNameEStringParserRuleCall_1_0());
-				}
-				lv_name_1_0=ruleEString
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getDeploymentRule());
+				(
+					lv_name_1_1=RULE_STRING
+					{
+						newLeafNode(lv_name_1_1, grammarAccess.getDeploymentAccess().getNameSTRINGTerminalRuleCall_1_0_0());
 					}
-					set(
-						$current,
-						"name",
-						lv_name_1_0,
-						"org.lowcomote.panoptes.PanoptesX.EString");
-					afterParserOrEnumRuleCall();
-				}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getDeploymentRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"name",
+							lv_name_1_1,
+							"org.eclipse.xtext.common.Terminals.STRING");
+					}
+					    |
+					lv_name_1_2=RULE_SAFESTRING
+					{
+						newLeafNode(lv_name_1_2, grammarAccess.getDeploymentAccess().getNameSAFESTRINGTerminalRuleCall_1_0_1());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getDeploymentRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"name",
+							lv_name_1_2,
+							"org.lowcomote.panoptes.PanoptesX.SAFESTRING");
+					}
+				)
 			)
 		)
 		otherlv_2='{'
@@ -1413,21 +1541,37 @@ ruleBaseAlgorithm returns [EObject current=null]
 		}
 		(
 			(
-				{
-					newCompositeNode(grammarAccess.getBaseAlgorithmAccess().getNameEStringParserRuleCall_1_0());
-				}
-				lv_name_1_0=ruleEString
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getBaseAlgorithmRule());
+				(
+					lv_name_1_1=RULE_STRING
+					{
+						newLeafNode(lv_name_1_1, grammarAccess.getBaseAlgorithmAccess().getNameSTRINGTerminalRuleCall_1_0_0());
 					}
-					set(
-						$current,
-						"name",
-						lv_name_1_0,
-						"org.lowcomote.panoptes.PanoptesX.EString");
-					afterParserOrEnumRuleCall();
-				}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getBaseAlgorithmRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"name",
+							lv_name_1_1,
+							"org.eclipse.xtext.common.Terminals.STRING");
+					}
+					    |
+					lv_name_1_2=RULE_SAFESTRING
+					{
+						newLeafNode(lv_name_1_2, grammarAccess.getBaseAlgorithmAccess().getNameSAFESTRINGTerminalRuleCall_1_0_1());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getBaseAlgorithmRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"name",
+							lv_name_1_2,
+							"org.lowcomote.panoptes.PanoptesX.SAFESTRING");
+					}
+				)
 			)
 		)
 		otherlv_2='{'
@@ -1452,21 +1596,37 @@ ruleBaseAlgorithm returns [EObject current=null]
 								}
 								(
 									(
-										{
-											newCompositeNode(grammarAccess.getBaseAlgorithmAccess().getCodebaseEStringParserRuleCall_3_0_1_0());
-										}
-										lv_codebase_5_0=ruleEString
-										{
-											if ($current==null) {
-												$current = createModelElementForParent(grammarAccess.getBaseAlgorithmRule());
+										(
+											lv_codebase_5_1=RULE_STRING
+											{
+												newLeafNode(lv_codebase_5_1, grammarAccess.getBaseAlgorithmAccess().getCodebaseSTRINGTerminalRuleCall_3_0_1_0_0());
 											}
-											set(
-												$current,
-												"codebase",
-												lv_codebase_5_0,
-												"org.lowcomote.panoptes.PanoptesX.EString");
-											afterParserOrEnumRuleCall();
-										}
+											{
+												if ($current==null) {
+													$current = createModelElement(grammarAccess.getBaseAlgorithmRule());
+												}
+												setWithLastConsumed(
+													$current,
+													"codebase",
+													lv_codebase_5_1,
+													"org.eclipse.xtext.common.Terminals.STRING");
+											}
+											    |
+											lv_codebase_5_2=RULE_SAFESTRING
+											{
+												newLeafNode(lv_codebase_5_2, grammarAccess.getBaseAlgorithmAccess().getCodebaseSAFESTRINGTerminalRuleCall_3_0_1_0_1());
+											}
+											{
+												if ($current==null) {
+													$current = createModelElement(grammarAccess.getBaseAlgorithmRule());
+												}
+												setWithLastConsumed(
+													$current,
+													"codebase",
+													lv_codebase_5_2,
+													"org.lowcomote.panoptes.PanoptesX.SAFESTRING");
+											}
+										)
 									)
 								)
 								))
@@ -1720,21 +1880,37 @@ ruleHigherOrderAlgorithm returns [EObject current=null]
 		}
 		(
 			(
-				{
-					newCompositeNode(grammarAccess.getHigherOrderAlgorithmAccess().getNameEStringParserRuleCall_2_0());
-				}
-				lv_name_2_0=ruleEString
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getHigherOrderAlgorithmRule());
+				(
+					lv_name_2_1=RULE_STRING
+					{
+						newLeafNode(lv_name_2_1, grammarAccess.getHigherOrderAlgorithmAccess().getNameSTRINGTerminalRuleCall_2_0_0());
 					}
-					set(
-						$current,
-						"name",
-						lv_name_2_0,
-						"org.lowcomote.panoptes.PanoptesX.EString");
-					afterParserOrEnumRuleCall();
-				}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getHigherOrderAlgorithmRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"name",
+							lv_name_2_1,
+							"org.eclipse.xtext.common.Terminals.STRING");
+					}
+					    |
+					lv_name_2_2=RULE_SAFESTRING
+					{
+						newLeafNode(lv_name_2_2, grammarAccess.getHigherOrderAlgorithmAccess().getNameSAFESTRINGTerminalRuleCall_2_0_1());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getHigherOrderAlgorithmRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"name",
+							lv_name_2_2,
+							"org.lowcomote.panoptes.PanoptesX.SAFESTRING");
+					}
+				)
 			)
 		)
 		otherlv_3='{'
@@ -1759,21 +1935,37 @@ ruleHigherOrderAlgorithm returns [EObject current=null]
 								}
 								(
 									(
-										{
-											newCompositeNode(grammarAccess.getHigherOrderAlgorithmAccess().getCodebaseEStringParserRuleCall_4_0_1_0());
-										}
-										lv_codebase_6_0=ruleEString
-										{
-											if ($current==null) {
-												$current = createModelElementForParent(grammarAccess.getHigherOrderAlgorithmRule());
+										(
+											lv_codebase_6_1=RULE_STRING
+											{
+												newLeafNode(lv_codebase_6_1, grammarAccess.getHigherOrderAlgorithmAccess().getCodebaseSTRINGTerminalRuleCall_4_0_1_0_0());
 											}
-											set(
-												$current,
-												"codebase",
-												lv_codebase_6_0,
-												"org.lowcomote.panoptes.PanoptesX.EString");
-											afterParserOrEnumRuleCall();
-										}
+											{
+												if ($current==null) {
+													$current = createModelElement(grammarAccess.getHigherOrderAlgorithmRule());
+												}
+												setWithLastConsumed(
+													$current,
+													"codebase",
+													lv_codebase_6_1,
+													"org.eclipse.xtext.common.Terminals.STRING");
+											}
+											    |
+											lv_codebase_6_2=RULE_SAFESTRING
+											{
+												newLeafNode(lv_codebase_6_2, grammarAccess.getHigherOrderAlgorithmAccess().getCodebaseSAFESTRINGTerminalRuleCall_4_0_1_0_1());
+											}
+											{
+												if ($current==null) {
+													$current = createModelElement(grammarAccess.getHigherOrderAlgorithmRule());
+												}
+												setWithLastConsumed(
+													$current,
+													"codebase",
+													lv_codebase_6_2,
+													"org.lowcomote.panoptes.PanoptesX.SAFESTRING");
+											}
+										)
 									)
 								)
 								))
@@ -1990,21 +2182,37 @@ ruleBaseAlgorithmRuntime returns [EObject current=null]
 		}
 		(
 			(
-				{
-					newCompositeNode(grammarAccess.getBaseAlgorithmRuntimeAccess().getNameEStringParserRuleCall_2_0());
-				}
-				lv_name_2_0=ruleEString
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getBaseAlgorithmRuntimeRule());
+				(
+					lv_name_2_1=RULE_STRING
+					{
+						newLeafNode(lv_name_2_1, grammarAccess.getBaseAlgorithmRuntimeAccess().getNameSTRINGTerminalRuleCall_2_0_0());
 					}
-					set(
-						$current,
-						"name",
-						lv_name_2_0,
-						"org.lowcomote.panoptes.PanoptesX.EString");
-					afterParserOrEnumRuleCall();
-				}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getBaseAlgorithmRuntimeRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"name",
+							lv_name_2_1,
+							"org.eclipse.xtext.common.Terminals.STRING");
+					}
+					    |
+					lv_name_2_2=RULE_SAFESTRING
+					{
+						newLeafNode(lv_name_2_2, grammarAccess.getBaseAlgorithmRuntimeAccess().getNameSAFESTRINGTerminalRuleCall_2_0_1());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getBaseAlgorithmRuntimeRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"name",
+							lv_name_2_2,
+							"org.lowcomote.panoptes.PanoptesX.SAFESTRING");
+					}
+				)
 			)
 		)
 		(
@@ -2018,21 +2226,37 @@ ruleBaseAlgorithmRuntime returns [EObject current=null]
 			}
 			(
 				(
-					{
-						newCompositeNode(grammarAccess.getBaseAlgorithmRuntimeAccess().getEndpointEStringParserRuleCall_3_2_0());
-					}
-					lv_endpoint_5_0=ruleEString
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getBaseAlgorithmRuntimeRule());
+					(
+						lv_endpoint_5_1=RULE_STRING
+						{
+							newLeafNode(lv_endpoint_5_1, grammarAccess.getBaseAlgorithmRuntimeAccess().getEndpointSTRINGTerminalRuleCall_3_2_0_0());
 						}
-						set(
-							$current,
-							"endpoint",
-							lv_endpoint_5_0,
-							"org.lowcomote.panoptes.PanoptesX.EString");
-						afterParserOrEnumRuleCall();
-					}
+						{
+							if ($current==null) {
+								$current = createModelElement(grammarAccess.getBaseAlgorithmRuntimeRule());
+							}
+							setWithLastConsumed(
+								$current,
+								"endpoint",
+								lv_endpoint_5_1,
+								"org.eclipse.xtext.common.Terminals.STRING");
+						}
+						    |
+						lv_endpoint_5_2=RULE_SAFESTRING
+						{
+							newLeafNode(lv_endpoint_5_2, grammarAccess.getBaseAlgorithmRuntimeAccess().getEndpointSAFESTRINGTerminalRuleCall_3_2_0_1());
+						}
+						{
+							if ($current==null) {
+								$current = createModelElement(grammarAccess.getBaseAlgorithmRuntimeRule());
+							}
+							setWithLastConsumed(
+								$current,
+								"endpoint",
+								lv_endpoint_5_2,
+								"org.lowcomote.panoptes.PanoptesX.SAFESTRING");
+						}
+					)
 				)
 			)
 			otherlv_6='}'
@@ -2072,21 +2296,37 @@ ruleHigherOrderAlgorithmRuntime returns [EObject current=null]
 		}
 		(
 			(
-				{
-					newCompositeNode(grammarAccess.getHigherOrderAlgorithmRuntimeAccess().getNameEStringParserRuleCall_2_0());
-				}
-				lv_name_2_0=ruleEString
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getHigherOrderAlgorithmRuntimeRule());
+				(
+					lv_name_2_1=RULE_STRING
+					{
+						newLeafNode(lv_name_2_1, grammarAccess.getHigherOrderAlgorithmRuntimeAccess().getNameSTRINGTerminalRuleCall_2_0_0());
 					}
-					set(
-						$current,
-						"name",
-						lv_name_2_0,
-						"org.lowcomote.panoptes.PanoptesX.EString");
-					afterParserOrEnumRuleCall();
-				}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getHigherOrderAlgorithmRuntimeRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"name",
+							lv_name_2_1,
+							"org.eclipse.xtext.common.Terminals.STRING");
+					}
+					    |
+					lv_name_2_2=RULE_SAFESTRING
+					{
+						newLeafNode(lv_name_2_2, grammarAccess.getHigherOrderAlgorithmRuntimeAccess().getNameSAFESTRINGTerminalRuleCall_2_0_1());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getHigherOrderAlgorithmRuntimeRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"name",
+							lv_name_2_2,
+							"org.lowcomote.panoptes.PanoptesX.SAFESTRING");
+					}
+				)
 			)
 		)
 		(
@@ -2100,21 +2340,37 @@ ruleHigherOrderAlgorithmRuntime returns [EObject current=null]
 			}
 			(
 				(
-					{
-						newCompositeNode(grammarAccess.getHigherOrderAlgorithmRuntimeAccess().getEndpointEStringParserRuleCall_3_2_0());
-					}
-					lv_endpoint_5_0=ruleEString
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getHigherOrderAlgorithmRuntimeRule());
+					(
+						lv_endpoint_5_1=RULE_STRING
+						{
+							newLeafNode(lv_endpoint_5_1, grammarAccess.getHigherOrderAlgorithmRuntimeAccess().getEndpointSTRINGTerminalRuleCall_3_2_0_0());
 						}
-						set(
-							$current,
-							"endpoint",
-							lv_endpoint_5_0,
-							"org.lowcomote.panoptes.PanoptesX.EString");
-						afterParserOrEnumRuleCall();
-					}
+						{
+							if ($current==null) {
+								$current = createModelElement(grammarAccess.getHigherOrderAlgorithmRuntimeRule());
+							}
+							setWithLastConsumed(
+								$current,
+								"endpoint",
+								lv_endpoint_5_1,
+								"org.eclipse.xtext.common.Terminals.STRING");
+						}
+						    |
+						lv_endpoint_5_2=RULE_SAFESTRING
+						{
+							newLeafNode(lv_endpoint_5_2, grammarAccess.getHigherOrderAlgorithmRuntimeAccess().getEndpointSAFESTRINGTerminalRuleCall_3_2_0_1());
+						}
+						{
+							if ($current==null) {
+								$current = createModelElement(grammarAccess.getHigherOrderAlgorithmRuntimeRule());
+							}
+							setWithLastConsumed(
+								$current,
+								"endpoint",
+								lv_endpoint_5_2,
+								"org.lowcomote.panoptes.PanoptesX.SAFESTRING");
+						}
+					)
 				)
 			)
 			otherlv_6='}'
@@ -2190,21 +2446,37 @@ ruleBaseAlgorithmExecution returns [EObject current=null]
 		}
 		(
 			(
-				{
-					newCompositeNode(grammarAccess.getBaseAlgorithmExecutionAccess().getNameEStringParserRuleCall_2_0());
-				}
-				lv_name_2_0=ruleEString
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getBaseAlgorithmExecutionRule());
+				(
+					lv_name_2_1=RULE_STRING
+					{
+						newLeafNode(lv_name_2_1, grammarAccess.getBaseAlgorithmExecutionAccess().getNameSTRINGTerminalRuleCall_2_0_0());
 					}
-					set(
-						$current,
-						"name",
-						lv_name_2_0,
-						"org.lowcomote.panoptes.PanoptesX.EString");
-					afterParserOrEnumRuleCall();
-				}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getBaseAlgorithmExecutionRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"name",
+							lv_name_2_1,
+							"org.eclipse.xtext.common.Terminals.STRING");
+					}
+					    |
+					lv_name_2_2=RULE_SAFESTRING
+					{
+						newLeafNode(lv_name_2_2, grammarAccess.getBaseAlgorithmExecutionAccess().getNameSAFESTRINGTerminalRuleCall_2_0_1());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getBaseAlgorithmExecutionRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"name",
+							lv_name_2_2,
+							"org.lowcomote.panoptes.PanoptesX.SAFESTRING");
+					}
+				)
 			)
 		)
 		otherlv_3='{'
@@ -2529,21 +2801,37 @@ ruleHigherOrderAlgorithmExecution returns [EObject current=null]
 		}
 		(
 			(
-				{
-					newCompositeNode(grammarAccess.getHigherOrderAlgorithmExecutionAccess().getNameEStringParserRuleCall_2_0());
-				}
-				lv_name_2_0=ruleEString
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getHigherOrderAlgorithmExecutionRule());
+				(
+					lv_name_2_1=RULE_STRING
+					{
+						newLeafNode(lv_name_2_1, grammarAccess.getHigherOrderAlgorithmExecutionAccess().getNameSTRINGTerminalRuleCall_2_0_0());
 					}
-					set(
-						$current,
-						"name",
-						lv_name_2_0,
-						"org.lowcomote.panoptes.PanoptesX.EString");
-					afterParserOrEnumRuleCall();
-				}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getHigherOrderAlgorithmExecutionRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"name",
+							lv_name_2_1,
+							"org.eclipse.xtext.common.Terminals.STRING");
+					}
+					    |
+					lv_name_2_2=RULE_SAFESTRING
+					{
+						newLeafNode(lv_name_2_2, grammarAccess.getHigherOrderAlgorithmExecutionAccess().getNameSAFESTRINGTerminalRuleCall_2_0_1());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getHigherOrderAlgorithmExecutionRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"name",
+							lv_name_2_2,
+							"org.lowcomote.panoptes.PanoptesX.SAFESTRING");
+					}
+				)
 			)
 		)
 		otherlv_3='{'
@@ -2944,21 +3232,37 @@ ruleTriggerGroup returns [EObject current=null]
 		}
 		(
 			(
-				{
-					newCompositeNode(grammarAccess.getTriggerGroupAccess().getNameEStringParserRuleCall_2_0());
-				}
-				lv_name_2_0=ruleEString
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getTriggerGroupRule());
+				(
+					lv_name_2_1=RULE_STRING
+					{
+						newLeafNode(lv_name_2_1, grammarAccess.getTriggerGroupAccess().getNameSTRINGTerminalRuleCall_2_0_0());
 					}
-					set(
-						$current,
-						"name",
-						lv_name_2_0,
-						"org.lowcomote.panoptes.PanoptesX.EString");
-					afterParserOrEnumRuleCall();
-				}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getTriggerGroupRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"name",
+							lv_name_2_1,
+							"org.eclipse.xtext.common.Terminals.STRING");
+					}
+					    |
+					lv_name_2_2=RULE_SAFESTRING
+					{
+						newLeafNode(lv_name_2_2, grammarAccess.getTriggerGroupAccess().getNameSAFESTRINGTerminalRuleCall_2_0_1());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getTriggerGroupRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"name",
+							lv_name_2_2,
+							"org.lowcomote.panoptes.PanoptesX.SAFESTRING");
+					}
+				)
 			)
 		)
 		otherlv_3='{'
@@ -3267,20 +3571,19 @@ ruleTemporalTrigger returns [EObject current=null]
 		    |
 		(
 			(
+				lv_cronString_3_0=RULE_STRING
 				{
-					newCompositeNode(grammarAccess.getTemporalTriggerAccess().getCronStringEStringParserRuleCall_1_0());
+					newLeafNode(lv_cronString_3_0, grammarAccess.getTemporalTriggerAccess().getCronStringSTRINGTerminalRuleCall_1_0());
 				}
-				lv_cronString_3_0=ruleEString
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getTemporalTriggerRule());
+						$current = createModelElement(grammarAccess.getTemporalTriggerRule());
 					}
-					set(
+					setWithLastConsumed(
 						$current,
 						"cronString",
 						lv_cronString_3_0,
-						"org.lowcomote.panoptes.PanoptesX.EString");
-					afterParserOrEnumRuleCall();
+						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)
@@ -3463,21 +3766,37 @@ ruleAction returns [EObject current=null]
 		}
 		(
 			(
-				{
-					newCompositeNode(grammarAccess.getActionAccess().getNameEStringParserRuleCall_2_0());
-				}
-				lv_name_2_0=ruleEString
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getActionRule());
+				(
+					lv_name_2_1=RULE_STRING
+					{
+						newLeafNode(lv_name_2_1, grammarAccess.getActionAccess().getNameSTRINGTerminalRuleCall_2_0_0());
 					}
-					set(
-						$current,
-						"name",
-						lv_name_2_0,
-						"org.lowcomote.panoptes.PanoptesX.EString");
-					afterParserOrEnumRuleCall();
-				}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getActionRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"name",
+							lv_name_2_1,
+							"org.eclipse.xtext.common.Terminals.STRING");
+					}
+					    |
+					lv_name_2_2=RULE_SAFESTRING
+					{
+						newLeafNode(lv_name_2_2, grammarAccess.getActionAccess().getNameSAFESTRINGTerminalRuleCall_2_0_1());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getActionRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"name",
+							lv_name_2_2,
+							"org.lowcomote.panoptes.PanoptesX.SAFESTRING");
+					}
+				)
 			)
 		)
 		otherlv_3='{'
@@ -3502,21 +3821,37 @@ ruleAction returns [EObject current=null]
 								}
 								(
 									(
-										{
-											newCompositeNode(grammarAccess.getActionAccess().getEndpointEStringParserRuleCall_4_0_1_0());
-										}
-										lv_endpoint_6_0=ruleEString
-										{
-											if ($current==null) {
-												$current = createModelElementForParent(grammarAccess.getActionRule());
+										(
+											lv_endpoint_6_1=RULE_STRING
+											{
+												newLeafNode(lv_endpoint_6_1, grammarAccess.getActionAccess().getEndpointSTRINGTerminalRuleCall_4_0_1_0_0());
 											}
-											set(
-												$current,
-												"endpoint",
-												lv_endpoint_6_0,
-												"org.lowcomote.panoptes.PanoptesX.EString");
-											afterParserOrEnumRuleCall();
-										}
+											{
+												if ($current==null) {
+													$current = createModelElement(grammarAccess.getActionRule());
+												}
+												setWithLastConsumed(
+													$current,
+													"endpoint",
+													lv_endpoint_6_1,
+													"org.eclipse.xtext.common.Terminals.STRING");
+											}
+											    |
+											lv_endpoint_6_2=RULE_SAFESTRING
+											{
+												newLeafNode(lv_endpoint_6_2, grammarAccess.getActionAccess().getEndpointSAFESTRINGTerminalRuleCall_4_0_1_0_1());
+											}
+											{
+												if ($current==null) {
+													$current = createModelElement(grammarAccess.getActionRule());
+												}
+												setWithLastConsumed(
+													$current,
+													"endpoint",
+													lv_endpoint_6_2,
+													"org.lowcomote.panoptes.PanoptesX.SAFESTRING");
+											}
+										)
 									)
 								)
 								))
@@ -3637,21 +3972,37 @@ ruleParameter returns [EObject current=null]
 		)?
 		(
 			(
-				{
-					newCompositeNode(grammarAccess.getParameterAccess().getNameEStringParserRuleCall_2_0());
-				}
-				lv_name_2_0=ruleEString
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getParameterRule());
+				(
+					lv_name_2_1=RULE_STRING
+					{
+						newLeafNode(lv_name_2_1, grammarAccess.getParameterAccess().getNameSTRINGTerminalRuleCall_2_0_0());
 					}
-					set(
-						$current,
-						"name",
-						lv_name_2_0,
-						"org.lowcomote.panoptes.PanoptesX.EString");
-					afterParserOrEnumRuleCall();
-				}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getParameterRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"name",
+							lv_name_2_1,
+							"org.eclipse.xtext.common.Terminals.STRING");
+					}
+					    |
+					lv_name_2_2=RULE_SAFESTRING
+					{
+						newLeafNode(lv_name_2_2, grammarAccess.getParameterAccess().getNameSAFESTRINGTerminalRuleCall_2_0_1());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getParameterRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"name",
+							lv_name_2_2,
+							"org.lowcomote.panoptes.PanoptesX.SAFESTRING");
+					}
+				)
 			)
 		)
 		(
@@ -3707,21 +4058,37 @@ ruleparameterValueEntry returns [EObject current=null]
 		)
 		(
 			(
-				{
-					newCompositeNode(grammarAccess.getParameterValueEntryAccess().getKeyEStringParserRuleCall_1_0());
-				}
-				lv_key_1_0=ruleEString
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getParameterValueEntryRule());
+				(
+					lv_key_1_1=RULE_STRING
+					{
+						newLeafNode(lv_key_1_1, grammarAccess.getParameterValueEntryAccess().getKeySTRINGTerminalRuleCall_1_0_0());
 					}
-					set(
-						$current,
-						"key",
-						lv_key_1_0,
-						"org.lowcomote.panoptes.PanoptesX.EString");
-					afterParserOrEnumRuleCall();
-				}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getParameterValueEntryRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"key",
+							lv_key_1_1,
+							"org.eclipse.xtext.common.Terminals.STRING");
+					}
+					    |
+					lv_key_1_2=RULE_SAFESTRING
+					{
+						newLeafNode(lv_key_1_2, grammarAccess.getParameterValueEntryAccess().getKeySAFESTRINGTerminalRuleCall_1_0_1());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getParameterValueEntryRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"key",
+							lv_key_1_2,
+							"org.lowcomote.panoptes.PanoptesX.SAFESTRING");
+					}
+				)
 			)
 		)
 		otherlv_2='='
@@ -3731,9 +4098,9 @@ ruleparameterValueEntry returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getParameterValueEntryAccess().getValueParameterLiteralParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getParameterValueEntryAccess().getValueEStringParserRuleCall_3_0());
 				}
-				lv_value_3_0=ruleParameterLiteral
+				lv_value_3_0=ruleEString
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getParameterValueEntryRule());
@@ -3742,7 +4109,7 @@ ruleparameterValueEntry returns [EObject current=null]
 						$current,
 						"value",
 						lv_value_3_0,
-						"org.lowcomote.panoptes.PanoptesX.ParameterLiteral");
+						"org.lowcomote.panoptes.PanoptesX.EString");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -3779,21 +4146,37 @@ ruleActionExecution returns [EObject current=null]
 		}
 		(
 			(
-				{
-					newCompositeNode(grammarAccess.getActionExecutionAccess().getNameEStringParserRuleCall_2_0());
-				}
-				lv_name_2_0=ruleEString
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getActionExecutionRule());
+				(
+					lv_name_2_1=RULE_STRING
+					{
+						newLeafNode(lv_name_2_1, grammarAccess.getActionExecutionAccess().getNameSTRINGTerminalRuleCall_2_0_0());
 					}
-					set(
-						$current,
-						"name",
-						lv_name_2_0,
-						"org.lowcomote.panoptes.PanoptesX.EString");
-					afterParserOrEnumRuleCall();
-				}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getActionExecutionRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"name",
+							lv_name_2_1,
+							"org.eclipse.xtext.common.Terminals.STRING");
+					}
+					    |
+					lv_name_2_2=RULE_SAFESTRING
+					{
+						newLeafNode(lv_name_2_2, grammarAccess.getActionExecutionAccess().getNameSAFESTRINGTerminalRuleCall_2_0_1());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getActionExecutionRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"name",
+							lv_name_2_2,
+							"org.lowcomote.panoptes.PanoptesX.SAFESTRING");
+					}
+				)
 			)
 		)
 		otherlv_3='{'
@@ -3931,22 +4314,13 @@ ruleEIntegerObject returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRule
 @after {
 	leaveRule();
 }:
-	(
-		(
-			kw='-'
-			{
-				$current.merge(kw);
-				newLeafNode(kw, grammarAccess.getEIntegerObjectAccess().getHyphenMinusKeyword_0());
-			}
-		)?
-		this_INT_1=RULE_INT
-		{
-			$current.merge(this_INT_1);
-		}
-		{
-			newLeafNode(this_INT_1, grammarAccess.getEIntegerObjectAccess().getINTTerminalRuleCall_1());
-		}
-	)
+	this_INT_0=RULE_INT
+	{
+		$current.merge(this_INT_0);
+	}
+	{
+		newLeafNode(this_INT_0, grammarAccess.getEIntegerObjectAccess().getINTTerminalRuleCall());
+	}
 ;
 
 // Entry rule entryRuleEString
@@ -3965,65 +4339,37 @@ ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()
 	leaveRule();
 }:
 	(
-		this_STRING_0=RULE_STRING
+		this_FLOAT_0=RULE_FLOAT
 		{
-			$current.merge(this_STRING_0);
+			$current.merge(this_FLOAT_0);
 		}
 		{
-			newLeafNode(this_STRING_0, grammarAccess.getEStringAccess().getSTRINGTerminalRuleCall_0());
+			newLeafNode(this_FLOAT_0, grammarAccess.getEStringAccess().getFLOATTerminalRuleCall_0());
 		}
 		    |
-		this_SAFESTRING_1=RULE_SAFESTRING
+		this_INT_1=RULE_INT
 		{
-			$current.merge(this_SAFESTRING_1);
+			$current.merge(this_INT_1);
 		}
 		{
-			newLeafNode(this_SAFESTRING_1, grammarAccess.getEStringAccess().getSAFESTRINGTerminalRuleCall_1());
+			newLeafNode(this_INT_1, grammarAccess.getEStringAccess().getINTTerminalRuleCall_1());
 		}
-	)
-;
-
-// Entry rule entryRuleParameterLiteral
-entryRuleParameterLiteral returns [String current=null]:
-	{ newCompositeNode(grammarAccess.getParameterLiteralRule()); }
-	iv_ruleParameterLiteral=ruleParameterLiteral
-	{ $current=$iv_ruleParameterLiteral.current.getText(); }
-	EOF;
-
-// Rule ParameterLiteral
-ruleParameterLiteral returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			kw='-'
-			{
-				$current.merge(kw);
-				newLeafNode(kw, grammarAccess.getParameterLiteralAccess().getHyphenMinusKeyword_0());
-			}
-		)?
-		(
-			this_INT_1=RULE_INT
-			{
-				$current.merge(this_INT_1);
-			}
-			{
-				newLeafNode(this_INT_1, grammarAccess.getParameterLiteralAccess().getINTTerminalRuleCall_1());
-			}
-		)?
-		(
-			this_SAFESTRING_2=RULE_SAFESTRING
-			{
-				$current.merge(this_SAFESTRING_2);
-			}
-			{
-				newLeafNode(this_SAFESTRING_2, grammarAccess.getParameterLiteralAccess().getSAFESTRINGTerminalRuleCall_2());
-			}
-		)?
+		    |
+		this_STRING_2=RULE_STRING
+		{
+			$current.merge(this_STRING_2);
+		}
+		{
+			newLeafNode(this_STRING_2, grammarAccess.getEStringAccess().getSTRINGTerminalRuleCall_2());
+		}
+		    |
+		this_SAFESTRING_3=RULE_SAFESTRING
+		{
+			$current.merge(this_SAFESTRING_3);
+		}
+		{
+			newLeafNode(this_SAFESTRING_3, grammarAccess.getEStringAccess().getSAFESTRINGTerminalRuleCall_3());
+		}
 	)
 ;
 
@@ -4156,11 +4502,13 @@ ruleparameterType returns [Enumerator current=null]
 	)
 ;
 
+RULE_FLOAT : '-'? '0'..'9' '.' ('0'..'9')+;
+
+RULE_INT : '-'? ('0'..'9')+;
+
 RULE_SAFESTRING : ('a'..'z'|'A'..'Z'|'_'|'.'|'@') ('a'..'z'|'A'..'Z'|'_'|'.'|'-'|'@'|'0'..'9')*;
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
-
-RULE_INT : ('0'..'9')+;
 
 RULE_STRING : ('"' ('\\' .|~(('\\'|'"')))* '"'|'\'' ('\\' .|~(('\\'|'\'')))* '\'');
 

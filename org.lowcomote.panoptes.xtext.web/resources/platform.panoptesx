@@ -1,75 +1,65 @@
 FeatureStore{
-	entities customer{keys customerID}, invoice{keys invoiceID}
-	request data rq1
-	features INVOICE_TOTAL_GROSS_AMOUNT:continuous{requires entities invoice},
-		"SECTOR_DESC_Agriculture & Food":categorical{requires entities customer},
-		"SECTOR_DESC_Automotive & Transport":categorical{requires entities customer}
-	labels INVOICE_PAID_ON_TIME
-	
+	features
+	    wait_duration:continuous,
+		service_duration:continuous
+	labels 
+	    is_happy:categorical
 }
 
-Model PTP_XGBOOST{
-    outputs PTP_XGBOOST_PRED2 predicts INVOICE_PAID_ON_TIME
-    uses INVOICE_TOTAL_GROSS_AMOUNT
+Model callcenter-linear{
+    uses "wait_duration", "service_duration"
+    outputs "p1"
+    predicts is_happy
 }
 
-Model PTP_XGBOOST2{
-    outputs PTP_XGBOOST_PRED predicts INVOICE_PAID_ON_TIME
-    uses INVOICE_TOTAL_GROSS_AMOUNT
-}
+BaseAlgorithmRuntime pythonFunction
 
-BaseAlgorithmRuntime PythonFunction{
-	endpoint  "https://domain.com"
-}
-
-BaseAlgorithm kolmogorovSmirnov{
-	codebase "https://domain.com"
-	runtime PythonFunction
+BaseAlgorithm kstest{
+	codebase "https://gitlab.agile.nat.bt.com/BETALAB/research/panoptes/example-algorithm-repo"
+	runtime pythonFunction
 	severity levels 2
-	accepts only categorical
+	accepts only continuous
 	parameters pValue:Boolean
 }
 
-HigherOrderAlgorithmRuntime PythonFunctionHO{
-	endpoint "https://domain.com"
-}
-
-HigherOrderAlgorithm timeSeriesAnalysis{
-	codebase "https://domain.com"
-	runtime PythonFunctionHO
-	severity levels 2
-}
-
-Action emailSender{
-	endpoint "https://domain.com"
+Action emailAction{
 	parameters mandatory email:String
 }
 
-Deployment PTP{
-	model PTP_XGBOOST
-	inputs invoice.invoiceID,customer.customerID
+Action retrainAction{
+    parameters
+        mandatory ioNames:String,
+        mandatory containerImage:String
+}
 
-	ActionExecution emailMe{
-		action emailSender
-		parameter values email=panagiotis@bt.com
-		
-	}
+Deployment callcenter{
+	model callcenter-linear
 	
-		BaseAlgorithmExecution KS_INVOICE_TOTAL_GROSS_AMOUNT{
-		algorithm kolmogorovSmirnov
-		live data INVOICE_TOTAL_GROSS_AMOUNT, INVOICE_PAID_ON_TIME
-	    historical data INVOICE_TOTAL_GROSS_AMOUNT
+	BaseAlgorithmExecution exec1{
+		algorithm kstest
+		live data wait_duration
+		historical data wait_duration
 		actions 1->emailMe
 		parameter values pValue = true
 	}
 	
+	ActionExecution emailMe{
+		action emailAction
+		parameter values email=panagiotis.kourouklidis@bt.com
+	}
+	
+	ActionExecution retrainCallcenterLinear{
+	    action retrainAction
+	    parameter values ioNames="wait_duration,service_duration,is_happy",  
+	        containerImage="registry.docker.nat.bt.com/panoptes/callcenter-model-training:latest"
+	}
+	
 	Trigger t1{
 	every
-	100 samples
+	5 samples
 	or
 	every
-	one week
-	execute
-	KS_INVOICE_TOTAL_GROSS_AMOUNT
+	one day
+	execute exec1
 	}
 }

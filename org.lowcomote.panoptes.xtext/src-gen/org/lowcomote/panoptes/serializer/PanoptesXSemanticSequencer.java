@@ -147,7 +147,7 @@ public class PanoptesXSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     ActionExecution returns ActionExecution
 	 *
 	 * Constraint:
-	 *     (name=EString (action=[Action|EString]? (parameterValueMap+=parameterValueEntry parameterValueMap+=parameterValueEntry*)?)+)
+	 *     ((name=STRING | name=SAFESTRING) (action=[Action|EString]? (parameterValueMap+=parameterValueEntry parameterValueMap+=parameterValueEntry*)?)+)
 	 */
 	protected void sequence_ActionExecution(ISerializationContext context, ActionExecution semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -159,7 +159,11 @@ public class PanoptesXSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     Action returns Action
 	 *
 	 * Constraint:
-	 *     (name=EString (endpoint=EString? (additionalParameters+=Parameter additionalParameters+=Parameter*)?)+)
+	 *     (
+	 *         (name=STRING | name=SAFESTRING) 
+	 *         endpoint=STRING? 
+	 *         ((endpoint=SAFESTRING | (additionalParameters+=Parameter additionalParameters+=Parameter*))? endpoint=STRING?)*
+	 *     )
 	 */
 	protected void sequence_Action(ISerializationContext context, panoptesDSL.Action semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -173,13 +177,13 @@ public class PanoptesXSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *
 	 * Constraint:
 	 *     (
-	 *         name=EString 
+	 *         (name=STRING | name=SAFESTRING) 
 	 *         (
 	 *             algorithm=[BaseAlgorithm|EString]? 
 	 *             (ActionExecutionMap+=actionExecutionEntry ActionExecutionMap+=actionExecutionEntry*)? 
-	 *             (historicIOValues+=[ModelIO|EString] historicIOValues+=[ModelIO|EString]*)? 
 	 *             (currentIOValues+=[ModelIO|EString] currentIOValues+=[ModelIO|EString]*)? 
-	 *             (parameterValueMap+=parameterValueEntry parameterValueMap+=parameterValueEntry*)?
+	 *             (parameterValueMap+=parameterValueEntry parameterValueMap+=parameterValueEntry*)? 
+	 *             (historicIOValues+=[ModelIO|EString] historicIOValues+=[ModelIO|EString]*)?
 	 *         )+
 	 *     )
 	 */
@@ -194,7 +198,7 @@ public class PanoptesXSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     BaseAlgorithmRuntime returns BaseAlgorithmRuntime
 	 *
 	 * Constraint:
-	 *     (name=EString endpoint=EString?)
+	 *     ((name=STRING | name=SAFESTRING) (endpoint=STRING | endpoint=SAFESTRING)?)
 	 */
 	protected void sequence_BaseAlgorithmRuntime(ISerializationContext context, BaseAlgorithmRuntime semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -208,12 +212,18 @@ public class PanoptesXSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *
 	 * Constraint:
 	 *     (
-	 *         name=EString 
+	 *         (name=STRING | name=SAFESTRING) 
+	 *         codebase=STRING? 
 	 *         (
-	 *             (codebase=EString | runtime=[BaseAlgorithmRuntime|EString] | driftLevels=EIntegerObject)? 
-	 *             (additionalParameters+=Parameter additionalParameters+=Parameter*)? 
-	 *             (strict?='only'? supportedTypes+=statisticalVariableType supportedTypes+=statisticalVariableType*)?
-	 *         )+
+	 *             (
+	 *                 codebase=SAFESTRING | 
+	 *                 runtime=[BaseAlgorithmRuntime|EString] | 
+	 *                 driftLevels=EIntegerObject | 
+	 *                 (strict?='only'? supportedTypes+=statisticalVariableType supportedTypes+=statisticalVariableType*) | 
+	 *                 (additionalParameters+=Parameter additionalParameters+=Parameter*)
+	 *             )? 
+	 *             codebase=STRING?
+	 *         )*
 	 *     )
 	 */
 	protected void sequence_BaseAlgorithm(ISerializationContext context, BaseAlgorithm semanticObject) {
@@ -239,11 +249,17 @@ public class PanoptesXSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *
 	 * Constraint:
 	 *     (
-	 *         name=EString 
+	 *         (name=STRING | name=SAFESTRING) 
+	 *         mlModel=[Model|EString]? 
 	 *         (
-	 *             (mlModel=[Model|EString] | algorithmexecutions+=AlgorithmExecution | actionExecutions+=ActionExecution | triggerGroups+=TriggerGroup)? 
-	 *             (inputs+=[DeploymentIO|EString] inputs+=[DeploymentIO|EString]*)?
-	 *         )+
+	 *             (
+	 *                 (inputs+=[DeploymentIO|EString] inputs+=[DeploymentIO|EString]*) | 
+	 *                 algorithmexecutions+=AlgorithmExecution | 
+	 *                 actionExecutions+=ActionExecution | 
+	 *                 triggerGroups+=TriggerGroup
+	 *             )? 
+	 *             mlModel=[Model|EString]?
+	 *         )*
 	 *     )
 	 */
 	protected void sequence_Deployment(ISerializationContext context, Deployment semanticObject) {
@@ -256,7 +272,7 @@ public class PanoptesXSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     Entity returns Entity
 	 *
 	 * Constraint:
-	 *     (name=EString keys+=Key keys+=Key*)
+	 *     ((name=STRING | name=SAFESTRING) keys+=Key keys+=Key*)
 	 */
 	protected void sequence_Entity(ISerializationContext context, Entity semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -287,7 +303,7 @@ public class PanoptesXSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *
 	 * Constraint:
 	 *     (
-	 *         name=EString 
+	 *         (name=STRING | name=SAFESTRING) 
 	 *         type=statisticalVariableType? 
 	 *         ((entities+=[Entity|EString] entities+=[Entity|EString]*) | (requestData+=[RequestData|EString] requestData+=[RequestData|EString]*))*
 	 *     )
@@ -304,17 +320,18 @@ public class PanoptesXSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *
 	 * Constraint:
 	 *     (
-	 *         name=EString 
+	 *         (name=STRING | name=SAFESTRING) 
+	 *         algorithm=[HigherOrderAlgorithm|EString]? 
 	 *         (
 	 *             (
-	 *                 algorithm=[HigherOrderAlgorithm|EString] | 
 	 *                 algorithmExecution=[AlgorithmExecution|EString] | 
+	 *                 (ActionExecutionMap+=actionExecutionEntry ActionExecutionMap+=actionExecutionEntry*) | 
 	 *                 minDataPoints=EIntegerObject | 
-	 *                 maxDataPoints=EIntegerObject
+	 *                 maxDataPoints=EIntegerObject | 
+	 *                 (parameterValueMap+=parameterValueEntry parameterValueMap+=parameterValueEntry*)
 	 *             )? 
-	 *             (ActionExecutionMap+=actionExecutionEntry ActionExecutionMap+=actionExecutionEntry*)? 
-	 *             (parameterValueMap+=parameterValueEntry parameterValueMap+=parameterValueEntry*)?
-	 *         )+
+	 *             algorithm=[HigherOrderAlgorithm|EString]?
+	 *         )*
 	 *     )
 	 */
 	protected void sequence_HigherOrderAlgorithmExecution(ISerializationContext context, HigherOrderAlgorithmExecution semanticObject) {
@@ -328,7 +345,7 @@ public class PanoptesXSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     HigherOrderAlgorithmRuntime returns HigherOrderAlgorithmRuntime
 	 *
 	 * Constraint:
-	 *     (name=EString endpoint=EString?)
+	 *     ((name=STRING | name=SAFESTRING) (endpoint=STRING | endpoint=SAFESTRING)?)
 	 */
 	protected void sequence_HigherOrderAlgorithmRuntime(ISerializationContext context, HigherOrderAlgorithmRuntime semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -342,11 +359,12 @@ public class PanoptesXSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *
 	 * Constraint:
 	 *     (
-	 *         name=EString 
+	 *         (name=STRING | name=SAFESTRING) 
+	 *         runtime=[HigherOrderAlgorithmRuntime|EString]? 
 	 *         (
-	 *             (codebase=EString | runtime=[HigherOrderAlgorithmRuntime|EString] | driftLevels=EIntegerObject)? 
-	 *             (additionalParameters+=Parameter additionalParameters+=Parameter*)?
-	 *         )+
+	 *             (codebase=STRING | codebase=SAFESTRING | driftLevels=EIntegerObject | (additionalParameters+=Parameter additionalParameters+=Parameter*))? 
+	 *             runtime=[HigherOrderAlgorithmRuntime|EString]?
+	 *         )*
 	 *     )
 	 */
 	protected void sequence_HigherOrderAlgorithm(ISerializationContext context, HigherOrderAlgorithm semanticObject) {
@@ -360,16 +378,10 @@ public class PanoptesXSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     Key returns Key
 	 *
 	 * Constraint:
-	 *     name=EString
+	 *     (name=STRING | name=SAFESTRING)
 	 */
 	protected void sequence_Key(ISerializationContext context, Key semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, PanoptesDSLPackage.Literals.DEPLOYMENT_IO__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PanoptesDSLPackage.Literals.DEPLOYMENT_IO__NAME));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getKeyAccess().getNameEStringParserRuleCall_1_0(), semanticObject.getName());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -397,7 +409,7 @@ public class PanoptesXSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     Label returns Label
 	 *
 	 * Constraint:
-	 *     (name=EString type=statisticalVariableType?)
+	 *     ((name=STRING | name=SAFESTRING) type=statisticalVariableType?)
 	 */
 	protected void sequence_Label(ISerializationContext context, Label semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -409,7 +421,7 @@ public class PanoptesXSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     Model returns Model
 	 *
 	 * Constraint:
-	 *     (name=EString ((inputs+=[Feature|EString] inputs+=[Feature|EString]*) | output=Prediction)+)
+	 *     ((name=STRING | name=SAFESTRING) ((inputs+=[Feature|EString] inputs+=[Feature|EString]*) | output=Prediction)+)
 	 */
 	protected void sequence_Model(ISerializationContext context, Model semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -421,7 +433,7 @@ public class PanoptesXSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     Parameter returns Parameter
 	 *
 	 * Constraint:
-	 *     (mandatory?='mandatory'? name=EString type=parameterType?)
+	 *     (mandatory?='mandatory'? (name=STRING | name=SAFESTRING) type=parameterType?)
 	 */
 	protected void sequence_Parameter(ISerializationContext context, panoptesDSL.Parameter semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -471,7 +483,7 @@ public class PanoptesXSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     Prediction returns Prediction
 	 *
 	 * Constraint:
-	 *     (name=EString label=[Label|EString]?)
+	 *     ((name=STRING | name=SAFESTRING) label=[Label|EString]?)
 	 */
 	protected void sequence_Prediction(ISerializationContext context, Prediction semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -484,16 +496,10 @@ public class PanoptesXSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     RequestData returns RequestData
 	 *
 	 * Constraint:
-	 *     name=EString
+	 *     (name=STRING | name=SAFESTRING)
 	 */
 	protected void sequence_RequestData(ISerializationContext context, RequestData semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, PanoptesDSLPackage.Literals.DEPLOYMENT_IO__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PanoptesDSLPackage.Literals.DEPLOYMENT_IO__NAME));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getRequestDataAccess().getNameEStringParserRuleCall_1_0(), semanticObject.getName());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -520,7 +526,7 @@ public class PanoptesXSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     TemporalTrigger returns TemporalTrigger
 	 *
 	 * Constraint:
-	 *     (frequency=frequencyEnum | cronString=EString)
+	 *     (frequency=frequencyEnum | cronString=STRING)
 	 */
 	protected void sequence_TemporalTrigger(ISerializationContext context, TemporalTrigger semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -533,7 +539,7 @@ public class PanoptesXSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *
 	 * Constraint:
 	 *     (
-	 *         name=EString 
+	 *         (name=STRING | name=SAFESTRING) 
 	 *         compositeTriggers+=CompositeTrigger 
 	 *         compositeTriggers+=CompositeTrigger* 
 	 *         targets+=[BaseAlgorithmExecution|EString] 
@@ -571,19 +577,10 @@ public class PanoptesXSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     parameterValueEntry returns parameterValueEntry
 	 *
 	 * Constraint:
-	 *     (key=EString value=ParameterLiteral)
+	 *     ((key=STRING | key=SAFESTRING) value=EString)
 	 */
 	protected void sequence_parameterValueEntry(ISerializationContext context, parameterValueEntry semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, PanoptesDSLPackage.Literals.PARAMETER_VALUE_ENTRY__KEY) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PanoptesDSLPackage.Literals.PARAMETER_VALUE_ENTRY__KEY));
-			if (transientValues.isValueTransient(semanticObject, PanoptesDSLPackage.Literals.PARAMETER_VALUE_ENTRY__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PanoptesDSLPackage.Literals.PARAMETER_VALUE_ENTRY__VALUE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getParameterValueEntryAccess().getKeyEStringParserRuleCall_1_0(), semanticObject.getKey());
-		feeder.accept(grammarAccess.getParameterValueEntryAccess().getValueParameterLiteralParserRuleCall_3_0(), semanticObject.getValue());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

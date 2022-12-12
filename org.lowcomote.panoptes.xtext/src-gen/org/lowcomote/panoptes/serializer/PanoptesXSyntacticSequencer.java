@@ -61,7 +61,8 @@ public class PanoptesXSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ('{' '}')?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     name=EString (ambiguity) (rule end)
+	 *     name=SAFESTRING (ambiguity) (rule end)
+	 *     name=STRING (ambiguity) (rule end)
 	 *     type=statisticalVariableType (ambiguity) (rule end)
 	 */
 	protected void emit_Feature___LeftCurlyBracketKeyword_2_0_RightCurlyBracketKeyword_2_2__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
@@ -78,7 +79,8 @@ public class PanoptesXSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     algorithmExecution=[AlgorithmExecution|EString] (ambiguity) 'observations' maxDataPoints=EIntegerObject
 	 *     maxDataPoints=EIntegerObject (ambiguity) 'observations' maxDataPoints=EIntegerObject
 	 *     minDataPoints=EIntegerObject (ambiguity) 'observations' maxDataPoints=EIntegerObject
-	 *     name=EString '{' (ambiguity) 'observations' maxDataPoints=EIntegerObject
+	 *     name=SAFESTRING '{' (ambiguity) 'observations' maxDataPoints=EIntegerObject
+	 *     name=STRING '{' (ambiguity) 'observations' maxDataPoints=EIntegerObject
 	 *     parameterValueMap+=parameterValueEntry (ambiguity) 'observations' maxDataPoints=EIntegerObject
 	 */
 	protected void emit_HigherOrderAlgorithmExecution_MaxKeyword_4_4_0_1_or_MaximumKeyword_4_4_0_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
@@ -95,7 +97,8 @@ public class PanoptesXSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     algorithmExecution=[AlgorithmExecution|EString] (ambiguity) 'observations' minDataPoints=EIntegerObject
 	 *     maxDataPoints=EIntegerObject (ambiguity) 'observations' minDataPoints=EIntegerObject
 	 *     minDataPoints=EIntegerObject (ambiguity) 'observations' minDataPoints=EIntegerObject
-	 *     name=EString '{' (ambiguity) 'observations' minDataPoints=EIntegerObject
+	 *     name=SAFESTRING '{' (ambiguity) 'observations' minDataPoints=EIntegerObject
+	 *     name=STRING '{' (ambiguity) 'observations' minDataPoints=EIntegerObject
 	 *     parameterValueMap+=parameterValueEntry (ambiguity) 'observations' minDataPoints=EIntegerObject
 	 */
 	protected void emit_HigherOrderAlgorithmExecution_MinKeyword_4_3_0_1_or_MinimumKeyword_4_3_0_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {

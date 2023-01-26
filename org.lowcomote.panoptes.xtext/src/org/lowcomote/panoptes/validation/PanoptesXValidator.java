@@ -11,16 +11,19 @@ import org.eclipse.xtext.validation.Check;
 import panoptesDSL.Execution;
 import panoptesDSL.Feature;
 import panoptesDSL.HigherOrderAlgorithmExecution;
+import panoptesDSL.Key;
 import panoptesDSL.Label;
 import panoptesDSL.ModelIO;
 import panoptesDSL.PanoptesDSLPackage;
 import panoptesDSL.Parameter;
 import panoptesDSL.Prediction;
+import panoptesDSL.RequestData;
 import panoptesDSL.parameterValueEntry;
 import panoptesDSL.statisticalVariableType;
 import panoptesDSL.ActionExecution;
 import panoptesDSL.BaseAlgorithmExecution;
 import panoptesDSL.Deployment;
+import panoptesDSL.Entity;
 
 /**
  * This class contains custom validation rules.
@@ -94,7 +97,24 @@ public class PanoptesXValidator extends AbstractPanoptesXValidator {
 
 	@Check
 	public void checkDeploymentInputs(Deployment deployment) {
-		// TODO
+		for (Feature f : deployment.getMlModel().getInputs()) {
+			
+			for (Entity e :f.getEntities()) {
+				for (Key k : e.getKeys()) {
+					if (!deployment.getInputs().contains(k)) {
+						warning("Deployment " + deployment.getName() + " needs Key " + k.getName() + " as input to retrieve Feature " + f.getName(),
+								PanoptesDSLPackage.Literals.DEPLOYMENT__ML_MODEL);
+					}
+				}
+			}
+			
+			for (RequestData r : f.getRequestData()) {
+				if (!deployment.getInputs().contains(r)) {
+					warning("Deployment " + deployment.getName() + " needs Request Data " + r.getName() + " as input to compute Feature " + f.getName(),
+								PanoptesDSLPackage.Literals.DEPLOYMENT__ML_MODEL);
+				}
+			}
+		}
 	}
 
 	@Check

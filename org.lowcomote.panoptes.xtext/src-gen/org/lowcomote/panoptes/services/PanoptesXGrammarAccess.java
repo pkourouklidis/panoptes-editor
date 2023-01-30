@@ -1678,7 +1678,7 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//            ('algorithm' algorithm=[BaseAlgorithm|EString]) &
 		//            ('live' 'data' currentIOValues+=[ModelIO|EString] ( "," currentIOValues+=[ModelIO|EString])*)? &
 		//            ('historical' 'data' historicIOValues+=[ModelIO|EString] ( "," historicIOValues+=[ModelIO|EString])*)? &
-		//            ('actions' ActionExecutionMap+=actionExecutionEntry ( "," ActionExecutionMap+=actionExecutionEntry)*) &
+		//            ('actions' ActionExecutionMap+=actionExecutionEntry ( "," ActionExecutionMap+=actionExecutionEntry)*)? &
 		//            ('parameter' 'values' parameterValueMap+=parameterValueEntry ( "," parameterValueMap+=parameterValueEntry)*)?
 		//        )
 		//    '}';
@@ -1692,7 +1692,7 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//        ('algorithm' algorithm=[BaseAlgorithm|EString]) &
 		//        ('live' 'data' currentIOValues+=[ModelIO|EString] ( "," currentIOValues+=[ModelIO|EString])*)? &
 		//        ('historical' 'data' historicIOValues+=[ModelIO|EString] ( "," historicIOValues+=[ModelIO|EString])*)? &
-		//        ('actions' ActionExecutionMap+=actionExecutionEntry ( "," ActionExecutionMap+=actionExecutionEntry)*) &
+		//        ('actions' ActionExecutionMap+=actionExecutionEntry ( "," ActionExecutionMap+=actionExecutionEntry)*)? &
 		//        ('parameter' 'values' parameterValueMap+=parameterValueEntry ( "," parameterValueMap+=parameterValueEntry)*)?
 		//    )
 		//'}'
@@ -1723,7 +1723,7 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//    ('algorithm' algorithm=[BaseAlgorithm|EString]) &
 		//    ('live' 'data' currentIOValues+=[ModelIO|EString] ( "," currentIOValues+=[ModelIO|EString])*)? &
 		//    ('historical' 'data' historicIOValues+=[ModelIO|EString] ( "," historicIOValues+=[ModelIO|EString])*)? &
-		//    ('actions' ActionExecutionMap+=actionExecutionEntry ( "," ActionExecutionMap+=actionExecutionEntry)*) &
+		//    ('actions' ActionExecutionMap+=actionExecutionEntry ( "," ActionExecutionMap+=actionExecutionEntry)*)? &
 		//    ('parameter' 'values' parameterValueMap+=parameterValueEntry ( "," parameterValueMap+=parameterValueEntry)*)?
 		//)
 		public UnorderedGroup getUnorderedGroup_4() { return cUnorderedGroup_4; }
@@ -1809,7 +1809,7 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//EString
 		public RuleCall getHistoricIOValuesModelIOEStringParserRuleCall_4_2_3_1_0_1() { return cHistoricIOValuesModelIOEStringParserRuleCall_4_2_3_1_0_1; }
 		
-		//('actions' ActionExecutionMap+=actionExecutionEntry ( "," ActionExecutionMap+=actionExecutionEntry)*)
+		//('actions' ActionExecutionMap+=actionExecutionEntry ( "," ActionExecutionMap+=actionExecutionEntry)*)?
 		public Group getGroup_4_3() { return cGroup_4_3; }
 		
 		//'actions'
@@ -1926,7 +1926,7 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//        (
 		//            ('algorithm' algorithm=[HigherOrderAlgorithm|EString]) &
 		//            ('observed' 'execution' algorithmExecution=[AlgorithmExecution|EString]) &
-		//            ('actions' ActionExecutionMap+=actionExecutionEntry ( "," ActionExecutionMap+=actionExecutionEntry)*) &
+		//            ('actions' ActionExecutionMap+=actionExecutionEntry ( "," ActionExecutionMap+=actionExecutionEntry)*)? &
 		//            (('minimum'|'min') 'observations' minDataPoints=EIntegerObject) &
 		//            (('maximum'|'max') 'observations' maxDataPoints=EIntegerObject) &
 		//            ('parameter' 'values' parameterValueMap+=parameterValueEntry ( "," parameterValueMap+=parameterValueEntry)*)?
@@ -1941,7 +1941,7 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//    (
 		//        ('algorithm' algorithm=[HigherOrderAlgorithm|EString]) &
 		//        ('observed' 'execution' algorithmExecution=[AlgorithmExecution|EString]) &
-		//        ('actions' ActionExecutionMap+=actionExecutionEntry ( "," ActionExecutionMap+=actionExecutionEntry)*) &
+		//        ('actions' ActionExecutionMap+=actionExecutionEntry ( "," ActionExecutionMap+=actionExecutionEntry)*)? &
 		//        (('minimum'|'min') 'observations' minDataPoints=EIntegerObject) &
 		//        (('maximum'|'max') 'observations' maxDataPoints=EIntegerObject) &
 		//        ('parameter' 'values' parameterValueMap+=parameterValueEntry ( "," parameterValueMap+=parameterValueEntry)*)?
@@ -1973,7 +1973,7 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//(
 		//    ('algorithm' algorithm=[HigherOrderAlgorithm|EString]) &
 		//    ('observed' 'execution' algorithmExecution=[AlgorithmExecution|EString]) &
-		//    ('actions' ActionExecutionMap+=actionExecutionEntry ( "," ActionExecutionMap+=actionExecutionEntry)*) &
+		//    ('actions' ActionExecutionMap+=actionExecutionEntry ( "," ActionExecutionMap+=actionExecutionEntry)*)? &
 		//    (('minimum'|'min') 'observations' minDataPoints=EIntegerObject) &
 		//    (('maximum'|'max') 'observations' maxDataPoints=EIntegerObject) &
 		//    ('parameter' 'values' parameterValueMap+=parameterValueEntry ( "," parameterValueMap+=parameterValueEntry)*)?
@@ -2013,7 +2013,7 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//EString
 		public RuleCall getAlgorithmExecutionAlgorithmExecutionEStringParserRuleCall_4_1_2_0_1() { return cAlgorithmExecutionAlgorithmExecutionEStringParserRuleCall_4_1_2_0_1; }
 		
-		//('actions' ActionExecutionMap+=actionExecutionEntry ( "," ActionExecutionMap+=actionExecutionEntry)*)
+		//('actions' ActionExecutionMap+=actionExecutionEntry ( "," ActionExecutionMap+=actionExecutionEntry)*)?
 		public Group getGroup_4_2() { return cGroup_4_2; }
 		
 		//'actions'
@@ -3418,7 +3418,7 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 	//            ('algorithm' algorithm=[BaseAlgorithm|EString]) &
 	//            ('live' 'data' currentIOValues+=[ModelIO|EString] ( "," currentIOValues+=[ModelIO|EString])*)? &
 	//            ('historical' 'data' historicIOValues+=[ModelIO|EString] ( "," historicIOValues+=[ModelIO|EString])*)? &
-	//            ('actions' ActionExecutionMap+=actionExecutionEntry ( "," ActionExecutionMap+=actionExecutionEntry)*) &
+	//            ('actions' ActionExecutionMap+=actionExecutionEntry ( "," ActionExecutionMap+=actionExecutionEntry)*)? &
 	//            ('parameter' 'values' parameterValueMap+=parameterValueEntry ( "," parameterValueMap+=parameterValueEntry)*)?
 	//        )
 	//    '}';
@@ -3438,7 +3438,7 @@ public class PanoptesXGrammarAccess extends AbstractElementFinder.AbstractGramma
 	//        (
 	//            ('algorithm' algorithm=[HigherOrderAlgorithm|EString]) &
 	//            ('observed' 'execution' algorithmExecution=[AlgorithmExecution|EString]) &
-	//            ('actions' ActionExecutionMap+=actionExecutionEntry ( "," ActionExecutionMap+=actionExecutionEntry)*) &
+	//            ('actions' ActionExecutionMap+=actionExecutionEntry ( "," ActionExecutionMap+=actionExecutionEntry)*)? &
 	//            (('minimum'|'min') 'observations' minDataPoints=EIntegerObject) &
 	//            (('maximum'|'max') 'observations' maxDataPoints=EIntegerObject) &
 	//            ('parameter' 'values' parameterValueMap+=parameterValueEntry ( "," parameterValueMap+=parameterValueEntry)*)?

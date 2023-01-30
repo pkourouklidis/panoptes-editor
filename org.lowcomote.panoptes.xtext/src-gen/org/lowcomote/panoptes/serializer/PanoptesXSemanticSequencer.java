@@ -181,8 +181,8 @@ public class PanoptesXSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *         (
 	 *             algorithm=[BaseAlgorithm|EString]? 
 	 *             (ActionExecutionMap+=actionExecutionEntry ActionExecutionMap+=actionExecutionEntry*)? 
-	 *             (currentIOValues+=[ModelIO|EString] currentIOValues+=[ModelIO|EString]*)? 
 	 *             (parameterValueMap+=parameterValueEntry parameterValueMap+=parameterValueEntry*)? 
+	 *             (currentIOValues+=[ModelIO|EString] currentIOValues+=[ModelIO|EString]*)? 
 	 *             (historicIOValues+=[ModelIO|EString] historicIOValues+=[ModelIO|EString]*)?
 	 *         )+
 	 *     )
@@ -213,16 +213,16 @@ public class PanoptesXSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 * Constraint:
 	 *     (
 	 *         (name=STRING | name=SAFESTRING) 
-	 *         codebase=STRING? 
+	 *         runtime=[BaseAlgorithmRuntime|EString]? 
 	 *         (
 	 *             (
+	 *                 codebase=STRING | 
 	 *                 codebase=SAFESTRING | 
-	 *                 runtime=[BaseAlgorithmRuntime|EString] | 
 	 *                 driftLevels=EIntegerObject | 
 	 *                 (strict?='only'? supportedTypes+=statisticalVariableType supportedTypes+=statisticalVariableType*) | 
 	 *                 (additionalParameters+=Parameter additionalParameters+=Parameter*)
 	 *             )? 
-	 *             codebase=STRING?
+	 *             runtime=[BaseAlgorithmRuntime|EString]?
 	 *         )*
 	 *     )
 	 */

@@ -162,7 +162,7 @@ BaseAlgorithmExecution returns BaseAlgorithmExecution:
 			('algorithm' algorithm=[BaseAlgorithm|EString]) &
 			('live' 'data' currentIOValues+=[ModelIO|EString] ( "," currentIOValues+=[ModelIO|EString])*)? &
 			('historical' 'data' historicIOValues+=[ModelIO|EString] ( "," historicIOValues+=[ModelIO|EString])*)? &
-			('actions' ActionExecutionMap+=actionExecutionEntry ( "," ActionExecutionMap+=actionExecutionEntry)*) &
+			('actions' ActionExecutionMap+=actionExecutionEntry ( "," ActionExecutionMap+=actionExecutionEntry)*)? &
 			('parameter' 'values' parameterValueMap+=parameterValueEntry ( "," parameterValueMap+=parameterValueEntry)*)?
 		)
 
@@ -176,7 +176,7 @@ HigherOrderAlgorithmExecution returns HigherOrderAlgorithmExecution:
 		(
 			('algorithm' algorithm=[HigherOrderAlgorithm|EString]) &
 			('observed' 'execution' algorithmExecution=[AlgorithmExecution|EString]) &
-			('actions' ActionExecutionMap+=actionExecutionEntry ( "," ActionExecutionMap+=actionExecutionEntry)*) &
+			('actions' ActionExecutionMap+=actionExecutionEntry ( "," ActionExecutionMap+=actionExecutionEntry)*)? &
 			(('minimum'|'min') 'observations' minDataPoints=EIntegerObject) &
 			(('maximum'|'max') 'observations' maxDataPoints=EIntegerObject) &
 			('parameter' 'values' parameterValueMap+=parameterValueEntry ( "," parameterValueMap+=parameterValueEntry)*)?
